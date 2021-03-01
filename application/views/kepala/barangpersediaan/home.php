@@ -37,15 +37,25 @@
       </div><br><br><br>
 
 <div class="row">
-<div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-
+<div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+<div class="icon"><i class="icofont-chart-bar-graph"></i></div>
+<h4 class="title"><a href="<?= base_url('laporanpenerimaanbarangpersediaan'); ?>">Daftar Penerimaan Barang Pesediaan</a></h4>
 </div>
 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
 <div class="icon"><i class="icofont-chart-bar-graph"></i></div>
-<h4 class="title"><a href="<?= base_url('laporanSsh/barangPersediaan'); ?>">Laporan SSH</a></h4>
+<h4 class="title"><a href="<?= base_url('laporanpengeluaranbarangpersediaan'); ?>">Daftar Pengeluaran Barang Pesediaan</a></h4>
+</a></h4>
 </div>
-<div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+<div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+<div class="icon"><i class="icofont-chart-bar-graph"></i></div>
+<h4 class="title"><a href="<?= base_url('laporanbukubarangpersediaan'); ?>">Buku Barang Pesediaan</a></h4>
+</div>
+</div><br><br><br>
 
+<div class="row">
+<div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+<div class="icon"><i class="icofont-chart-bar-graph"></i></div>
+<h4 class="title"><a href="<?= base_url('laporanrekapitulasibarangpersediaan'); ?>">Rekapitulasi Barang Pesediaan</a></h4>
 </div>
 
 </div>
