@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="wid_sshth=device-wid_sshth, initial-scale=1.0" name="viewport">
 
   <!-- Favicons -->
   <link href="<?php echo base_url('theme/mamba/assets/img/favicon.png')?>" rel="icon">
@@ -23,7 +23,8 @@
 
   <!-- Template Main CSS File -->
   <link href="<?php echo base_url('theme/mamba/assets/css/style.css')?>" rel="stylesheet">
-
+  <link href="<?php echo base_url().'assets/css/jquery.datatables.min.css'?>" rel="stylesheet" type="text/css"/>
+  <link href="<?php echo base_url().'assets/css/dataTables.bootstrap.css'?>" rel="stylesheet" type="text/css"/>
   <!-- =======================================================
   * Template Name: theme/mamba - v2.5.1
   * Template URL: https://bootstrapmade.com/theme/mamba-one-page-bootstrap-template-free/
@@ -38,73 +39,72 @@ $this->load->view('sekretaris/barangpersediaan/menu');
 
 </head>
 
-<section id="services" class="services">
+<section id_rekanan="services" class="services">
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-          <a href="<?php echo config_item('base_url'); ?>">Halaman Utama</a>
+          <a href="<?php echo base_url('sekretaris/barangpersediaan')?>">Halaman Utama</a>
         </li>
   
-        <li class="breadcrumb-item active">Order Barang</li>
+        <li class="breadcrumb-item active">Daftar Order Barang</li>
       </ol>
- <a href="<?php echo base_url('orderrekanan/tambah')?>" class="btn btn-primary" style="margin-bottom: 10px;"><i class="fa fa-plus">Tambah Data</a></i>
-     
- <div class="card mb-3">
+
+      <div class="container">
+      <a href="<?php echo base_url('orderrekanan/menambahdataorderrekanan')?>" class="btn btn-primary" style="margin-bottom: 10px;"><i class="fa fa-plus">Tambah Data</a></i>
+  
+  <!-- Example DataTables Card-->
+  <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Daftar Tabel Order Rekanan</div>
-          
+          <i class="fa fa-table"></i> Data Tabel Order Rekanan</div>
         <div class="card-body">
           <div class="table-responsive">
-          <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>No</th> 
-                        <th>Tanggal Pesan</th>
-                        <th>Rekanan</th>
-                        <th>Keterangan</th>                         
-                        <th>Paket Pekerjaan</th> 
-                        <th>No Faktur</th> 
-                        <th colspan='2'>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+            
+                <tr class="text-center">
+                  <th>No</th>
+                  <th>Tanggal Pesan</th>
+                  <th>Nama Rekanan</th>
+                  <th>Keterangan</th>
+                  <th>No Faktur</th>
+                  <th>Opsi</th>
+                </tr>
+              </thead>
+            <tbody  class="text-center">
+                <tr>
+                <?php 
+                  $i = 1;
+                  foreach ($content->result() as $data) : ?>
+                  <td><?= $i ?></td>
+                  <td><?= $data->tanggal_pesan ?></td>
+                  <td><?= $data->id_rekanan ?></td>
+                  <td><?= $data->keterangan ?></td>
+                  <td><?= $data->no_faktur ?></td>
+                  <td> 
+                    <a href="<?php echo base_url()?>orderrekanan/listdataorderrekanan/<?php echo $data->id_faktur; ?>" class="btn btn-warning" style="margin-bottom: 1px;">List Order<i class="fa fa-tag"></i></a>
+                    <a href="<?php echo base_url()?>orderrekanan/action_deletedataorderrekanan/<?php echo $data->id_faktur; ?>" onclick="return confirm('Apakah anda yakin?');" class="btn btn-danger">Hapus<i class="fa fa-trash"></i></a>
+                  </td> 
+                </tr>
                     <?php
-                    $no=1;
-                    foreach ($hasil as $item)
-                    {
-    
-                    ?>
-                    <tr>
-                        <td><?php echo $no;?></td>
-                        <td><?php echo $item->tanggal_pesan;?></td>
-                        <td><?php echo $item->nama_rekanan;?></td>
-                        <td><?php echo $item->keterangan;?></td>                        
-                        <td><?php echo $item->id_paketpekerjaan;?></td>
-                        <td><?php echo $item->no_faktur;?></td>
-                        <td> <a href="<?php echo base_url()?>listorderrekanan/index/<?php echo $item->id_faktur; ?>" class="btn btn-warning" role="button">List Order</a></td>
-                        <td> <a href="<?php echo base_url()?>orderrekanan/hapus/<?php echo $item->id_faktur; ?>" onclick="return confirm('Apakah anda yakin?');"class="btn btn-danger" role="button">Delete</a></td>
-                    </tr>
-                    <?php
-                            $no++;
-                    }
-                    ?>
-                </tbody>
+                      $i++;
+                    endforeach;
+                  ?>
+              </tbody>
             </table>
+          
+          </div>
+        </div>
+      </div>
     </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-    </section>
-
+  </div>
+  
 <?php $this->load->view('include/footer'); ?>
 
 <!-- Vendor JS Files -->
 <script src="<?php echo base_url('theme/mamba/assets/vendor/jquery/jquery.min.js')?>"></script>
   <script src="<?php echo base_url('theme/mamba/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
   <script src="<?php echo base_url('theme/mamba/assets/vendor/jquery.easing/jquery.easing.min.js')?>"></script>
-  <script src="<?php echo base_url('theme/mamba/assets/vendor/php-email-form/validate.js')?>"></script>
+  <script src="<?php echo base_url('theme/mamba/assets/vendor/php-email-form/valid_sshate.js')?>"></script>
   <script src="<?php echo base_url('theme/mamba/assets/vendor/jquery-sticky/jquery.sticky.js')?>"></script>
   <script src="<?php echo base_url('theme/mamba/assets/vendor/venobox/venobox.min.js')?>"></script>
   <script src="<?php echo base_url('theme/mamba/assets/vendor/waypoints/jquery.waypoints.min.js')?>"></script>
@@ -115,3 +115,21 @@ $this->load->view('sekretaris/barangpersediaan/menu');
 
   <!-- Template Main JS File -->
   <script src="<?php echo base_url('theme/mamba/assets/js/main.js')?>"></script>
+
+  <!-- Bootstrap core JavaScript-->
+
+  <script src="<?php echo base_url('assets/vendor/jquery/jquery.min.js'); ?>"></script>
+
+<script src="<?php echo base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
+<!-- Core plugin JavaScript-->
+<script src="<?php echo base_url('assets/vendor/jquery-easing/jquery.easing.min.js'); ?>"></script>
+
+<!-- Page level plugin JavaScript-->
+<script src="<?php echo base_url('assets/vendor/chart.js/Chart.min.js'); ?>"></script>
+<script src="<?php echo base_url('assets/vendor/datatables/jquery.dataTables.js'); ?>"></script>
+<script src="<?php echo base_url('assets/vendor/datatables/dataTables.bootstrap4.js'); ?>"></script>
+<!-- Custom scripts for all pages-->
+<script src="<?php echo base_url('assets/js/sb-admin.min.js'); ?>"></script>
+<!-- Custom scripts for this page-->
+<script src="<?php echo base_url('assets/js/sb-admin-datatables.min.js'); ?>"></script>
+<script src="<?php echo base_url('assets/js/sb-admin-charts.min.js'); ?>"></script>

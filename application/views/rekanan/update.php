@@ -33,7 +33,7 @@
 
 <?php 
 $this->load->view('include/header'); 
-$this->load->view('barangpersediaan/menu'); 
+$this->load->view('asettetap/menu'); 
 ?>
 
 </head>
@@ -44,11 +44,13 @@ $this->load->view('barangpersediaan/menu');
           <a href="<?php echo config_item('base_url'); ?>">Halaman Utama</a>
         </li>
   
-        <li class="breadcrumb-item active">Update Rekanan</li>
+        <li class="breadcrumb-item active">Update Data Rekanan</li>
       </ol>
-
-      
 <!-- Example DataTables Card-->
+<?php foreach ($content->result() as $data) {
+          # code...
+        } ?>
+
 <div class="card mb-3">
         <div class="card-header">
           <i class="fa fa-plus"></i> Update Data Rekanan</div>
@@ -56,33 +58,32 @@ $this->load->view('barangpersediaan/menu');
           <div class="table-responsive">
              <div class="container">
 
-        <form action="<?php echo base_url('rekanan/simpan_update')?>" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="id_rekanan"  value="<?php echo $ambil->id_rekanan; ?>" />
+        <form action="<?php echo config_item('base_url'); ?>/rekanan/action_updatedatarekanan/<?= $data->id_rekanan?>" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id_rekanan"  value="<?= $data->id_rekanan?>" />
         <div class="form-group">
               <div class="form-row">
-              <div class="col-md-6">
+                  <div class="col-md-6">
                     <label for="nama_pimpinan">Nama Pimpinan</label>
-                    <input value="<?php echo $ambil->nama_pimpinan; ?>"class="form-control" id="nama_pimpinan" type="text" aria-describedby="nameHelp" name="nama_pimpinan" required/>
+                    <input value="<?= $data->nama_pimpinan?>"class="form-control" id="nama_pimpinan" type="text" aria-describedby="nameHelp" name="nama_pimpinan" required/>
+                  </div>
+                  
+                </div>
+              </div>
+
+              <div class="form-group">
+              <div class="form-row">
+              
+              <div class="col-md-6">
+                    <label for="nama_rekanan">Nama Rekanan</label>
+                    <input value="<?= $data->nama_rekanan?>"class="form-control" id="nama_rekanan" type="text" aria-describedby="nameHelp" name="nama_rekanan" required/>
                   </div>
                            
                   <div class="col-md-6">
-                    <label for="nama_rekanan">Nama Rekanan</label>
-                    <input value="<?php echo $ambil->nama_rekanan; ?>"class="form-control" id="nama_rekanan" type="text" aria-describedby="nameHelp" name="nama_rekanan" required/>
-                  </div>
-                </div>
-              </div>
-
-            <div class="form-group">
-              <div class="form-row">
-                  <div class="col-md-6">
                     <label for="alamat_rekanan">Alamat Rekanan</label>
-                    <input value="<?php echo $ambil->alamat_rekanan; ?>"class="form-control" id="alamat_rekanan" type="text" aria-describedby="nameHelp" name="alamat_rekanan" required/>
+                    <input value="<?= $data->alamat_rekanan?>"class="form-control" id="alamat_rekanan" type="text" aria-describedby="nameHelp" name="alamat_rekanan" required/>
                   </div>
-      
                 </div>
               </div>
-
-            
               <div class="form-group">
             <div class="form-row">
               <div class="col-md-2">
@@ -90,8 +91,6 @@ $this->load->view('barangpersediaan/menu');
               </div>
             </div>
           </div>
-          </form>
-        </div>
 </div>
 </div>
 </div>
@@ -119,3 +118,21 @@ $this->load->view('barangpersediaan/menu');
 
   <!-- Template Main JS File -->
   <script src="<?php echo base_url('theme/mamba/assets/js/main.js')?>"></script>
+
+<!-- Bootstrap core JavaScript-->
+
+<script src="<?php echo base_url('assets/vendor/jquery/jquery.min.js'); ?>"></script>
+
+<script src="<?php echo base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
+<!-- Core plugin JavaScript-->
+<script src="<?php echo base_url('assets/vendor/jquery-easing/jquery.easing.min.js'); ?>"></script>
+
+<!-- Page level plugin JavaScript-->
+<script src="<?php echo base_url('assets/vendor/chart.js/Chart.min.js'); ?>"></script>
+<script src="<?php echo base_url('assets/vendor/datatables/jquery.dataTables.js'); ?>"></script>
+<script src="<?php echo base_url('assets/vendor/datatables/dataTables.bootstrap4.js'); ?>"></script>
+<!-- Custom scripts for all pages-->
+<script src="<?php echo base_url('assets/js/sb-admin.min.js'); ?>"></script>
+<!-- Custom scripts for this page-->
+<script src="<?php echo base_url('assets/js/sb-admin-datatables.min.js'); ?>"></script>
+<script src="<?php echo base_url('assets/js/sb-admin-charts.min.js'); ?>"></script>

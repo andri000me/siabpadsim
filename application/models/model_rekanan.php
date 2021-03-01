@@ -1,24 +1,28 @@
-<?php
-
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Model_rekanan extends CI_Model {
+  
+ 
+    public function __construct()
+	{
+		parent::__construct();
+		//Do your magic here
+	}
 
-	function TampilRekanan() 
-    {
-        $this->db->order_by('id_rekanan', 'ASC');
-        return $this->db->from('tbl_rekanan')
-          ->get()
-          ->result();
-    }
+	public function menambahdatarekanan($data)
+	{
+		$this->db->insert('tbl_rekanan', $data);
+	}
+	
+	public function updatedatarekanan($data, $id_rekanan)
+	{
+		$this->db->where('id_rekanan', $id_rekanan);
+		$this->db->update('tbl_rekanan', $data);
+	}
 
-    function GetId_rekanan($id_rekanan='')
-    {
-      return $this->db->get_where('tbl_rekanan', array('id_rekanan' => $id_rekanan))->row();
-    }
-    function Hapusrekanan($id_rekanan)
-    {
-        $this->db->delete('tbl_rekanan',array('id_rekanan' => $id_rekanan));
-    }
+	public function deletedatarekanan($id_rekanan)
+	{
+		$this->db->where('id_rekanan', $id_rekanan);
+		$this->db->delete('tbl_rekanan');
+	}
+
 }
-
-/* End of file Model_rekanan.php */
-/* Location: ./application/models/Model_rekanan.php */

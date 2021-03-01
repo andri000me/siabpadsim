@@ -36,19 +36,19 @@ class beritaacarapenerimaanhasilpekerjaan extends CI_Controller {
 
     function print($id_faktur)
 	{
+        $ambil=$this->model_beritaacarapenerimaanhasilpekerjaan->Tampilberitaacarapenerimaanhasilpekerjaan();
+        if ($ambil){
+        $query = $this->db->query("select*from tbl_fakturrekanan join tbl_rekanan on tbl_rekanan.id_rekanan=tbl_fakturrekanan.id_rekanan join tbl_akun on tbl_akun.username=tbl_fakturrekanan.username join tbl_opd on tbl_opd.id_opd=tbl_akun.id_opd join tbl_paketpekerjaan on tbl_paketpekerjaan.id_paketpekerjaan=tbl_fakturrekanan.id_paketpekerjaan where id_faktur=$id_faktur");
+        $data['ambil']= $query->row();
+        }
+
         $hasilorder = $this->model_beritaacarapenerimaanhasilpekerjaan->Tampilorder();
         if ($hasilorder)
         {
             $data['hasilorder'] = $this->model_beritaacarapenerimaanhasilpekerjaan->GetId_order($id_faktur);
         }
-         
-        $hasilpenyaluran = $this->model_beritaacarapenerimaanhasilpekerjaan->Tampilpenyaluran();
-        if ($hasilpenyaluran)
-        {
-            $data['hasilpenyaluran'] = $this->model_beritaacarapenerimaanhasilpekerjaan->Getid_faktur($id_faktur);
-        }
-         
-    	$this->load->view('beritaacarapenerimaanhasilpekerjaan/print',$data);
+
+        $this->load->view('beritaacarapenerimaanhasilpekerjaan/print',$data);
 	}
 
 }

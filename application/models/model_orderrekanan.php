@@ -2,7 +2,7 @@
 
 class Model_orderrekanan extends CI_Model {
 
-	function TampilOrderRekanan() 
+	function Tampilorderrekanan() 
     {
         $this->db->order_by('id_faktur', 'ASC');
         return $this->db->from('tbl_fakturrekanan')
@@ -19,9 +19,6 @@ class Model_orderrekanan extends CI_Model {
     {
         $this->db->delete('tbl_fakturrekanan',array('id_faktur' => $id_faktur));
     }
-
-
-
 
     public function TampilorderbyMenungguKonfirmasi()
 		{

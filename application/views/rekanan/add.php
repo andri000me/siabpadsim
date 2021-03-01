@@ -33,7 +33,7 @@
 
 <?php 
 $this->load->view('include/header'); 
-$this->load->view('sekretaris/barangpersediaan/menu'); 
+$this->load->view('asettetap/menu'); 
 ?>
 
 </head>
@@ -44,7 +44,7 @@ $this->load->view('sekretaris/barangpersediaan/menu');
           <a href="<?php echo config_item('base_url'); ?>">Halaman Utama</a>
         </li>
   
-        <li class="breadcrumb-item active">Tambah Rekanan</li>
+        <li class="breadcrumb-item active">Tambah Data Rekanan</li>
       </ol>
 <!-- Example DataTables Card-->
 <div class="card mb-3">
@@ -54,15 +54,16 @@ $this->load->view('sekretaris/barangpersediaan/menu');
           <div class="table-responsive">
              <div class="container">
 
-        <form action="<?php echo base_url('rekanan/simpan_rekanan')?>" method="post" enctype="multipart/form-data">
-
-             <div class="form-group">
+        <form action="<?php echo base_url('rekanan/action_menambahdatarekanan')?>" method="post" enctype="multipart/form-data">
+              <div class="form-group">
               <div class="form-row">
-              <div class="col-md-6">
-                    <label for="nama_pimpinan">Nama Pimpinan</label>
+              
+                           
+                  
+                  <div class="col-md-6">
+                    <label for="nama_pimpinan">Nama Pimpnan</label>
                     <input class="form-control" id="nama_pimpinan" type="text" aria-describedby="nameHelp" name="nama_pimpinan" required/>
                   </div>
-                           
                   <div class="col-md-6">
                     <label for="nama_rekanan">Nama Rekanan</label>
                     <input class="form-control" id="nama_rekanan" type="text" aria-describedby="nameHelp" name="nama_rekanan" required/>
@@ -70,18 +71,21 @@ $this->load->view('sekretaris/barangpersediaan/menu');
                 </div>
               </div>
 
-            <div class="form-group">
+              <div class="form-group">
               <div class="form-row">
+                                     
+                  
+
                   <div class="col-md-6">
                     <label for="alamat_rekanan">Alamat Rekanan</label>
                     <input class="form-control" id="alamat_rekanan" type="text" aria-describedby="nameHelp" name="alamat_rekanan" required/>
                   </div>
-      
+
+
                 </div>
               </div>
 
-            
-              <div class="form-group">
+                         <div class="form-group">
             <div class="form-row">
               <div class="col-md-2">
                 <input class="form-control btn btn-primary" type="submit" value="Simpan" name="btnSimpan" >
