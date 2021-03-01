@@ -56,11 +56,10 @@ table{
 <p>berdasarkan "KETERANGAN SPK", bersama ini memerintahkan:</p>
 
 <table>
-<tr><p><td>Nama Penyedia Barang</td>	            <td>:</td> <td><b></b></td></p></tr>
-<tr><p><td>Alamat</td>	                            <td>:</td> <td></td></p></tr>
-<tr><p><td>yang dalam hal ini diwakili oleh</td>	<td>:</td> <td></td></p></tr>
-<tr><p><td></td>	                                <td></td>  <td><b>PIMPINAN/PENANGGUNG JAWAB</b> selanjutnya disebut</td></p></tr>
-<tr><p><td></td>	                                <td></td>  <td>sebagai <b>Penyedia;</b></td></p></tr>
+<tr><td><b>"Nama Rekanan"</b><td></tr>
+<tr><td>"Alamat Rekanan"<td></tr>
+<tr><td>yang dalam hal ini diwakili oleh : <b>"Nama Pimpinan", PIMPINAN/PENANGGUNG JAWAB</b><td></tr>
+<tr><td>selanjutnya disebut sebagai <b>Penyedia;</b><td></tr>
 </table>
 
 <p>untuk mengirimkan barang dengan memperhatikan ketentuan-ketentuan sebagai berikut : </p>
@@ -71,68 +70,73 @@ table{
                     <tr>
                         <th>No</th>
                         <th>Nama Barang</th>
-                        <th>Banyaknya</th> 
-                        <th>Harga Satuan</th>
-                        <th>Jumlah (Rp)</th>
+                        <th>Jumlah</th>      
+                        <th>Harga Satuan</th>                   
+                        <th>Pajak</th> 
+                        <th>Jumlah Harga Satuan(Rp)</th>
+                        <th>Jumlah Harga (Rp)</th>
                     </tr>
                 </thead>
                 <tbody>
                 
                 </tbody>
                 <tr>
-                        <td align="center" colspan="4">Total</td> 
+                        <td align="center" colspan="6">JUMLAH TOTAL</td> 
+                        <td>Rp</td>
+                </tr>
+                <tr>
+                        <td align="center" colspan="6">JUMLAH TOTAL DIBULATKAN</td> 
                         <td>Rp</td>
                 </tr>
     
             </table>
 
-            <p><b><i>Terbilang : "isi". </b></i></p>
-
         <table>
-        <tr><td>1.</td> <td><u>Tanggal barang diterima :</u> 7 (Tujuh) hari kalender setelah SP disampaikan;</td></tr>
-        <tr><td>2.</td> <td><u>Syarat-syarat pekerjaan :</u> sesuai dengan persyaratan dan ketentuan SPK;</td></tr>
-        <tr><td>3.</td> <td><u>Alamat Pengiriman Barang :</u>  Kota Padangsidimpuan, </td></tr>
-        <tr><td>4.</td> <td><u>Denda</u><td>
-        <tr><td></td>     <td>Terhadap setiap hari keterlambatan penyelesaian pekerjaan Penyedia Jasa akan dikenakan Dengan Keterlambatan sebesar 1/1000 (satu permil) dari Nilai sisa SPK yang belum dilaksanakan (tidak termasuk PPN);</td></tr>
+        <tr><td>2.</td> <td><u>Tanggal barang diterima :</u> 7 (Tujuh) hari kalender setelah SP disampaikan;</td></tr>
+        <tr><td>3.</td> <td><u>Syarat-syarat pekerjaan :</u> sesuai dengan persyaratan dan ketentuan SPK;</td></tr>
+        <tr><td>4.</td> <td><u>Waktu penyelesaian :</u> "tanggal penerimaan"</td></tr>
+        <tr><td>5.</td> <td><u>Alamat Pengiriman Barang :</u>  "nama opd" Kota Padangsidimpuan</td></tr>
+        <tr><td></td> <td><u></u>  "alamat opd"</td></tr>
+        <tr><td>6.</td> <td><u>Denda :</u>  Terhadap setiap hari keterlambatan penyelesaian pekerjaan Penyedia Jasa akan dikenakan Dengan Keterlambatan sebesar 1/1000 (satu permil) dari Nilai sisa SPK yang belum dilaksanakan (tidak termasuk PPN);</td></tr>
+      
         
         </table>
 </body>
 
 <footer>
 
-<table>
-    <th><b>Padang Sidempuan, <?php echo format_indo(date('Y-m-d'));?><b></th>
+<table align="center" style="width:100%">
 <tr>
-<td></td>
-<td>Menerima dan menyetujui:</td>
+    <td>Padang Sidempuan, <?php echo format_indo(date('Y-m-d'));?></td>
+    <td>Menerima dan menyetujui</td>
 </tr>
 <tr>
     <td>Untuk dan atas nama</td>
     <td>Untuk dan atas nama</td>
 </tr>
-<b>
 <tr>
-    <td></td>
-    <td></td>
+    <td>"NAMA OPD" KOTA PADANG SIDEMPUAN</td>
+    <td>"NAMA REKANAN"</td>
 </tr>
 <tr>
-    <td>Kota Padangsidimpuan</td>
+    <td>PEJABAT PEMBUAT KOMITMEN</td>
     <td></td>
 </tr>
+<tr height="75px"></tr>
 <tr>
-    <td>Pejabat Pembuat Komitmen</td>
-    <td></td>
+    <td>"NAMA KEPALA OPD"</td>
+    <td>"NAMA PIMPINAN REKANAN"</td>
 </tr>
-<br><br><br>
+
 <tr>
-    <td><u></u></td>
-    <td></td>
+    <td>Kepala "Nama OPD" Kota Padang Sidempuan</td>
+    <td>PIMPINAN/PENANGGUNG JAWAB</td>
 </tr>
+
 <tr>
-    <td>NIP: </td>
+    <td>NIP. "NIP KEPALA OPD"</td>
     <td></td>
 </tr>
-</b>
 
 </table>
 </footer>
