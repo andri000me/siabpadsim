@@ -24,9 +24,9 @@ table{
 <td>
 <td>
 <h3 class="jarak-lh" align="center">PEMERINTAH KOTA PADANGSIDIMPUAN</h3>
-<h1 class="jarak-lh" align="center"><?php echo $ambil->nama_opd; ?></h1>
-<p class="jarak-lh" align="center"><?php echo $ambil->alamat_kop_opd; ?></p>
-<p class="jarak-lh" align="center"><?php echo $ambil->kecamatan_opd; ?></p>
+<h1 class="jarak-lh" align="center"></h1>
+<p class="jarak-lh" align="center"></p>
+<p class="jarak-lh" align="center"></p>
 <td>
 </tr>
 <tr>
@@ -38,24 +38,27 @@ table{
 </head>
 
 <body>
-<p class="jarak-lh" align="center"><u><b>SURAT PESANAN</u></b></p>
-<p class="jarak-lh" align="center">Nomor : <?php echo $ambil->no_suratpesanan; ?></p>
-<p class="jarak-lh" align="center">Paket Pekerjaan : <?php echo $ambil->paketpekerjaan; ?> </p>
+<p class="jarak-lh" align="center"><u><b>SURAT PERINTAH PENGIRIMAN (SPP)</u></b></p>
+<p class="jarak-lh" align="center">Nomor : "no spp"</p>
+<p class="jarak-lh" align="center">Paket Pekerjaan : </p>
+<p class="jarak-lh" align="center"><b>"NAMA PAKET PEKERJAAN"</b></p>
+
 
 <p>Yang bertanda tangan di bawah ini :</p>
 
 <table>
-<tr><p><td>Nama</td>	<td>:</td> <td><b><?php echo $ambil->nama_kepala; ?><b></td></p></tr>
-<tr><p><td>Jabatan</td>	<td>:</td> <td>Kepala <?php echo $ambil->nama_opd; ?> selaku Pejabat Pembuat Komitmen (PPK) <?php echo $ambil->nama_opd; ?> Kota Padang Sidimpuan</td></p></tr>
-<tr><p><td>Alamat</td>	<td>:</td> <td><?php echo $ambil->alamat_opd; ?></td></p></tr>
+<tr><td><b>"Nama Kepala OPD"</b><td></tr>
+<tr><td>KEPALA "NAMA OPD" KOTA PADANG SIDIMPUAN<td></tr>
+<tr><td>"ALAMAT OPD"<td></tr>
+<tr><td>selanjutnya disebut sebagai <b>Pejabat Pembuat Komitmen;</b><td></tr>
 </table>
 
-<p>berdasarkan <?php echo $ambil->spk_paketpekerjaan; ?>, bersama ini memerintahkan:</p>
+<p>berdasarkan "KETERANGAN SPK", bersama ini memerintahkan:</p>
 
 <table>
-<tr><p><td>Nama Penyedia Barang</td>	            <td>:</td> <td><b><?php echo $ambil->nama_rekanan; ?></b></td></p></tr>
-<tr><p><td>Alamat</td>	                            <td>:</td> <td><?php echo $ambil->alamat_rekanan; ?></td></p></tr>
-<tr><p><td>yang dalam hal ini diwakili oleh</td>	<td>:</td> <td><?php echo $ambil->nama_pimpinan; ?></td></p></tr>
+<tr><p><td>Nama Penyedia Barang</td>	            <td>:</td> <td><b></b></td></p></tr>
+<tr><p><td>Alamat</td>	                            <td>:</td> <td></td></p></tr>
+<tr><p><td>yang dalam hal ini diwakili oleh</td>	<td>:</td> <td></td></p></tr>
 <tr><p><td></td>	                                <td></td>  <td><b>PIMPINAN/PENANGGUNG JAWAB</b> selanjutnya disebut</td></p></tr>
 <tr><p><td></td>	                                <td></td>  <td>sebagai <b>Penyedia;</b></td></p></tr>
 </table>
@@ -74,23 +77,7 @@ table{
                     </tr>
                 </thead>
                 <tbody>
-                <?php
-                    $no=1;
-                    foreach ($hasilorder as $item)
-                    {
-    
-                    ?>
-                    <tr>
-                        <td><?php echo $no;?></td>
-                        <td><?php echo $item->Namabarang_ssh;?></td>
-                        <td><?php echo $item->total_barang;?></td>
-                        <td><?php echo $item->Hargasatuan_ssh;?></td>
-                        <td><?php echo ($item->total_barang*$item->Hargasatuan_ssh);?></td>
-                    </tr>
-                    <?php
-                            $no++;
-                    }
-                    ?>
+                
                 </tbody>
                 <tr>
                         <td align="center" colspan="4">Total</td> 
@@ -104,7 +91,7 @@ table{
         <table>
         <tr><td>1.</td> <td><u>Tanggal barang diterima :</u> 7 (Tujuh) hari kalender setelah SP disampaikan;</td></tr>
         <tr><td>2.</td> <td><u>Syarat-syarat pekerjaan :</u> sesuai dengan persyaratan dan ketentuan SPK;</td></tr>
-        <tr><td>3.</td> <td><u>Alamat Pengiriman Barang :</u> <?php echo $ambil->nama_opd; ?> Kota Padangsidimpuan, <?php echo $ambil->alamat_opd; ?></td></tr>
+        <tr><td>3.</td> <td><u>Alamat Pengiriman Barang :</u>  Kota Padangsidimpuan, </td></tr>
         <tr><td>4.</td> <td><u>Denda</u><td>
         <tr><td></td>     <td>Terhadap setiap hari keterlambatan penyelesaian pekerjaan Penyedia Jasa akan dikenakan Dengan Keterlambatan sebesar 1/1000 (satu permil) dari Nilai sisa SPK yang belum dilaksanakan (tidak termasuk PPN);</td></tr>
         
@@ -125,8 +112,8 @@ table{
 </tr>
 <b>
 <tr>
-    <td><?php echo $ambil->nama_opd; ?></td>
-    <td><?php echo $ambil->nama_rekanan; ?></td>
+    <td></td>
+    <td></td>
 </tr>
 <tr>
     <td>Kota Padangsidimpuan</td>
@@ -138,11 +125,11 @@ table{
 </tr>
 <br><br><br>
 <tr>
-    <td><u><?php echo $ambil->nama_kepala; ?></u></td>
-    <td><?php echo $ambil->nama_pimpinan; ?></td>
+    <td><u></u></td>
+    <td></td>
 </tr>
 <tr>
-    <td>NIP: <?php echo $ambil->nip_kepala; ?></td>
+    <td>NIP: </td>
     <td></td>
 </tr>
 </b>
