@@ -6,7 +6,7 @@ class Model_laporanbukubarangpersediaan extends CI_Model {
     {
         $this->db->order_by('id_faktur', 'ASC');
         $this->db->where('keterangan', "Disetujui");
-        $this->db->group_by('tahun_order');
+        $this->db->group_by('tahun_pesan');
         return $this->db->from('tbl_fakturrekanan')
           ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_fakturrekanan.id_rekanan')
           ->get()
@@ -30,7 +30,7 @@ class Model_laporanbukubarangpersediaan extends CI_Model {
         $this->db->where('tbl_orderrekanan.tahun_order',$tahun_order);
         return $this->db->from('tbl_orderrekanan')
           ->join('tbl_order','tbl_order.id_ssh=tbl_orderrekanan.id_ssh')
-          ->join('tbl_ssh','tbl_ssh.id_ssh=tbl_orderrekanan.id_ssh')
+          ->join('tbl_ssh','tbl_ssh.id_ssh=tbl_orderrekanan.id_ssh')          
           ->join('tbl_fakturrekanan','tbl_fakturrekanan.id_faktur=tbl_orderrekanan.id_fakturrekanan')          
           ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_fakturrekanan.id_rekanan')             
           ->join('tbl_akun','tbl_akun.username=tbl_fakturrekanan.username')   
