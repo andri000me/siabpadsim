@@ -17,7 +17,7 @@ table{
     text-transform: uppercase;
 }
 </style>
-<table align="center">
+<table align="center" style="width:100%">
 <tr>
 <td>
 <img src="<?php echo base_url('theme/logopadsim.jpg')?>" width="100px">
@@ -124,17 +124,17 @@ table{
 </tr>
 <tr height="75px"></tr>
 <tr>
-    <td>"NAMA KEPALA OPD"</td>
-    <td>"NAMA PIMPINAN REKANAN"</td>
+    <td><b>"NAMA KEPALA OPD"</b></td>
+    <td><b>"NAMA PIMPINAN REKANAN"</b></td>
 </tr>
 
 <tr>
-    <td>Kepala "Nama OPD" Kota Padang Sidempuan</td>
-    <td>PIMPINAN/PENANGGUNG JAWAB</td>
+    <td><b>Kepala "Nama OPD" Kota Padang Sidempuan</b></td>
+    <td><b>PIMPINAN/PENANGGUNG JAWAB</b></td>
 </tr>
 
 <tr>
-    <td>NIP. "NIP KEPALA OPD"</td>
+    <td><b>NIP. "NIP KEPALA OPD"</b></td>
     <td></td>
 </tr>
 
