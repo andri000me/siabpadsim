@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2021 at 10:28 AM
+-- Generation Time: Mar 01, 2021 at 04:26 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.30
 
@@ -33,7 +33,7 @@ CREATE TABLE `tbl_akun` (
   `password` varchar(50) NOT NULL,
   `nama` varchar(200) NOT NULL,
   `jabatan` varchar(50) NOT NULL,
-  `level` enum('Kepala','Sekretaris','User','Admin','Operator') NOT NULL,
+  `level` enum('Admin','Pengguna Anggaran','Bendahara','PPTK','Pengurus Barang') NOT NULL,
   `id_opd` int(11) NOT NULL,
   `admin` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -43,11 +43,11 @@ CREATE TABLE `tbl_akun` (
 --
 
 INSERT INTO `tbl_akun` (`id`, `username`, `password`, `nama`, `jabatan`, `level`, `id_opd`, `admin`) VALUES
-(1, '1', '1', '1', 'Admin', 'Admin', 1, '3'),
-(2, '2', '2', 'sulaiman', 'pengguna anggaran', 'Kepala', 1, '3'),
-(3, '3', '3', '3', 'Sekretaris', 'Sekretaris', 1, '3'),
-(4, '4', '4', '4', 'Kepala Bidang', 'User', 1, '3'),
-(5, '5', '5', '5', 'Tata Usaha', 'Operator', 1, '4');
+(1, '111111111', '111111111', 'Arin Dewi Jayanti', 'Admin', 'Admin', 1, 'admin'),
+(2, '211211211', '211211211', 'Sulaiman Lubis, S.E.', 'Pengguna Anggaran', 'Pengguna Anggaran', 1, 'admin'),
+(3, '321321321', '321321321', 'Bendahara', 'Bendahara', 'Bendahara', 1, 'admin'),
+(4, '432432432', '432432432', 'Hj. Rosti Megawati Harahap', 'PPTK', 'PPTK', 1, 'admin'),
+(5, '543543543', '543543543', 'Siti Armida Siregar, S.H.', 'Pengurus Barang', 'Pengurus Barang', 1, 'admin');
 
 -- --------------------------------------------------------
 
@@ -57,6 +57,7 @@ INSERT INTO `tbl_akun` (`id`, `username`, `password`, `nama`, `jabatan`, `level`
 
 CREATE TABLE `tbl_fakturrekanan` (
   `id_faktur` int(11) NOT NULL,
+  `tahun_pesan` year(4) NOT NULL DEFAULT current_timestamp(),
   `tanggal_pesan` date NOT NULL,
   `id_rekanan` int(11) NOT NULL,
   `keterangan` enum('Disetujui','Ditolak','Menunggu Konfirmasi','') NOT NULL,
@@ -69,17 +70,22 @@ CREATE TABLE `tbl_fakturrekanan` (
   `no_beritaacarapb` varchar(50) DEFAULT NULL,
   `statusorder` enum('Belum Diterima','Sudah Diterima','','') DEFAULT NULL,
   `tanggalterimabarang` date DEFAULT NULL,
-  `id_opd` int(11) DEFAULT NULL
+  `id_paketpekerjaan` int(11) NOT NULL,
+  `tanggal_suratpesanan` date DEFAULT NULL,
+  `tanggal_suratperintahpengiriman` date DEFAULT NULL,
+  `tanggal_faktur` date DEFAULT NULL,
+  `tanggal_kwitansi` date DEFAULT NULL,
+  `tanggal_beritaacaraphp` date DEFAULT NULL,
+  `tanggal_beritaacarapb` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_fakturrekanan`
 --
 
-INSERT INTO `tbl_fakturrekanan` (`id_faktur`, `tanggal_pesan`, `id_rekanan`, `keterangan`, `username`, `no_suratpesanan`, `no_suratperintahpengiriman`, `no_faktur`, `no_kwitansi`, `no_beritaacaraphp`, `no_beritaacarapb`, `statusorder`, `tanggalterimabarang`, `id_opd`) VALUES
-(14, '2021-02-26', 1, 'Menunggu Konfirmasi', '3', '1', '2', 'asd', 'asd', 'asd', 'q', 'Belum Diterima', '2021-02-25', NULL),
-(15, '2021-02-03', 1, 'Disetujui', '3', 'no surat perintah 15', 'nosuratperitnah15', 'nofaktur15', 'nokwitansi15', 'no_beritaacarphp15', 'noberitaacarapbp15', 'Sudah Diterima', '2021-02-27', NULL),
-(16, '2021-02-04', 1, 'Disetujui', 'admin', NULL, NULL, NULL, NULL, NULL, NULL, 'Sudah Diterima', '2021-02-27', NULL);
+INSERT INTO `tbl_fakturrekanan` (`id_faktur`, `tahun_pesan`, `tanggal_pesan`, `id_rekanan`, `keterangan`, `username`, `no_suratpesanan`, `no_suratperintahpengiriman`, `no_faktur`, `no_kwitansi`, `no_beritaacaraphp`, `no_beritaacarapb`, `statusorder`, `tanggalterimabarang`, `id_paketpekerjaan`, `tanggal_suratpesanan`, `tanggal_suratperintahpengiriman`, `tanggal_faktur`, `tanggal_kwitansi`, `tanggal_beritaacaraphp`, `tanggal_beritaacarapb`) VALUES
+(15, 2021, '2021-02-03', 1, 'Disetujui', '321321321', 'no surat perintah 15', 'nosuratperitnah15', 'nofaktur15', 'nokwitansi15', 'no_beritaacarphp15', 'noberitaacarapbp15', 'Sudah Diterima', '2021-02-27', 1, NULL, NULL, NULL, NULL, NULL, NULL),
+(19, 2021, '2021-03-10', 1, 'Disetujui', '321321321', NULL, NULL, NULL, NULL, NULL, NULL, 'Sudah Diterima', '2021-03-01', 1, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -91,6 +97,11 @@ CREATE TABLE `tbl_opd` (
   `id_opd` int(11) NOT NULL,
   `kode_opd` varchar(50) NOT NULL,
   `nama_opd` varchar(50) NOT NULL,
+  `nip_kepala` int(11) NOT NULL,
+  `nama_kepala` varchar(50) NOT NULL,
+  `alamat_opd` varchar(100) NOT NULL,
+  `kecamatan_opd` varchar(50) NOT NULL,
+  `alamat_kop_opd` varchar(100) NOT NULL,
   `username` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -98,9 +109,9 @@ CREATE TABLE `tbl_opd` (
 -- Dumping data for table `tbl_opd`
 --
 
-INSERT INTO `tbl_opd` (`id_opd`, `kode_opd`, `nama_opd`, `username`) VALUES
-(1, '5657', 'Dinas Pendidikansss', 'admin'),
-(2131, '345345', 'Dinas Lain', 'admin');
+INSERT INTO `tbl_opd` (`id_opd`, `kode_opd`, `nama_opd`, `nip_kepala`, `nama_kepala`, `alamat_opd`, `kecamatan_opd`, `alamat_kop_opd`, `username`) VALUES
+(1, '5657', 'Badan Keuangan Daerah', 123123123, 'Sulaiman Lubis, S.E.', 'Jln. Jen. Dr. Abd.Haris Nasution Pal - IV Pijorkoling', 'Kec. Padangsidimpuan Tenggara', 'Jln. Jen. Dr. Abd.Haris Nasution Pal - IV Pijorkoling Telp (0634)27075 Fax. (0634) 27075', 'admin'),
+(2131, '345345', 'Dinas Lain', 0, '', '', '', '', 'admin');
 
 -- --------------------------------------------------------
 
@@ -110,25 +121,20 @@ INSERT INTO `tbl_opd` (`id_opd`, `kode_opd`, `nama_opd`, `username`) VALUES
 
 CREATE TABLE `tbl_order` (
   `id_order` int(11) NOT NULL,
-  `tanggal_pesan` date NOT NULL,
+  `id_penyaluran` int(11) DEFAULT NULL,
   `id_ssh` int(11) NOT NULL,
   `total_barang` int(11) NOT NULL,
-  `total_harga` int(11) NOT NULL,
-  `keterangan` enum('Disetujui','Ditolak','Menunggu Konfirmasi','') NOT NULL,
   `username` varchar(15) NOT NULL,
   `tanggal_input` datetime NOT NULL DEFAULT current_timestamp(),
-  `id_penyaluran` int(11) DEFAULT NULL
+  `tahun_order` year(4) NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_order`
 --
 
-INSERT INTO `tbl_order` (`id_order`, `tanggal_pesan`, `id_ssh`, `total_barang`, `total_harga`, `keterangan`, `username`, `tanggal_input`, `id_penyaluran`) VALUES
-(4, '2021-02-10', 3, 6, 6000, 'Ditolak', '3', '2021-02-22 19:01:11', 1),
-(5, '2021-02-16', 3, 9, 9000, 'Ditolak', '3', '2021-02-22 23:12:35', 0),
-(6, '2021-02-25', 3, 2, 2000, 'Menunggu Konfirmasi', '2', '2021-02-22 23:12:46', 1),
-(7, '2021-02-17', 2, 8, 8000, 'Disetujui', '3', '2021-02-22 23:20:17', 0);
+INSERT INTO `tbl_order` (`id_order`, `id_penyaluran`, `id_ssh`, `total_barang`, `username`, `tanggal_input`, `tahun_order`) VALUES
+(10, 17, 4, 1, '432432432', '2021-02-27 20:51:57', 2021);
 
 -- --------------------------------------------------------
 
@@ -141,53 +147,38 @@ CREATE TABLE `tbl_orderrekanan` (
   `id_fakturrekanan` int(11) NOT NULL,
   `id_ssh` int(11) NOT NULL,
   `total_barang` int(11) NOT NULL,
-  `total_harga` int(11) NOT NULL,
   `username` varchar(15) NOT NULL,
-  `tanggal_input` datetime NOT NULL DEFAULT current_timestamp()
+  `tanggal_input` datetime NOT NULL DEFAULT current_timestamp(),
+  `tahun_order` year(4) NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_orderrekanan`
 --
 
-INSERT INTO `tbl_orderrekanan` (`id_orderrekanan`, `id_fakturrekanan`, `id_ssh`, `total_barang`, `total_harga`, `username`, `tanggal_input`) VALUES
-(15, 4, 2, 6, 6000, '3', '2021-02-26 00:07:36'),
-(17, 4, 3, 7, 7000, '3', '2021-02-26 00:23:45'),
-(18, 13, 3, 1, 1000, '3', '2021-02-26 11:41:47'),
-(19, 13, 4, 6, 6000, '3', '2021-02-26 11:41:53'),
-(20, 13, 4, 2, 2000, '3', '2021-02-26 11:41:59'),
-(21, 14, 2, 2, 2000, 'admin', '2021-02-26 12:06:38'),
-(27, 14, 4, 1, 1000, 'admin', '2021-02-27 11:51:28'),
-(28, 14, 2, 1, 0, 'admin', '2021-02-27 12:01:32'),
-(29, 14, 2, 1, 0, 'admin', '2021-02-27 12:18:20'),
-(30, 14, 3, 1, 0, 'admin', '2021-02-27 12:35:16'),
-(31, 14, 2, 6, 0, 'admin', '2021-02-27 12:35:26');
+INSERT INTO `tbl_orderrekanan` (`id_orderrekanan`, `id_fakturrekanan`, `id_ssh`, `total_barang`, `username`, `tanggal_input`, `tahun_order`) VALUES
+(32, 19, 3, 6, '321321321', '2021-03-01 14:50:25', 2021),
+(33, 19, 4, 7, '321321321', '2021-03-01 14:50:31', 2021);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_pengaturansurat`
+-- Table structure for table `tbl_paketpekerjaan`
 --
 
-CREATE TABLE `tbl_pengaturansurat` (
-  `id_pengaturansurat` int(11) NOT NULL,
-  `username` int(50) NOT NULL,
-  `id_opd` int(11) NOT NULL,
-  `nama_opd` varchar(50) NOT NULL,
-  `nip_kepala_opd` int(20) NOT NULL,
-  `nama_kepala_opd` varchar(50) NOT NULL,
-  `alamat_opd` varchar(100) NOT NULL,
-  `nama_rekanan` varchar(50) NOT NULL,
-  `alamat_rekanan` varchar(100) NOT NULL,
-  `nama_pimpinan_rekanan` varchar(50) NOT NULL
+CREATE TABLE `tbl_paketpekerjaan` (
+  `id_paketpekerjaan` int(11) NOT NULL,
+  `paketpekerjaan` varchar(100) NOT NULL,
+  `spk_paketpekerjaan` text NOT NULL,
+  `username` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tbl_pengaturansurat`
+-- Dumping data for table `tbl_paketpekerjaan`
 --
 
-INSERT INTO `tbl_pengaturansurat` (`id_pengaturansurat`, `username`, `id_opd`, `nama_opd`, `nip_kepala_opd`, `nama_kepala_opd`, `alamat_opd`, `nama_rekanan`, `alamat_rekanan`, `nama_pimpinan_rekanan`) VALUES
-(1, 2, 1, 'Badan Keuangan Daerah', 12345678, 'Sulaiman', 'alamat opd Padang Sidempuan', 'UD', 'alamat rekanan Padang Sidempuan', 'Bapak Pimpian UD');
+INSERT INTO `tbl_paketpekerjaan` (`id_paketpekerjaan`, `paketpekerjaan`, `spk_paketpekerjaan`, `username`) VALUES
+(1, 'Penyediaan Cetak', 'SPK Belanja Penyediaan Cetak Nomor: 02/SPK/BK/2020 Tanggal 11 Mei 2020', 3);
 
 -- --------------------------------------------------------
 
@@ -197,21 +188,25 @@ INSERT INTO `tbl_pengaturansurat` (`id_pengaturansurat`, `username`, `id_opd`, `
 
 CREATE TABLE `tbl_penyaluran` (
   `id_penyaluran` int(11) NOT NULL,
-  `tanggal_penyaluran` date NOT NULL,
-  `pemberi` varchar(50) NOT NULL,
-  `penerima` varchar(50) NOT NULL,
-  `keterangan_pemberi` enum('Belum Diproses','Sudah Diserahkan','','') NOT NULL,
-  `keterangan_penerima` enum('Belum Diterima','Sudah Diterima','','') NOT NULL,
+  `tanggal_pesan` date NOT NULL,
+  `keterangan` enum('Disetujui','Ditolak','Menunggu Konfirmasi','') NOT NULL,
+  `username` varchar(15) NOT NULL,
   `no_sppb` varchar(50) DEFAULT NULL,
-  `id_opd` int(11) NOT NULL
+  `no_beritaacarapb` varchar(50) DEFAULT NULL,
+  `statusorder` enum('Belum Diterima','Sudah Disalurkan','Sudah Diterima','') DEFAULT NULL,
+  `tanggalterimabarang` date DEFAULT NULL,
+  `id_opd` int(11) DEFAULT NULL,
+  `tahun_penyaluran` year(4) NOT NULL DEFAULT current_timestamp(),
+  `tanggal_sppb` date DEFAULT NULL,
+  `tanggal_beritaacarapb` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_penyaluran`
 --
 
-INSERT INTO `tbl_penyaluran` (`id_penyaluran`, `tanggal_penyaluran`, `pemberi`, `penerima`, `keterangan_pemberi`, `keterangan_penerima`, `no_sppb`, `id_opd`) VALUES
-(1, '2021-02-17', 'pengurus barang', 'kabid aset', 'Belum Diproses', 'Belum Diterima', 'trgrtg', 1);
+INSERT INTO `tbl_penyaluran` (`id_penyaluran`, `tanggal_pesan`, `keterangan`, `username`, `no_sppb`, `no_beritaacarapb`, `statusorder`, `tanggalterimabarang`, `id_opd`, `tahun_penyaluran`, `tanggal_sppb`, `tanggal_beritaacarapb`) VALUES
+(17, '2021-02-12', 'Disetujui', '432432432', '123', 'vff', 'Sudah Diterima', '2021-02-27', NULL, 2021, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -299,10 +294,10 @@ ALTER TABLE `tbl_orderrekanan`
   ADD PRIMARY KEY (`id_orderrekanan`);
 
 --
--- Indexes for table `tbl_pengaturansurat`
+-- Indexes for table `tbl_paketpekerjaan`
 --
-ALTER TABLE `tbl_pengaturansurat`
-  ADD PRIMARY KEY (`id_pengaturansurat`);
+ALTER TABLE `tbl_paketpekerjaan`
+  ADD PRIMARY KEY (`id_paketpekerjaan`);
 
 --
 -- Indexes for table `tbl_penyaluran`
@@ -336,7 +331,7 @@ ALTER TABLE `tbl_akun`
 -- AUTO_INCREMENT for table `tbl_fakturrekanan`
 --
 ALTER TABLE `tbl_fakturrekanan`
-  MODIFY `id_faktur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_faktur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `tbl_opd`
@@ -348,25 +343,25 @@ ALTER TABLE `tbl_opd`
 -- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tbl_orderrekanan`
 --
 ALTER TABLE `tbl_orderrekanan`
-  MODIFY `id_orderrekanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_orderrekanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
--- AUTO_INCREMENT for table `tbl_pengaturansurat`
+-- AUTO_INCREMENT for table `tbl_paketpekerjaan`
 --
-ALTER TABLE `tbl_pengaturansurat`
-  MODIFY `id_pengaturansurat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `tbl_paketpekerjaan`
+  MODIFY `id_paketpekerjaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_penyaluran`
 --
 ALTER TABLE `tbl_penyaluran`
-  MODIFY `id_penyaluran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_penyaluran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tbl_rekanan`
