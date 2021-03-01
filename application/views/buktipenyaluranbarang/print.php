@@ -7,20 +7,22 @@
 p {
     font-size: 12spt;
 }
+h1{
+    text-transform: uppercase;
+}
 table{
     font-size: 12pt;
 }
+.hurufkapital{
+    text-transform: uppercase;
+}
 </style>
-<table align="center">
+<table align="center" style="width:100%">
 <tr>
 <td>
-<img src="<?php echo base_url('theme/logopadsim.jpg')?>" width="100px">
 <td>
 <td>
-<h3 class="jarak-lh" align="center">PEMERINTAH KOTA PADANGSIDIMPUAN</h3>
-<h1 class="jarak-lh" align="center">BADAN KEUANGAN DAERAH</h1>
-<p class="jarak-lh" align="center">Jln. Jen. Dr. Abd.Haris Nasution Pal - IV Pijorkoling Telp (0634)27075 Fax. (0634) 27075</p>
-<p class="jarak-lh" align="center">Kec. Padangsidimpuan Tenggara</p>
+<h1 class="jarak-lh" align="center">KOP PERUSAHAAN</h1>
 <td>
 </tr>
 <tr>
@@ -28,71 +30,67 @@ table{
 <hr  color="black" size="2px"/>
 </td>
 </tr>
-<table>
+</table>
 </head>
 
 <body>
-<p align="center">SURAT PERINTAH PENGELUARAN/PENYALURAN BARANG</p>
-<p align="center">NO. <?php echo $hasilpenyaluran->no_sppb; ?></p>
-<table>
-<tr><p><td>Dari</td>	<td>:</td> <td></td></p></tr>
-<tr><p><td>Kepada</td>	<td>:</td> <td><?php echo $hasilpenyaluran->pemberi; ?></td></p></tr>
+<table  align="right">
+<tr><td>No.......................</td></tr>
 </table>
+<table align="left">
+<tr><td>Skpd......................</td></tr>
+</table>
+<br>
+<br>
+<table align="center">
+<tr><td>BUKTI PENYALURAN BARANG</td></tr>
+</table>
+<br><br><br>
+<tr>
 
-<p>Harap dikeluarkan dari Gudang dan disalurkan barang tersebut dalam daftar dibawah ini untuk <?php echo $hasilpenyaluran->penerima; ?></p>
-
-<table border="1" align="center">              
+<table border="1" align="center" style="width:100%">
                     <tr>
-                        <th>No</th> 
+                        <th>Tanggal Penyerahan Barang Menurut Permintaan</th>
                         <th>Nama Barang</th>
-                        <th>Banyaknya</th> 
-                        <th>Harga Satuan</th>
-                        <th>Jumlah (Rp)</th>
+                        <th>Unit</th>
+                        <th>Harga Satuan</th> 
+                        <th>Jumlah (Rp.)</th>
+                        <th>Kepada</th>
+                        <th>Keterangan</th>
                     </tr>
                 </thead>
                 <tbody>
-                <?php
-    $no=1;
-    foreach ($hasilorder as $item)
-    {
-        ?>
-    <tr>
-                        <td><?php echo $no;?></td>
-                        <td><?php echo $item->id_ssh;?></td>
-                        <td><?php echo $item->total_barang;?></td>
-                        <td><?php echo $item->id_ssh;?></td>
-                        <td><?php echo $item->total_harga;?></td>
-    </tr>
-    <?php
-            $no++;
-    }
-        ?>
                 </tbody>
             </table>
 
-	
-</body>
-
-<footer>
-<table>
-<tr>
-<td>
-</td>
-<td align="center">
-<p>Padang Sidempuan, <?php echo format_indo(date('Y-m-d'));?><p>
-
-	
-   <p> PENGGUNA BARANG </p>
-
-
-
-
-<p>(......................................)</p>
-<p>NIP.<p>
-</td>
-</tr>
+            <table  align="right">
+<tr><td>Dibuat di.................</td></tr>
 </table>
-</footer>
+<br><br>
+<table  align="left">
+<tr><td>Yang Menerima</td></tr>
+<tr height="75px"></tr><td>(.......................)</td></tr>
+<tr><td>NIP.</td></tr></table>
+    
+    <table  align="right">
+<tr><td>Yang Menyerahkan</td></tr>
+<tr><td>Pengurus Barang</td></tr>
+<tr height="75px"></tr><td>(.......................)</td></tr>
+<tr><td>NIP.</td></tr></table>
+
+    </tr>
+    <br>
+<br><br><br><br><br><br><br><br>
+<table align="center">
+<tr><td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspMengetahui</td></tr>
+<tr><td>PEJABAT PENATAUSAHAAN BARANG</td></tr>
+<tr height="75px"></tr><td>&nbsp &nbsp (.....................................................)</td></tr>
+<tr><td>&nbsp &nbspNIP.</td></tr>
+</table>
+
+    
+           
+</body>
 
 </html>
 
