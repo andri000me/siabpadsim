@@ -71,6 +71,11 @@ class Model_orderrekanan extends CI_Model {
           ->get()
           ->result();
 		}
+
+    public function menambahdataorderrekanan($data)
+	{
+		$this->db->insert('tbl_fakturrekanan', $data);
+	}
 }
 
 /* End of file Model_rekanan.php */

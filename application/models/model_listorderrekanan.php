@@ -7,7 +7,8 @@ class Model_listorderrekanan extends CI_Model {
         $this->db->order_by('id_orderrekanan', 'ASC');
         $this->db->where('id_fakturrekanan', $id_fakturrekanan);
         return $this->db->from('tbl_orderrekanan')
-          ->join('tbl_ssh','tbl_orderrekanan.id_ssh=tbl_ssh.id_ssh')
+          ->join('tbl_ssh','tbl_orderrekanan.id_ssh=tbl_ssh.id_ssh')          
+          ->join('tbl_fakturrekanan','tbl_fakturrekanan.id_rekanan=tbl_rekanan.id_rekanan')
           ->get()
           ->result();
     }

@@ -54,7 +54,7 @@ $this->load->view('sekretaris/barangpersediaan/menu');
           <div class="table-responsive">
              <div class="container">
 
-        <form action="<?php echo base_url('orderrekanan/simpan_orderrekanan')?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo base_url('orderrekanan/action_menambahdataorderrekanan')?>" method="post" enctype="multipart/form-data">
 
              <div class="form-group">
               <div class="form-row">
