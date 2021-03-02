@@ -81,21 +81,18 @@ $this->load->view('sekretaris/barangpersediaan/menu');
             <div class="form-group">
               <div class="form-row">
                   <div class="col-md-6">
-                    <label for="id_ssh">Nama Barang</label>
-                    <select class="form-control form-control-sm" id="id_ssh" name="id_ssh" required />
+                    <label for="id_ssh">Paket Pekerjaan</label>
+                    <select class="form-control form-control-sm" id="id_paketpekerjaan" name="id_paketpekerjaan" required />
                     
                     <option>Silahkan Pilih Barang</option>
-                        <?php $id_ssh = $this->db->query("SELECT * FROM tbl_ssh");
+                        <?php $id_paketpekerjaan = $this->db->query("SELECT * FROM tbl_paketpekerjaan");
                 
-                        foreach ($id_ssh->result() as $id_ssh) : ?>
-                        <option value="<?= $id_ssh->id_ssh?>"><?= $id_ssh->Namabarang_ssh?></option>
+                        foreach ($id_paketpekerjaan->result() as $id_paketpekerjaan) : ?>
+                        <option value="<?= $id_paketpekerjaan->id_paketpekerjaan?>"><?= $id_paketpekerjaan->paketpekerjaan?></option>
                          <?php endforeach; ?>
                        </select>
                         </div>
-                  <div class="col-md-6">
-                    <label for="total_barang">Total Barang</label>
-                    <input class="form-control" id="total_barang" type="text" aria-describedby="nameHelp" name="total_barang" required/>
-                  </div>
+                  
                 </div>
               </div>
 
