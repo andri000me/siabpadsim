@@ -108,21 +108,7 @@ $this->load->view('asettetap/menu');
                 </div>
               </div>
 
-              <div class="form-group">
-              <div class="form-row">
-              
-                           
-                  
-                  <div class="col-md-6">
-                    <label for="No_skpd">No SKPD</label>
-                    <input class="form-control" id="No_skpd" type="text" aria-describedby="nameHelp" name="No_skpd" required/>
-                  </div>
-
-                  
-                </div>
-              </div>
-
-                         <div class="form-group">
+             <div class="form-group">
             <div class="form-row">
               <div class="col-md-2">
                 <input class="form-control btn btn-primary" type="submit" value="Simpan" name="btnSimpan" >

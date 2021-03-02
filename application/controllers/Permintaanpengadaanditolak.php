@@ -26,7 +26,7 @@ class Permintaanpengadaanditolak extends CI_Controller {
 		$id = $this->input->post('id_faktur');
 		$this->db->where('id_faktur', $id_faktur);
         $this->db->update('tbl_fakturrekanan',$data);
-        redirect('permintaanpengadaanbarang');
+        redirect('permintaanpengadaanditolak');
     }
 
     function updatetolak($id_faktur)

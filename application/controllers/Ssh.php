@@ -29,14 +29,8 @@ class Ssh extends CI_Controller {
                             'Spesifikasi_ssh'=>$this->input->post('Spesifikasi_ssh'),
                             'Satuan_ssh'=>$this->input->post('Satuan_ssh'),
                             'Hargasatuan_ssh'=>$this->input->post('Hargasatuan_ssh'),
-                            'Tahun_ssh'=>$this->input->post('Tahun_ssh'),
-                            'No_skpd'=>$this->input->post('No_skpd'),            
-                            'id_opd'=>$this->input->post('id_opd'),
-                            'username'=>$this->input->post('username')
+                            'Tahun_ssh'=>$this->input->post('Tahun_ssh')
 					);
-                    $data['username'] = $this->session->userdata('username');
-                    $data['id_opd'] = $this->session->userdata('id_opd');
-
 					$this->model_ssh->menambahdatassh($data);
 					redirect('ssh','refresh');
 	}
@@ -56,13 +50,8 @@ class Ssh extends CI_Controller {
             'Spesifikasi_ssh'=>$this->input->post('Spesifikasi_ssh'),
             'Satuan_ssh'=>$this->input->post('Satuan_ssh'),
             'Hargasatuan_ssh'=>$this->input->post('Hargasatuan_ssh'),
-            'Tahun_ssh'=>$this->input->post('Tahun_ssh'),
-            'No_skpd'=>$this->input->post('No_skpd'),            
-            'id_opd'=>$this->input->post('id_opd'),
-            'username'=>$this->input->post('username')
+            'Tahun_ssh'=>$this->input->post('Tahun_ssh')
         );
-        $data['username'] = $this->session->userdata('username');
-        $data['id_opd'] = $this->session->userdata('id_opd');
 		
         $this->model_ssh->updatedatassh($data, $id_ssh);
         redirect('ssh');

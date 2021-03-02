@@ -84,7 +84,7 @@ $this->load->view('sekretaris/barangpersediaan/menu');
                     <label for="id_ssh">Paket Pekerjaan</label>
                     <select class="form-control form-control-sm" id="id_paketpekerjaan" name="id_paketpekerjaan" required />
                     
-                    <option>Silahkan Pilih Barang</option>
+                    <option>Silahkan Pilih Paket Pekerjaan</option>
                         <?php $id_paketpekerjaan = $this->db->query("SELECT * FROM tbl_paketpekerjaan");
                 
                         foreach ($id_paketpekerjaan->result() as $id_paketpekerjaan) : ?>

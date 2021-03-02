@@ -46,7 +46,7 @@ $this->load->view('sekretaris/barangpersediaan/menu');
           <a href="<?php echo base_url('sekretaris/barangpersediaan')?>">Halaman Utama</a>
         </li>
   
-        <li class="breadcrumb-item active">Daftar Order Barang</li>
+        <li class="breadcrumb-item active">Daftar Order Rekanan</li>
       </ol>
 
       <div class="container">
@@ -66,7 +66,6 @@ $this->load->view('sekretaris/barangpersediaan/menu');
                   <th>Tanggal Pesan</th>
                   <th>Nama Rekanan</th>
                   <th>Keterangan</th>
-                  <th>No Faktur</th>
                   <th>Opsi</th>
                 </tr>
               </thead>
@@ -79,7 +78,6 @@ $this->load->view('sekretaris/barangpersediaan/menu');
                   <td><?= $data->tanggal_pesan ?></td>
                   <td><?= $data->nama_rekanan ?></td>
                   <td><?= $data->keterangan ?></td>
-                  <td><?= $data->no_faktur ?></td>
                   <td> 
                     <a href="<?php echo base_url()?>listorderrekanan/index/<?php echo $data->id_faktur; ?>" class="btn btn-warning" style="margin-bottom: 1px;">List Order<i class="fa fa-tag"></i></a>
                     <a href="<?php echo base_url()?>orderrekanan/action_deletedataorderrekanan/<?php echo $data->id_faktur; ?>" onclick="return confirm('Apakah anda yakin?');" class="btn btn-danger">Hapus<i class="fa fa-trash"></i></a>

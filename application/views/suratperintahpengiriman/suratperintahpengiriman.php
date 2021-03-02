@@ -45,12 +45,12 @@ $this->load->view('sekretaris/barangpersediaan/menu');
           <a href="<?php echo base_url('sekretaris/barangpersediaan')?>">Halaman Utama</a>
         </li>
   
-        <li class="breadcrumb-item active">Daftar Tabel Surat Pesanan</li>
+        <li class="breadcrumb-item active">Daftar Tabel Surat Perintah Pengiriman</li>
       </ol>
 
  <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Daftar Tabel Surat Pesanan</li>
+          <i class="fa fa-table"></i> Daftar Tabel Surat Perintah Pengiriman</li>
       </ol> </div>
           
         <div class="card-body">

@@ -64,7 +64,7 @@ $this->load->view('sekretaris/barangpersediaan/menu');
                   </div>
                            
                   <div class="col-md-6">
-                    <label for="spk_paketpekerjaan">Nama Rekanan</label>
+                    <label for="spk_paketpekerjaan">Keterangan SPK</label>
                     <input class="form-control" id="spk_paketpekerjaan" type="text" aria-describedby="nameHelp" name="spk_paketpekerjaan" required/>
                   </div>
                 </div>

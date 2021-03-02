@@ -34,6 +34,7 @@ class Model_orderrekanan extends CI_Model {
 		{
 			$this->db->order_by('id_faktur', 'ASC');
 			$this->db->where('keterangan', "Menunggu Konfirmasi");
+      $this->db->where('statusorder', "Belum Diterima");
         return $this->db->from('tbl_fakturrekanan')
           ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_fakturrekanan.id_rekanan')
           ->get()

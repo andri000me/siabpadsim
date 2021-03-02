@@ -71,23 +71,27 @@ $this->load->view('kepala/barangpersediaan/menu');
                 <tbody>
                     <?php
                     $no=1;
+                    $total=0;
                     foreach ($hasil as $item)
                     {
-    
+                      $total += $item->total_barang*$item->Hargasatuan_ssh;
                     ?>
                     <tr>
-                        <td><?php echo $no;?></td>
+                        <td align="center"><?php echo $no;?></td>
                         <td><?php echo $item->Namabarang_ssh;?></td>
-                        <td><?php echo $item->total_barang;?></td>
+                        <td align="center"><?php echo $item->total_barang;?></td>
                         <td><?php echo $item->Satuan_ssh;?></td>
-                        <td><?php echo $item->Hargasatuan_ssh;?></td>
-                        <td><?php echo $item->total_barang*$item->Hargasatuan_ssh;?></td>
-                    </tr>
+                        <td align="right"><?= 'Rp'.number_format($item->Hargasatuan_ssh,0,'.','.');?></td>
+                        <td align="right"><?= 'Rp'.number_format(($item->total_barang)*($item->Hargasatuan_ssh),0,'.','.');?></td></tr>
                     <?php
                             $no++;
                     }
                     ?>
                 </tbody>
+                <tr>
+                        <td align="center" colspan="5">Total</td> 
+                        <td align="right"><?= 'Rp'.number_format($total,0,'.','.')?></td>
+                </tr>
             </table>
     </div>
 </div>

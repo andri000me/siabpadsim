@@ -7,7 +7,7 @@ class Model_listorder extends CI_Model {
         $this->db->order_by('id_order', 'ASC');
         $this->db->where('id_penyaluran', $id_penyaluran);
         return $this->db->from('tbl_order')
-          ->join('tbl_ssh','tbl_order.id_ssh=tbl_ssh.id_ssh')
+          ->join('tbl_ssh','tbl_ssh.id_ssh=tbl_order.id_ssh')
           ->get()
           ->result();
     }

@@ -69,7 +69,6 @@ $this->load->view('sekretaris/barangpersediaan/menu');
                   <th>Satuan</th>
                   <th>Harga Satuan</th>
                   <th>Tahun </th>
-                  <th>No Skpd</th>
                   <th>Opsi</th>
                 </tr>
               </thead>
@@ -85,7 +84,6 @@ $this->load->view('sekretaris/barangpersediaan/menu');
                   <td><?= $data->Satuan_ssh ?></td>
                   <td><?= 'Rp'.number_format($data->Hargasatuan_ssh,0,'.','.')?></td>
                   <td><?= $data->Tahun_ssh ?></td>
-                  <td><?= $data->No_skpd ?></td>
                   <td> 
                     <a href="<?php echo base_url()?>ssh/updatedatassh/<?php echo $data->id_ssh; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Edit<i class="fa fa-tag"></i></a>
                     <a href="<?php echo base_url()?>ssh/action_deletedatassh/<?php echo $data->id_ssh; ?>" onclick="return confirm('Apakah anda yakin?');" class="btn btn-danger">Hapus<i class="fa fa-trash"></i></a>

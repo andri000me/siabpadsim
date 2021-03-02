@@ -78,7 +78,7 @@ $this->load->view('kepala/barangpersediaan/menu');
                         <td><?php echo $item->nama_rekanan;?></td>
                         <td><?php echo $item->keterangan;?></td>
                         <td><?php echo $item->statusorder;?></td>
-                        <td> <a href="<?php echo base_url()?>permintaanpengadaanbarang/updatesetuju/<?php echo $item->id_faktur; ?>" onclick="return confirm('Apakah anda yakin?');" class="btn btn-warning" role="button">Setuju</a></td>
+                        <td> <a href="<?php echo base_url()?>permintaanpengadaanditolak/updatesetuju/<?php echo $item->id_faktur; ?>" onclick="return confirm('Apakah anda yakin?');" class="btn btn-warning" role="button">Setuju</a></td>
                     </tr>
                     <?php
                             $no++;

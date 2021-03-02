@@ -69,18 +69,18 @@ $this->load->view('pptk/barangpersediaan/menu');
                 <tbody>
                     <?php
                     $no=1;
+                    $total=0;
                     foreach ($hasil as $item)
                     {
-    
+                      $total += $item->total_barang*$item->Hargasatuan_ssh;
                     ?>
                     <tr>
                         <td><?php echo $no;?></td>
                         <td><?php echo $item->Namabarang_ssh;?></td>
                         <td align="center"><?php echo $item->total_barang;?></td>   
                         <td><?php echo $item->Satuan_ssh;?></td>                    
-                        <td align="right"><?php echo $item->Hargasatuan_ssh;?></td>
-                        <td align="right"><?php echo ($item->total_barang)*($item->Hargasatuan_ssh);?></td>
-                        <td align="center"> <a href="<?php echo base_url()?>listorder/update/<?php echo $item->id_order;?>/<?php echo $hasilparsing?>" class="btn btn-warning" role="button">Update</a></td>
+                        <td align="right"><?= 'Rp'.number_format($item->Hargasatuan_ssh,0,'.','.');?></td>
+                        <td align="right"><?= 'Rp'.number_format(($item->total_barang)*($item->Hargasatuan_ssh),0,'.','.');?></td> <td align="center"> <a href="<?php echo base_url()?>listorder/update/<?php echo $item->id_order;?>/<?php echo $hasilparsing?>" class="btn btn-warning" role="button">Update</a></td>
                         <td align="center"> <a href="<?php echo base_url()?>listorder/hapus/<?php echo $item->id_order;?>/<?php echo $hasilparsing?>" onclick="return confirm('Apakah anda yakin?');"class="btn btn-danger" role="button">Delete</a></td>
                     </tr>
                     <?php
@@ -88,6 +88,10 @@ $this->load->view('pptk/barangpersediaan/menu');
                     }
                     ?>
                 </tbody>
+                <tr>
+                        <td align="center" colspan="5">Total</td> 
+                        <td align="right"><?= 'Rp'.number_format($total,0,'.','.')?></td>
+                </tr>
             </table>
     </div>
 </div>

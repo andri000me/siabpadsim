@@ -17,12 +17,17 @@
             </div>
             <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="icofont-computer"></i></div>
-            <h4 class="title"><a href="<?php echo base_url('orderrekanan'); ?>">Order Rekanan</a></h4>
+            <h4 class="title"><a href="<?php echo base_url('paketpekerjaan'); ?>">Paket Pekerjaan</a></h4>
            </div>
+            
 
       </div>
       <br><br><br>
       <div class="row">
+      <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+            <div class="icon"><i class="icofont-computer"></i></div>
+            <h4 class="title"><a href="<?php echo base_url('orderrekanan'); ?>">Order Rekanan</a></h4>
+            </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="icofont-computer"></i></div>
             <h4 class="title"><a href="<?php echo base_url('suratpesanan'); ?>">Surat Pesanan</a></h4>
@@ -31,14 +36,15 @@
             <div class="icon"><i class="icofont-computer"></i></div>
             <h4 class="title"><a href="<?php echo base_url('suratperintahpengiriman'); ?>">Surat Perintah Pengiriman</a></h4>
            </div>
-           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="icofont-computer"></i></div>
-            <h4 class="title"><a href="<?php echo base_url('faktur'); ?>">Faktur</a></h4>
-           </div>
+          
 
       </div>
       <br><br><br>
       <div class="row">
+      <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+            <div class="icon"><i class="icofont-computer"></i></div>
+            <h4 class="title"><a href="<?php echo base_url('faktur'); ?>">Faktur</a></h4>
+           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="icofont-computer"></i></div>
             <h4 class="title"><a href="<?php echo base_url('kwitansi'); ?>">Kwitansi</a></h4>
@@ -47,18 +53,16 @@
             <div class="icon"><i class="icofont-computer"></i></div>
             <h4 class="title"><a href="<?php echo base_url('beritaacarapenerimaanhasilpekerjaan'); ?>">Berita Acara Penerimaan Hasil Pekerjaan</a></h4>
            </div>
-           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="icofont-computer"></i></div>
-            <h4 class="title"><a href="<?php echo base_url('beritaacarapenerimaanbarang'); ?>">Berita Acara Penerimaan Barang</a></h4>
-           </div>
+           
 
       </div>
       <br><br><br>
       <div class="row">
-           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+      <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="icofont-computer"></i></div>
-            <h4 class="title"><a href="<?php echo base_url('paketpekerjaan'); ?>">Paket Pekerjaan</a></h4>
+            <h4 class="title"><a href="<?php echo base_url('beritaacarapenerimaanbarang'); ?>">Berita Acara Penerimaan Barang</a></h4>
            </div>
+          
            
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="icofont-computer"></i></div>

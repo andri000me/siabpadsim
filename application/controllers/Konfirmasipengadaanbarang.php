@@ -28,6 +28,10 @@ class Konfirmasipengadaanbarang extends CI_Controller {
 		$id = $this->input->post('id_faktur');
 		$this->db->where('id_faktur', $id_faktur);
         $this->db->update('tbl_fakturrekanan',$data);
+
+        $data2['id_fakturrekanan'] = $id_faktur;
+        $this->db->insert('tbl_mutasi',$data2);
+
         redirect('konfirmasipengadaanbarang');
     }
 

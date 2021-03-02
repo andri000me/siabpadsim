@@ -60,7 +60,7 @@ $this->load->view('kepala/barangpersediaan/menu');
                     <tr>
                     <th>No</th> 
                         <th>Tahun</th> 
-                        <th colspan='2'>Aksi</th>
+                        <th >Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,8 +73,7 @@ $this->load->view('kepala/barangpersediaan/menu');
                     <tr>
                     <td><?php echo $no;?></td>
                         <td><?php echo $item->tahun_pesan;?></td>
-                        <td> <a href="<?php echo base_url()?>laporanbukubarangpersediaan/lihat/<?php echo $item->tahun_pesan; ?>" class="btn btn-warning" role="button">Lihat</a></td>
-                        <td> <a href="<?php echo base_url()?>laporanbukubarangpersediaan/print/<?php echo $item->tahun_pesan; ?>" class="btn btn-warning" role="button">Print</a></td>
+                       <td> <a href="<?php echo base_url()?>laporanbukubarangpersediaan/print/<?php echo $item->tahun_pesan; ?>" class="btn btn-warning" role="button">Print</a></td>
                     </tr>
                     <?php
                             $no++;
