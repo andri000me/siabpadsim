@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="wid_sshth=device-wid_sshth, initial-scale=1.0" name="viewport">
 
   <!-- Favicons -->
   <link href="<?php echo base_url('theme/mamba/assets/img/favicon.png')?>" rel="icon">
@@ -23,7 +23,9 @@
 
   <!-- Template Main CSS File -->
   <link href="<?php echo base_url('theme/mamba/assets/css/style.css')?>" rel="stylesheet">
-
+  <link href="<?php echo base_url().'assets/css/jquery.datatables.min.css'?>" rel="stylesheet" type="text/css"/>
+  <link href="<?php echo base_url().'assets/css/dataTables.bootstrap.css'?>" rel="stylesheet" type="text/css"/>
+  
   <!-- =======================================================
   * Template Name: theme/mamba - v2.5.1
   * Template URL: https://bootstrapmade.com/theme/mamba-one-page-bootstrap-template-free/
@@ -54,7 +56,7 @@ $this->load->view('sekretaris/barangpersediaan/menu');
           
         <div class="card-body">
           <div class="table-responsive">
-          <table class="table table-bordered">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>No</th> 
@@ -97,13 +99,13 @@ $this->load->view('sekretaris/barangpersediaan/menu');
 </div>
     </section>
 
-<?php $this->load->view('include/footer'); ?>
+    <?php $this->load->view('include/footer'); ?>
 
 <!-- Vendor JS Files -->
 <script src="<?php echo base_url('theme/mamba/assets/vendor/jquery/jquery.min.js')?>"></script>
   <script src="<?php echo base_url('theme/mamba/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
   <script src="<?php echo base_url('theme/mamba/assets/vendor/jquery.easing/jquery.easing.min.js')?>"></script>
-  <script src="<?php echo base_url('theme/mamba/assets/vendor/php-email-form/validate.js')?>"></script>
+  <script src="<?php echo base_url('theme/mamba/assets/vendor/php-email-form/valid_sshate.js')?>"></script>
   <script src="<?php echo base_url('theme/mamba/assets/vendor/jquery-sticky/jquery.sticky.js')?>"></script>
   <script src="<?php echo base_url('theme/mamba/assets/vendor/venobox/venobox.min.js')?>"></script>
   <script src="<?php echo base_url('theme/mamba/assets/vendor/waypoints/jquery.waypoints.min.js')?>"></script>
@@ -114,3 +116,21 @@ $this->load->view('sekretaris/barangpersediaan/menu');
 
   <!-- Template Main JS File -->
   <script src="<?php echo base_url('theme/mamba/assets/js/main.js')?>"></script>
+
+  <!-- Bootstrap core JavaScript-->
+
+  <script src="<?php echo base_url('assets/vendor/jquery/jquery.min.js'); ?>"></script>
+
+<script src="<?php echo base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
+<!-- Core plugin JavaScript-->
+<script src="<?php echo base_url('assets/vendor/jquery-easing/jquery.easing.min.js'); ?>"></script>
+
+<!-- Page level plugin JavaScript-->
+<script src="<?php echo base_url('assets/vendor/chart.js/Chart.min.js'); ?>"></script>
+<script src="<?php echo base_url('assets/vendor/datatables/jquery.dataTables.js'); ?>"></script>
+<script src="<?php echo base_url('assets/vendor/datatables/dataTables.bootstrap4.js'); ?>"></script>
+<!-- Custom scripts for all pages-->
+<script src="<?php echo base_url('assets/js/sb-admin.min.js'); ?>"></script>
+<!-- Custom scripts for this page-->
+<script src="<?php echo base_url('assets/js/sb-admin-datatables.min.js'); ?>"></script>
+<script src="<?php echo base_url('assets/js/sb-admin-charts.min.js'); ?>"></script>

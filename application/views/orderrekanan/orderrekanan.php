@@ -77,7 +77,7 @@ $this->load->view('sekretaris/barangpersediaan/menu');
                   foreach ($content->result() as $data) : ?>
                   <td><?= $i ?></td>
                   <td><?= $data->tanggal_pesan ?></td>
-                  <td><?= $data->nama_rekanan ?></td>
+                  <td><?= $data->id_rekanan ?></td>
                   <td><?= $data->keterangan ?></td>
                   <td><?= $data->no_faktur ?></td>
                   <td> 
