@@ -19,6 +19,19 @@ class Model_login extends CI_Model {
 				
 			}
 		}
+
+		function GetAkun()
+		{
+			$username = $this->uri->segment(3);
+			return $this->db->get_where('tbl_akun', array('username' => $username))->row();
+		}
+
+		public function updatepassword($data)
+		{
+			$username = $this->uri->segment(3);
+			$this->db->where('username', $username);
+			$this->db->update('tbl_akun', $data);
+		}
 }
 
 /* End of file model_login.php */

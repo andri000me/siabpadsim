@@ -12,7 +12,8 @@ class Orderrekanan extends CI_Controller {
 
 	function index()
 	{
-        $data['content'] = $this->db->get('tbl_fakturrekanan');
+        $data['content'] = $this->model_orderrekanan->GetOrderRekanan();
+		//print_r($data);exit();
         $this->load->view('orderrekanan/orderrekanan', $data);
 	}
 
@@ -23,8 +24,7 @@ class Orderrekanan extends CI_Controller {
 	
 	function action_menambahdataorderrekanan()
     {       
-                    	$data = array(
-                            'nama_rekanan'=>$this->input->post('nama_rekanan'),
+            $data = array(
             'tanggal_pesan'=>$this->input->post('tanggal_pesan'),
 			'id_rekanan'=>$this->input->post('id_rekanan'),
             'keterangan'=>$this->input->post('keterangan'),            
@@ -32,7 +32,10 @@ class Orderrekanan extends CI_Controller {
             'statusorder'=>$this->input->post('statusorder'),
             'username'=>$this->input->post('username')
 					);
-
+					$data['keterangan'] = "Menunggu Konfirmasi";
+					$data['statusorder'] = "Belum Diterima";
+					$data['username'] = $this->session->userdata('username');
+					
 					$this->model_orderrekanan->menambahdataorderrekanan($data);
 					redirect('orderrekanan','refresh');
 	}
