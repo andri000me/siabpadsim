@@ -28,70 +28,53 @@ table{
 <hr  color="black" size="2px"/>
 </td>
 </tr>
-<table>
+</table>
 </head>
 
 <body>
-<p align="center">SURAT PERINTAH PENGELUARAN/PENYALURAN BARANG</p>
-<p align="center">NO. <?php echo $hasilpenyaluran->no_sppb; ?></p>
 <table>
-<tr><p><td>Dari</td>	<td>:</td> <td></td></p></tr>
-<tr><p><td>Kepada</td>	<td>:</td> <td><?php echo $hasilpenyaluran->pemberi; ?></td></p></tr>
-</table>
+<tr><p><td>Dari</td>	<td>: Pengguna Barang/Kuasa Pengguna Barang</td>
+<tr><p><td>Kepada</td>	<td>: Pengurus Barang Pengguna</td>
+                        
+        </table>
 
-<p>Harap dikeluarkan dari Gudang dan disalurkan barang tersebut dalam daftar dibawah ini untuk <?php echo $hasilpenyaluran->penerima; ?></p>
+<p>Harap dikeluarkan dari Gudang dan disalurkan barang tersebut dalam daftar dibawah ini untuk.......................</p>
 
-<table border="1" align="center">              
+<table border="1" align="center">
                     <tr>
-                        <th>No</th> 
+                        <th>No</th>
                         <th>Nama Barang</th>
                         <th>Banyaknya</th> 
-                        <th>Harga Satuan</th>
-                        <th>Jumlah (Rp)</th>
+                        <th>Harga Satuan</th> 
+                        <th>Jumlah (Rp.)</th> 
+                        <th>Keterangan</th> 
                     </tr>
                 </thead>
                 <tbody>
                 <?php
-    $no=1;
-    foreach ($hasilorder as $item)
-    {
-        ?>
-    <tr>
-                        <td><?php echo $no;?></td>
-                        <td><?php echo $item->id_ssh;?></td>
-                        <td><?php echo $item->total_barang;?></td>
-                        <td><?php echo $item->id_ssh;?></td>
-                        <td><?php echo $item->total_harga;?></td>
-    </tr>
-    <?php
-            $no++;
-    }
-        ?>
+                    $no = 1 ;
+                    $total = 0;
+                    foreach ($hasilorder as $item)
+                    {
+                    ?>
+                    <?php
+                            $no++;
+                    }
+                    ?>
+                    
                 </tbody>
             </table>
-
-	
+                       
 </body>
 
 <footer>
-<table>
-<tr>
-<td>
-</td>
-<td align="center">
-<p>Padang Sidempuan, <?php echo format_indo(date('Y-m-d'));?><p>
-
-	
-   <p> PENGGUNA BARANG </p>
-
-
-
-
-<p>(......................................)</p>
-<p>NIP.<p>
-</td>
-</tr>
-</table>
+<br>
+<br><br><br><br><br><br><br><br>
+<table align="right">
+<tr><td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</td></tr>
+<tr><td>&nbsp &nbsp &nbsp &nbsp &nbsp PENGGUNA BARANG</td></tr>
+<tr height="75px"></tr><td>&nbsp &nbsp (.....................................................)</td></tr>
+<tr><td>&nbsp &nbspNIP.</td></tr>
 </footer>
 
 </html>

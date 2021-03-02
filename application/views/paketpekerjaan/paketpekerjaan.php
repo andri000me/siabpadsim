@@ -75,7 +75,7 @@ $this->load->view('sekretaris/barangpersediaan/menu');
                         <td><?php echo $no;?></td>
                         <td><?php echo $item->paketpekerjaan;?></td>
                         <td><?php echo $item->spk_paketpekerjaan;?></td>
-                        <td> <a href="<?php echo base_url()?>paketpekerjaan/update/<?php echo $item->id_paketpekerjaan; ?>" class="btn btn-warning" role="button">Update</a></td>
+                        <td> <a href="<?php echo base_url()?>paketpekerjaan/update/<?php echo $item->id_paketpekerjaan; ?>" class="btn btn-warning" role="button">Edit</a></td>
                         <td> <a href="<?php echo base_url()?>paketpekerjaan/hapus/<?php echo $item->id_paketpekerjaan; ?>" onclick="return confirm('Apakah anda yakin?');"class="btn btn-danger" role="button">Delete</a></td>
                     </tr>
                     <?php

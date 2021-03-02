@@ -77,7 +77,7 @@ $this->load->view('sekretaris/barangpersediaan/menu');
                         <td><?php echo $item->nama_rekanan;?></td>
                         <td><?php echo $item->no_beritaacarapb;?></td>
                         <td><?php echo $item->tanggalterimabarang;?></td>
-                        <td> <a href="<?php echo base_url()?>beritaacarapenerimaanbarang/update/<?php echo $item->id_faktur; ?>" class="btn btn-warning" role="button">Update</a></td>
+                        <td> <a href="<?php echo base_url()?>beritaacarapenerimaanbarang/update/<?php echo $item->id_faktur; ?>" class="btn btn-warning" role="button">Edit</a></td>
                         <td> <a href="<?php echo base_url()?>beritaacarapenerimaanbarang/print/<?php echo $item->id_faktur; ?>" class="btn btn-warning" role="button">Print</a></td>
                     </tr>
                     <?php

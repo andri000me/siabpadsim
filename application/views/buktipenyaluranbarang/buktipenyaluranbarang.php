@@ -76,7 +76,7 @@ $this->load->view('pptk/barangpersediaan/menu');
                         <td><?php echo $item->tanggal_pesan;?></td>
                         <td><?php echo $item->keterangan;?></td>
                         <td><?php echo $item->no_beritaacarapb;?></td>
-                        <td> <a href="<?php echo base_url()?>buktipenyaluranbarang/update/<?php echo $item->id_penyaluran; ?>" class="btn btn-warning" role="button">Update</a></td>
+                        <td> <a href="<?php echo base_url()?>buktipenyaluranbarang/update/<?php echo $item->id_penyaluran; ?>" class="btn btn-warning" role="button">Edit</a></td>
                         <td> <a href="<?php echo base_url()?>buktipenyaluranbarang/print/<?php echo $item->id_penyaluran; ?>" class="btn btn-warning" role="button">Print</a></td>
                     </tr>
                     <?php

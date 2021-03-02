@@ -79,7 +79,7 @@ $this->load->view('sekretaris/barangpersediaan/menu');
                         <td><?php echo $item->nama_rekanan;?></td>
                         <td><?php echo $item->keterangan;?></td>
                         <td><?php echo $item->no_faktur;?></td>
-                        <td> <a href="<?php echo base_url()?>faktur/update/<?php echo $item->id_faktur; ?>" class="btn btn-warning" role="button">Update</a></td>
+                        <td> <a href="<?php echo base_url()?>faktur/update/<?php echo $item->id_faktur; ?>" class="btn btn-warning" role="button">Edit</a></td>
                         <td> <a href="<?php echo base_url()?>faktur/print/<?php echo $item->id_faktur; ?>" class="btn btn-warning" role="button">Print</a></td>
                     </tr>
                     <?php
