@@ -83,7 +83,7 @@ $this->load->view('sekretaris/barangpersediaan/menu');
                   <td><?= $data->Namabarang_ssh ?></td>
                   <td><?= $data->Spesifikasi_ssh ?></td>
                   <td><?= $data->Satuan_ssh ?></td>
-                  <td><?= $data->Hargasatuan_ssh ?></td>
+                  <td><?= 'Rp'.number_format($data->Hargasatuan_ssh,0,'.','.')?></td>
                   <td><?= $data->Tahun_ssh ?></td>
                   <td><?= $data->No_skpd ?></td>
                   <td> 

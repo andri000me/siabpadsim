@@ -50,7 +50,7 @@ class Login extends CI_Controller {
 				} elseif ($this->session->userdata('level') == "PPTK") {
 						redirect('pptk','refresh');
 				}  elseif ($this->session->userdata('level') == "Pengurus Barang") {
-					redirect('pengurusbarang','refresh');
+					redirect('pengurusbarangpengguna','refresh');
 				}
 			}
 		}
@@ -58,6 +58,24 @@ class Login extends CI_Controller {
 					$this->load->view('login/login');
 				}
     }
+
+	public function profil()
+	{
+		
+			$username=$this->session->userdata('username');
+			$this->db->where('username', $username);
+            $data['ambil'] = $this->db->get('tbl_akun');
+			$this->load->view('profil/profil', $data);
+	}
+
+	function simpan_updatepassword()
+    {
+		$data = array(
+            'password'=>$this->input->post('password')
+        );
+        $this->model_login->updatepassword($data, $username);
+        redirect('login/profil');
+	}
 }
 /* End of file Login.php */
 /* Location: ./application/controllers/Login.php */

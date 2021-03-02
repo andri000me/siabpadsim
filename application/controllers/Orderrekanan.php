@@ -12,7 +12,8 @@ class Orderrekanan extends CI_Controller {
 
 	function index()
 	{
-        $data['content'] = $this->db->get('tbl_fakturrekanan');
+        $data['content'] = $this->model_orderrekanan->GetOrderRekanan();
+		//print_r($data);exit();
         $this->load->view('orderrekanan/orderrekanan', $data);
 	}
 

@@ -11,6 +11,16 @@ class Model_orderrekanan extends CI_Model {
           ->result();
     }
 
+    function GetOrderRekanan() 
+    {
+        $this->db->order_by('id_faktur', 'ASC');
+        return $this->db->from('tbl_fakturrekanan')
+          ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_fakturrekanan.id_rekanan')
+          ->get()
+          ->result();
+    }
+
+    
     function Getid_faktur($id_faktur='')
     {
       return $this->db->get_where('tbl_fakturrekanan', array('id_faktur' => $id_faktur))->row();
