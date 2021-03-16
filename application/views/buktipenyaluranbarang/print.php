@@ -81,7 +81,8 @@ table{
     </tr>
     <br>
 <br><br><br><br><br><br><br><br>
-<table align="center">
+<table align="center"
+>
 <tr><td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspMengetahui</td></tr>
 <tr><td>PEJABAT PENATAUSAHAAN BARANG</td></tr>
 <tr height="75px"></tr><td>&nbsp &nbsp (.....................................................)</td></tr>

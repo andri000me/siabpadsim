@@ -42,7 +42,7 @@ $this->load->view('pptk/barangpersediaan/menu');
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-          <a href="<?php echo config_item('base_url'); ?>">Halaman Utama</a>
+        <a href="<?php echo base_url('order')?>">Halaman Utama</a>
         </li>
   
         <li class="breadcrumb-item active">Order Barang</li>

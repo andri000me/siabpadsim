@@ -137,7 +137,7 @@ table{
     <td>Pejabat Pembuat Komitmen</td>
     <td></td>
 </tr>
-<br><br><br>
+<tr height="75"></tr>
 <tr>
     <td><u><?php echo $ambil->nama_kepala; ?></u></td>
     <td><?php echo $ambil->nama_pimpinan; ?></td>

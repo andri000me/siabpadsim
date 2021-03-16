@@ -27,8 +27,8 @@ class Konfirmasipenyaluranbarang extends CI_Controller {
 		$this->db->where('id_penyaluran', $id_penyaluran);
         $this->db->update('tbl_penyaluran',$data);
 
-        $data2['id_penyaluran'] = $id_penyaluran;
-        $this->db->insert('tbl_mutasi',$data2);
+        /*$data2['id_penyaluran'] = $id_penyaluran;
+        $this->db->insert('tbl_mutasi',$data2);*/
 
         redirect('konfirmasipenyaluranbarang');
     }
