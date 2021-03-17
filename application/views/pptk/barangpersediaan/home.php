@@ -13,15 +13,23 @@
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="icofont-computer"></i></div>
-            <h4 class="title"><a href="<?php echo base_url('order'); ?>">Pengajuan Penyaluran Barang</a></h4>
+            <h4 class="title"><a href="<?php echo base_url('pengadaan'); ?>">Pengadaan Barang</a></h4>
            </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+            <div class="icon"><i class="icofont-computer"></i></div>
+            <h4 class="title"><a href="<?php echo base_url('penyaluran'); ?>">Penyaluran Barang</a></h4>
+           </div>
+       
+      </div>
+      <br><br><br><br>
+      <div class="row">
+        
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
             <div class="icon"><i class="icofont-computer"></i></div>
             <h4 class="title"><a href="<?php echo base_url('konfirmasipenyaluranditerima'); ?>">Konfirmasi Penyaluran Diterima</a></h4>
           </div>
 
       </div>
-      <br><br><br>
     </section><!-- End Services Section -->
 
   </main><!-- End #main -->

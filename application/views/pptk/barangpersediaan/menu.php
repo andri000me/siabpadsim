@@ -13,9 +13,9 @@
             <ul>
             <li><a href="<?php echo base_url('rekanan')?>">Data Rekanan</a>
               </li>
-              <li><a href="<?php echo base_url('pptk/asettetap')?>">Aset Tetap</a>
+              <li><a href="<?php echo base_url('pengadaan')?>">Pengadaan Barang</a>
               </li>
-              <li><a href="<?php echo base_url('pptk/barangpersediaan')?>">Barang Persediaan</a>
+              <li><a href="<?php echo base_url('penyaluran')?>">Penyaluran Barang</a>
               </li>
             </ul>
           </li>
