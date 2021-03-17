@@ -17,13 +17,13 @@ class Login extends CI_Controller {
 		if ($this->session->userdata('level') == "Admin") {
 			redirect('Admin','refresh');
 		} elseif ($this->session->userdata('level') == "Pengguna Anggaran") {
-			redirect('kepala','refresh');
-        } elseif ($this->session->userdata('level') == "Bendahara") {
-			redirect('sekretaris','refresh');
+			redirect('penggunaanggaran','refresh');
+        } elseif ($this->session->userdata('level') == "Operator") {
+			redirect('operator','refresh');
 			} elseif ($this->session->userdata('level') == "PPTK") {
 			redirect('pptk','refresh');
-		} elseif ($this->session->userdata('level') == "Pengurus Barang") {
-				redirect('pengurusbarang','refresh');
+		} elseif ($this->session->userdata('level') == "Pengurus Barang Pengguna") {
+				redirect('pengurusbarangpengguna','refresh');
 		} else {
 			$this->load->view('login/login');
 		}
@@ -44,12 +44,12 @@ class Login extends CI_Controller {
 				if ($this->session->userdata('level') == "Admin") {
 					redirect('admin','refresh');
 				} elseif ($this->session->userdata('level') == "Pengguna Anggaran") {
-					redirect('kepala','refresh');
-				} elseif ($this->session->userdata('level') == "Bendahara") {
-					redirect('sekretaris','refresh');
+					redirect('penggunaanggaran','refresh');
+				} elseif ($this->session->userdata('level') == "Operator") {
+					redirect('operator','refresh');
 				} elseif ($this->session->userdata('level') == "PPTK") {
 						redirect('pptk','refresh');
-				}  elseif ($this->session->userdata('level') == "Pengurus Barang") {
+				}  elseif ($this->session->userdata('level') == "Pengurus Barang Pengguna") {
 					redirect('pengurusbarangpengguna','refresh');
 				}
 			}
