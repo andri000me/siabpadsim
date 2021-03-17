@@ -33,7 +33,7 @@
 
 <?php 
 $this->load->view('include/header'); 
-$this->load->view('asettetap/menu'); 
+$this->load->view('admin/menu');
 ?>
 
 </head>
@@ -68,7 +68,11 @@ $this->load->view('asettetap/menu');
                     <select class="form-control" name="Kelompok_ssh" value="<?= $data->Kelompok_ssh?>">
                       <option><?= $data->Kelompok_ssh?></option>
                       <option value="Umum">Umum</option>
-                      <option value="Lain">Lain</option>        
+                <option value="Industri">Industri</option>                
+                <option value="Kesehatan">Kesehatan</option>                
+                <option value="Pertanian">Pertanian</option>  
+                <option value="Pekerjaan Umum">Pekerjaan Umum</option>  
+                <option value="Lain Lain">Lain Lain</option>         
                     </select>
                   </div>
 
@@ -77,6 +81,21 @@ $this->load->view('asettetap/menu');
                     <input value="<?= $data->Namabarang_ssh?>"class="form-control" id="Namabarang_ssh" type="text" aria-describedby="nameHelp" name="Namabarang_ssh" required/>
                   </div>
                   
+                </div>
+              </div>
+
+              <div class="form-group">
+              <div class="form-row">
+              
+              <div class="col-md-6">
+                    <label for="Jenisbarang_ssh">Jenis Barang</label>
+                    <input value="<?= $data->Jenisbarang_ssh?>"class="form-control" id="Jenisbarang_ssh" type="text" aria-describedby="nameHelp" name="Jenisbarang_ssh" required/>
+                  </div>
+                           
+                  <div class="col-md-6">
+                    <label for="Ukuran_ssh">Ukuran</label>
+                    <input value="<?= $data->Ukuran_ssh?>"class="form-control" id="Ukuran_ssh" type="text" aria-describedby="nameHelp" name="Ukuran_ssh" required/>
+                  </div>
                 </div>
               </div>
 

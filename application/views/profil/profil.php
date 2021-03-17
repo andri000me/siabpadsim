@@ -33,7 +33,6 @@
 
 <?php 
 $this->load->view('include/header'); 
-$this->load->view('asettetap/menu'); 
 ?>
 
 </head>

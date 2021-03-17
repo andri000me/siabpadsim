@@ -6,13 +6,15 @@ class Rekanan extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-       $this->load->model('model_rekanan'); //load model model_rekanan
+       $this->load->model('model_rekanan');
+	   $this->load->library('session');
 
     }
 
 	function index()
 	{
-        $data['content'] = $this->db->get('tbl_rekanan');
+		$username=$this->session->userdata('username');
+        $data['content'] = $this->db->where('username', $username)->get('tbl_rekanan');
         $this->load->view('rekanan/rekanan', $data);
 	}
 
@@ -26,9 +28,10 @@ class Rekanan extends CI_Controller {
                     	$data = array(
                             'nama_pimpinan'=>$this->input->post('nama_pimpinan'),
                             'nama_rekanan'=>$this->input->post('nama_rekanan'),
-                            'alamat_rekanan'=>$this->input->post('alamat_rekanan')
-					);
-
+                            'alamat_rekanan'=>$this->input->post('alamat_rekanan'),
+							'username'=>$this->input->post('username'),
+						);
+					$data['username']=$this->session->userdata('username');
 					$this->model_rekanan->menambahdatarekanan($data);
 					redirect('rekanan','refresh');
 	}

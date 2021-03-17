@@ -56,25 +56,16 @@ $this->load->view('admin/menu');
 
         <form action="<?php echo base_url('opd/simpan_opd')?>" method="post" enctype="multipart/form-data">
 
-             <div class="form-group">
-              <div class="form-row">
-              <div class="col-md-6">
-                    <label for="id_opd">ID OPD</label>
-                    <input class="form-control" id="id_opd" type="text" aria-describedby="nameHelp" name="id_opd" required/>
-                  </div>
-                           
-                  <div class="col-md-6">
-                    <label for="kode_opd">Kode OPD</label>
-                    <input class="form-control" id="kode_opd" type="text" aria-describedby="nameHelp" name="kode_opd" required/>
-                  </div>
-                </div>
-              </div>
-
+             
               <div class="form-group">
               <div class="form-row">                  
                   <div class="col-md-6">
                     <label for="nama_opd">Nama OPD</label>
                     <input class="form-control" id="nama_opd" type="text" aria-describedby="nameHelp" name="nama_opd" required/>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="kode_opd">Kode OPD</label>
+                    <input class="form-control" id="kode_opd" type="text" aria-describedby="nameHelp" name="kode_opd" required/>
                   </div>
                 </div>
               </div>

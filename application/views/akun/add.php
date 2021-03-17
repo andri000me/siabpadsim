@@ -100,12 +100,12 @@ $this->load->view('admin/menu');
                 <div class="col-md-6">
                     <label for="level">Level</label>
                     <select class="form-control" name="level">
-                <option value="Admin">Admin</option>
-                <option value="Pengguna Anggaran">Pengguna Anggaran</option>                
-                <option value="Bendahara">Bendahara</option>                
-                <option value="PPTK">PPTK</option>             
-                <option value="Pengurus Barang">Pengurus Barang</option>
-            </select>
+                      <option value="Admin">Admin</option>
+                      <option value="Pengguna Anggaran">Pengguna Anggaran</option>                   
+                      <option value="PPTK">PPTK</option>             
+                      <option value="Pengurus Barang Pengguna">Pengurus Barang Pengguna</option>                           
+                      <option value="Operator">Operator</option>  
+                    </select>
                   </div>
                 </div>
               </div>

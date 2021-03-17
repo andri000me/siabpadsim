@@ -63,10 +63,11 @@ $this->load->view('admin/menu');
                   <div class="col-md-6">
                     <label for="id_opd">OPD</label>
                      <select class="form-control form-control-sm" id="id_opd" name="id_opd" value="<?php echo $ambil->id_opd; ?>"required />
+                     <option value="<?php echo $ambil->id_opd; ?>"><?php echo $ambil->id_opd; ?></option>
                         <?php $id_opd = $this->db->query("SELECT * FROM tbl_opd");
                 
                         foreach ($id_opd->result() as $id_opd) : ?>
-                        <option><?= $id_opd->id_opd?></option>
+                        <option><?= $id_opd->nama_opd?></option>
                          <?php endforeach; ?>
                        </select>
                      </div>
@@ -103,11 +104,10 @@ $this->load->view('admin/menu');
                     <select class="form-control" name="level" value="<?php echo $ambil->level; ?>">
                     <option><?= $ambil->level?></option>
                     <option value="Admin">Admin</option>
-                   <option value="Pengguna Anggaran">Pengguna Anggaran</option>                
-                   <option value="Bendahara">Bendahara</option>                
+                   <option value="Pengguna Anggaran">Pengguna Anggaran</option>          
                    <option value="PPTK">PPTK</option>             
-                   <option value="Pengurus Barang">Pengurus Barang</option>
-
+                   <option value="Pengurus Barang Pengguna">Pengurus Barang Pengguna</option>
+                   <option value="Operator">Operator</option>   
             </select>
                     
                   </div>

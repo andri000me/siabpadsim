@@ -34,7 +34,7 @@
 
 <?php 
 $this->load->view('include/header'); 
-$this->load->view('sekretaris/barangpersediaan/menu'); 
+$this->load->view('pptk/menu'); 
 ?>
 
 </head>
@@ -43,7 +43,7 @@ $this->load->view('sekretaris/barangpersediaan/menu');
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-          <a href="<?php echo base_url('sekretaris/barangpersediaan')?>">Halaman Utama</a>
+          <a href="<?php echo base_url('pptk/barangpersediaan')?>">Halaman Utama</a>
         </li>
   
         <li class="breadcrumb-item active">Daftar Tabel Rekanan</li>

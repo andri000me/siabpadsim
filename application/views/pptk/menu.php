@@ -3,7 +3,7 @@
     <div class="container">
 
       <div class="logo float-left">
-        <h1 class="text-light"><a href="<?php echo base_url('user')?>"><span>SIABPADSIM</span></a></h1>
+        <h1 class="text-light"><a href="<?php echo base_url('pptk')?>"><span>SIABPADSIM</span></a></h1>
      </div>
       <nav class="nav-menu float-right d-none d-lg-block">
         <ul>
@@ -11,11 +11,11 @@
           <li><a href="#about">About Us</a></li>
           <li class="drop-down"><a href="">Menu</a>
             <ul>
-              <li><a href="<?php echo base_url('pptk/asettetap')?>">Aset Tetap</a>
+              <li><a href="#">Aset Tetap</a>
               </li>
               <li><a href="<?php echo base_url('pptk/barangpersediaan')?>">Barang Persediaan</a>
               </li>
-			        <li><a href="<?php echo base_url('profil')?>">Pengaturan Akun</a>
+			        <li><a href="<?php echo base_url()?>login/profil/<?php echo $this->session->userdata('username') ?>">Ganti Kata Sandi</a>
               </li>
             </ul>
           </li>

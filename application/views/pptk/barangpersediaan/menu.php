@@ -11,11 +11,11 @@
           <li><a href="#about">About Us</a></li>
           <li class="drop-down"><a href="">Menu</a>
             <ul>
+            <li><a href="<?php echo base_url('rekanan')?>">Data Rekanan</a>
+              </li>
               <li><a href="<?php echo base_url('pptk/asettetap')?>">Aset Tetap</a>
               </li>
               <li><a href="<?php echo base_url('pptk/barangpersediaan')?>">Barang Persediaan</a>
-              </li>
-			        <li><a href="#">Profil</a>
               </li>
             </ul>
           </li>

@@ -26,6 +26,8 @@ class Ssh extends CI_Controller {
                     	$data = array(
                             'Kelompok_ssh'=>$this->input->post('Kelompok_ssh'),
                             'Namabarang_ssh'=>$this->input->post('Namabarang_ssh'),
+                            'Jenisbarang_ssh'=>$this->input->post('Jenisbarang_ssh'),
+                            'Ukuran_ssh'=>$this->input->post('Ukuran_ssh'),
                             'Spesifikasi_ssh'=>$this->input->post('Spesifikasi_ssh'),
                             'Satuan_ssh'=>$this->input->post('Satuan_ssh'),
                             'Hargasatuan_ssh'=>$this->input->post('Hargasatuan_ssh'),
@@ -47,6 +49,8 @@ class Ssh extends CI_Controller {
         $data = array(
             'Kelompok_ssh'=>$this->input->post('Kelompok_ssh'),
             'Namabarang_ssh'=>$this->input->post('Namabarang_ssh'),
+            'Jenisbarang_ssh'=>$this->input->post('Jenisbarang_ssh'),
+            'Ukuran_ssh'=>$this->input->post('Ukuran_ssh'),
             'Spesifikasi_ssh'=>$this->input->post('Spesifikasi_ssh'),
             'Satuan_ssh'=>$this->input->post('Satuan_ssh'),
             'Hargasatuan_ssh'=>$this->input->post('Hargasatuan_ssh'),

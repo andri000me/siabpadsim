@@ -60,8 +60,7 @@ $this->load->view('admin/menu');
                     <tr>
                         <th>No</th>                       
                         <th>Kode OPD </th> 
-                        <th>Nama OPD</th>                        
-                        <th>Diinput Oleh</th>
+                        <th>Nama OPD</th>      
                         <th colspan='2'>Aksi</th>
                     </tr>
                 </thead>
@@ -76,7 +75,6 @@ $this->load->view('admin/menu');
                         <td><?php echo $no;?></td>
                         <td><?php echo $item->kode_opd;?></td>
                         <td><?php echo $item->nama_opd;?></td>  
-                        <td><?php echo $item->username;?></td>
                         <td> <a href="<?php echo base_url()?>opd/update/<?php echo $item->id_opd; ?>" class="btn btn-warning" role="button">Update</a></td>
                         <td> <a href="<?php echo base_url()?>opd/hapus/<?php echo $item->id_opd; ?>" onclick="return confirm('Apakah anda yakin?');"class="btn btn-danger" role="button">Delete</a></td>
                     </tr>

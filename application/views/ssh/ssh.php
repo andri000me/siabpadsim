@@ -34,7 +34,7 @@
 
 <?php 
 $this->load->view('include/header'); 
-$this->load->view('sekretaris/barangpersediaan/menu'); 
+$this->load->view('admin/menu'); 
 ?>
 
 </head>
@@ -43,7 +43,7 @@ $this->load->view('sekretaris/barangpersediaan/menu');
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-          <a href="<?php echo base_url('sekretaris/barangpersediaan')?>">Halaman Utama</a>
+          <a href="<?php echo config_item('base_url'); ?>">Halaman Utama</a>
         </li>
   
         <li class="breadcrumb-item active">Daftar Tabel SSH</li>
@@ -64,7 +64,9 @@ $this->load->view('sekretaris/barangpersediaan/menu');
                 <tr class="text-center">
                   <th>No</th>
                   <th>Kelompok SSH</th>
-                  <th>Nama Barang</th>
+                  <th>Jenis Barang</th>
+                  <th>Nama Barang</th>                  
+                  <th>Ukuran</th>
                   <th>Spesifikasi</th>
                   <th>Satuan</th>
                   <th>Harga Satuan</th>
@@ -79,7 +81,9 @@ $this->load->view('sekretaris/barangpersediaan/menu');
                   foreach ($content->result() as $data) : ?>
                   <td><?= $i ?></td>
                   <td><?= $data->Kelompok_ssh ?></td>
+                  <td><?= $data->Jenisbarang_ssh ?></td>
                   <td><?= $data->Namabarang_ssh ?></td>
+                  <td><?= $data->Ukuran_ssh ?></td>
                   <td><?= $data->Spesifikasi_ssh ?></td>
                   <td><?= $data->Satuan_ssh ?></td>
                   <td><?= 'Rp'.number_format($data->Hargasatuan_ssh,0,'.','.')?></td>

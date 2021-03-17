@@ -11,11 +11,11 @@
           <li><a href="#about">About Us</a></li>
           <li class="drop-down"><a href="">Menu</a>
             <ul>
-              <li><a href="#">Manajemen</a>
+              <li><a href="<?php echo base_url('akun')?>">Data Akun</a>
               </li>
-              <li><a href="<?php echo base_url('opd')?>">Manajemen OPD</a>
+              <li><a href="<?php echo base_url('opd')?>">Data OPD</a>
               </li>
-			        <li><a href="<?php echo base_url('akun')?>">Manajemen Akun</a>
+			        <li><a href="<?php echo base_url('ssh')?>">Data SSH</a>
               </li>
             </ul>
           </li>
