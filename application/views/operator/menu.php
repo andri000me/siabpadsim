@@ -11,11 +11,11 @@
           <li><a href="#about">About Us</a></li>
           <li class="drop-down"><a href="">Menu</a>
             <ul>
-              <li><a href="<?php echo base_url('operator/asettetap')?>">Aset Tetap</a>
+              <li><a href="#">Aset Tetap</a>
               </li>
               <li><a href="<?php echo base_url('operator/barangpersediaan')?>">Barang Persediaan</a>
               </li>
-			        <li><a href="<?php echo base_url('profil')?>">Pengaturan Akun</a>
+			        <li><a href="<?php echo base_url()?>login/profil/<?php echo $this->session->userdata('username') ?>">Ganti Kata Sandi</a>
               </li>
             </ul>
           </li>

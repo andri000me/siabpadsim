@@ -9,7 +9,7 @@
          <div class="row">
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="icofont-computer"></i></div>
-            <h4 class="title"><a href="<?php echo base_url('operator/asettetap'); ?>">Aset Tetap</a></h4>
+            <h4 class="title"><a href="#">Aset Tetap</a></h4>
            </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
             <div class="icon"><i class="icofont-chart-bar-graph"></i></div>
@@ -17,7 +17,7 @@
             </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
             <div class="icon"><i class="icofont-settings"></i></div>
-            <h4 class="title"><a href="<?php echo base_url('profil'); ?>">Pengaturan Akun</a></h4>
+            <h4 class="title"><a href="<?php echo base_url()?>login/profil/<?php echo $this->session->userdata('username') ?>">Ganti Kata Sandi</a></h4>
             </div>
 
       </div>
