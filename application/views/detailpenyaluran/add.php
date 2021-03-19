@@ -53,43 +53,26 @@ $this->load->view('pptk/barangpersediaan/menu');
         <div class="card-body">
           <div class="table-responsive">
              <div class="container">
-
-        <form action="<?php echo base_url('pengadaan/action_menambahdatapengadaan')?>" method="post" enctype="multipart/form-data">
-
-             <div class="form-group">
+        <form action="<?php echo base_url()?>listorder/simpan_listorder/<?php echo $hasilparsing; ?>" method="post" enctype="multipart/form-data">
+              <div class="form-group">
               <div class="form-row">
-              <div class="col-md-6">
-                    <label for="tanggal_pesan">Tanggal Pesan</label>
-                    <input class="form-control" id="tanggal_pesan" type="date" aria-describedby="nameHelp" name="tanggal_pesan" required/>
-                  </div>
-                           
                   <div class="col-md-6">
-                    <label for="id_rekanan">Nama Rekanan</label>
-                    <select class="form-control form-control-sm" id="id_rekanan" name="id_rekanan" required />
-                    <option>Silahkan Pilih Nama Rekanan</option>
-                        <?php 
-                        $username = $this->session->userdata('username');
-                        $id_rekanan = $this->db->query("SELECT * FROM tbl_rekanan where username=$username");
+                    <label for="id_ssh">Nama Barang</label>
+                    <select class="form-control form-control-sm" id="id_ssh" name="id_ssh" required />
+                    
+                    <option>Silahkan Pilih Barang</option>
+                        <?php $id_ssh = $this->db->query("SELECT * FROM tbl_ssh");
                 
-                        foreach ($id_rekanan->result() as $id_rekanan) : ?>
-                        
-                        <option value="<?= $id_rekanan->id_rekanan?>"><?= $id_rekanan->nama_rekanan?></option>
+                        foreach ($id_ssh->result() as $id_ssh) : ?>
+                        <option value="<?= $id_ssh->id_ssh?>"><?= $id_ssh->Namabarang_ssh?></option>
                          <?php endforeach; ?>
                        </select>
-                      </div>
-                </div>
-              </div>
-
-            <div class="form-group">
-              <div class="form-row">
-              <div class="col-md-6">
-                    <label for="belanja">Belanja</label>
-                    <input class="form-control" id="belanja" type="text" aria-describedby="nameHelp" name="belanja" required/>
-                  </div>
+                        </div>
                   <div class="col-md-6">
-                    <label for="memesan">Memesan</label>
-                    <input class="form-control" id="memesan" type="text" aria-describedby="nameHelp" name="memesan" required/>
+                    <label for="total_barang">Total Barang</label>
+                    <input class="form-control" id="total_barang" type="text" aria-describedby="nameHelp" name="total_barang" required/>
                   </div>
+                </div>
               </div>
 
               <div class="form-group">

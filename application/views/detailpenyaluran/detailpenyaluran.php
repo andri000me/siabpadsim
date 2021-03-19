@@ -37,77 +37,67 @@ $this->load->view('pptk/barangpersediaan/menu');
 ?>
 
 </head>
+
 <section id="services" class="services">
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-          <a href="<?php echo config_item('base_url'); ?>">Halaman Utama</a>
+        <a href="<?php echo base_url('pptk/barangpersediaan')?>">Halaman Utama</a>
         </li>
   
-        <li class="breadcrumb-item active">Tambah Order Barang</li>
+        <li class="breadcrumb-item active">Detail Penyaluran Barang</li>
       </ol>
-<!-- Example DataTables Card-->
-<div class="card mb-3">
+ <a href="<?php echo base_url()?>detailpenyaluran/tambah/<?php echo $hasilparsing; ?>" class="btn btn-primary" style="margin-bottom: 10px;"><i class="fa fa-plus">Tambah Data</a></i>
+ <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-plus"></i> Menambah Data Order</div>
+          <i class="fa fa-table"></i> Daftar Tabel Detail Penyaluran Barang</div>
+          
         <div class="card-body">
           <div class="table-responsive">
-             <div class="container">
-
-        <form action="<?php echo base_url('pengadaan/action_menambahdatapengadaan')?>" method="post" enctype="multipart/form-data">
-
-             <div class="form-group">
-              <div class="form-row">
-              <div class="col-md-6">
-                    <label for="tanggal_pesan">Tanggal Pesan</label>
-                    <input class="form-control" id="tanggal_pesan" type="date" aria-describedby="nameHelp" name="tanggal_pesan" required/>
-                  </div>
-                           
-                  <div class="col-md-6">
-                    <label for="id_rekanan">Nama Rekanan</label>
-                    <select class="form-control form-control-sm" id="id_rekanan" name="id_rekanan" required />
-                    <option>Silahkan Pilih Nama Rekanan</option>
-                        <?php 
-                        $username = $this->session->userdata('username');
-                        $id_rekanan = $this->db->query("SELECT * FROM tbl_rekanan where username=$username");
-                
-                        foreach ($id_rekanan->result() as $id_rekanan) : ?>
-                        
-                        <option value="<?= $id_rekanan->id_rekanan?>"><?= $id_rekanan->nama_rekanan?></option>
-                         <?php endforeach; ?>
-                       </select>
-                      </div>
-                </div>
-              </div>
-
-            <div class="form-group">
-              <div class="form-row">
-              <div class="col-md-6">
-                    <label for="belanja">Belanja</label>
-                    <input class="form-control" id="belanja" type="text" aria-describedby="nameHelp" name="belanja" required/>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="memesan">Memesan</label>
-                    <input class="form-control" id="memesan" type="text" aria-describedby="nameHelp" name="memesan" required/>
-                  </div>
-              </div>
-
-              <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-2">
-                <input class="form-control btn btn-primary" type="submit" value="Simpan" name="btnSimpan" >
-              </div>
-            </div>
-          </div>
-          </form>
-        </div>
+          <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>No</th> 
+                        <th>Nama Barang</th> 
+                        <th>Total Barang</th>
+                        <th>Satuan</th> 
+                        <th>Harga Satuan</th>                        
+                        <th>Total Harga</th>
+                        <th colspan='2'>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $no=1;
+                    $total=0;
+                    foreach ($hasil as $item)
+                    {
+                      $total += $item->total_barang*$item->Hargasatuan_ssh;
+                    ?>
+                    <tr>
+                        <td><?php echo $no;?></td>
+                        <td><?php echo $item->Namabarang_ssh;?></td>
+                        <td align="center"><?php echo $item->total_barang;?></td>   
+                        <td><?php echo $item->Satuan_ssh;?></td>                    
+                        <td align="right"><?= 'Rp'.number_format($item->Hargasatuan_ssh,0,'.','.');?></td>
+                        <td align="right"><?= 'Rp'.number_format(($item->total_barang)*($item->Hargasatuan_ssh),0,'.','.');?></td> <td align="center"> <a href="<?php echo base_url()?>listorder/update/<?php echo $item->id_order;?>/<?php echo $hasilparsing?>" class="btn btn-warning" role="button">Update</a></td>
+                        <td align="center"> <a href="<?php echo base_url()?>listorder/hapus/<?php echo $item->id_order;?>/<?php echo $hasilparsing?>" onclick="return confirm('Apakah anda yakin?');"class="btn btn-danger" role="button">Delete</a></td>
+                    </tr>
+                    <?php
+                            $no++;
+                    }
+                    ?>
+                </tbody>
+                <tr>
+                        <td align="center" colspan="5">Total</td> 
+                        <td align="right"><?= 'Rp'.number_format($total,0,'.','.')?></td>
+                </tr>
+            </table>
+    </div>
 </div>
 </div>
 </div>
 </div>
-
-
-
 </div>
     </section>
 
