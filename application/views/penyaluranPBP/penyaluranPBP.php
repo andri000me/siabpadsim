@@ -34,7 +34,7 @@
 
 <?php 
 $this->load->view('include/header'); 
-$this->load->view('penggunaanggaran/barangpersediaan/menu'); 
+$this->load->view('pengurusbarangpengguna/barangpersediaan/menu'); 
 ?>
 
 </head>
@@ -43,7 +43,7 @@ $this->load->view('penggunaanggaran/barangpersediaan/menu');
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-          <a href="<?php echo base_url('penggunaanggaran/barangpersediaan')?>">Halaman Utama</a>
+          <a href="<?php echo base_url('pengurusbarangpengguna/barangpersediaan')?>">Halaman Utama</a>
         </li>
   
         <li class="breadcrumb-item active">Data Penyaluran Barang</li>
@@ -63,9 +63,9 @@ $this->load->view('penggunaanggaran/barangpersediaan/menu');
                 <tr class="text-center">
                   <th>No</th>
                   <th>Tanggal Pesan</th>
-                  <th>Diajukan oleh</th>
+                  <th>Diajukan Oleh</th>
                   <th>Keterangan</th>
-                  <th>Status Order</th>           
+                  <th>Status Penyaluran</th>           
                   <th>Tanggal Terima</th>                               
                   <th>Detail Order</th>
                   <th>Opsi</th>
@@ -83,11 +83,12 @@ $this->load->view('penggunaanggaran/barangpersediaan/menu');
                   <td><?= $data->statusorder ?></td>
                   <td><?= $data->tanggalterimabarang ?></td>
                   <td> 
-                    <a href="penyaluranPA/lihatlistpenyaluran/<?php echo $data->id_penyaluran; ?>" class="btn btn-success" style="margin-bottom: 1px;">Lihat<i class="fa fa-tag"></i></a>
+                    <a href="penyaluranPBP/lihatlistpenyaluran/<?php echo $data->id_penyaluran; ?>" class="btn btn-success" style="margin-bottom: 1px;">Lihat<i class="fa fa-tag"></i></a>
                       </td> 
                   <td> 
-                    <a href="penyaluranPA/updateketerangan/<?php echo $data->id_penyaluran; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Disetujui<i class="fa fa-tag"></i></a>
-                    </td> 
+                    <a href="penyaluranPBP/updateketerangan/<?php echo $data->id_penyaluran; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Disetujui<i class="fa fa-tag"></i></a>
+                    <a href="penyaluranPBP/updatestatusorder/<?php echo $data->id_penyaluran; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Sudah Disalurkan<i class="fa fa-tag"></i></a>
+                   </td> 
                 </tr>
                     <?php
                       $i++;
