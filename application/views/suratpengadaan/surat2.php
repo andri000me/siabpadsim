@@ -10,6 +10,9 @@ p {
 table{
     font-size: 12pt;
 }
+h1{
+    text-transform: uppercase;
+}
 </style>
 <?php
 $tanggal = $pengadaan->tanggal_suratpermohonanpenyedia;
