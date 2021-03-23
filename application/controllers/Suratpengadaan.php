@@ -88,6 +88,21 @@ class Suratpengadaan extends CI_Controller {
         
 	}
 
+    function surat3($id_pengadaan)
+	{
+        
+        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_pengadaan);
+
+        $detailpengadaan = $this->model_suratpengadaan->detailpengadaan();
+        if ($detailpengadaan)
+        {
+            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_pengadaan);
+        }
+
+        $this->load->view('suratpengadaan/surat3',$data);
+        
+	}
+
     function surat5($id_pengadaan)
 	{
         
