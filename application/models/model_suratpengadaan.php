@@ -32,6 +32,47 @@ class Model_suratpengadaan extends CI_Model {
       return $this->db->get_where('tbl_pengadaan', array('id_pengadaan' => $id_pengadaan))->row();
     }
 
+    function pengadaan() 
+    {
+        $this->db->order_by('id_pengadaan', 'ASC');
+        $this->db->where('keterangan', "Disetujui");
+        return $this->db->from('tbl_pengadaan')
+          ->get()
+          ->result();
+      
+    }
+
+    function detailpengadaan() 
+    {
+      $this->db->order_by('id_detailpengadaan', 'ASC');
+      return $this->db->from('tbl_detailpengadaan')
+        ->get()
+        ->result();
+    }
+
+    function pengadaan5($id_pengadaan='') 
+    {
+        $this->db->order_by('id_pengadaan', 'ASC');
+        $this->db->where('id_pengadaan', $id_pengadaan);
+        return $this->db->from('tbl_pengadaan')
+          ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_pengadaan.id_rekanan')
+          ->join('tbl_akun','tbl_akun.username=tbl_pengadaan.username')
+          ->join('tbl_opd','tbl_opd.kode_opd=tbl_akun.id_opd')
+          ->get()
+          ->row();
+      
+    }
+
+    function detailpengadaansurat5($id_pengadaan='') 
+    {
+      $this->db->order_by('id_detailpengadaan', 'ASC');
+      $this->db->where('id_pengadaan', $id_pengadaan);
+      return $this->db->from('tbl_detailpengadaan')
+      ->join('tbl_ssh','tbl_ssh.id_ssh=tbl_detailpengadaan.id_ssh')
+        ->get()
+        ->result();
+    }
+
 
 }
 

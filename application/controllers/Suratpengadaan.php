@@ -73,6 +73,24 @@ class Suratpengadaan extends CI_Controller {
         redirect('suratpengadaan');
 	}
 
+    function surat5($id_pengadaan)
+	{
+        
+        $data['pengadaan']= $this->model_suratpengadaan->pengadaan5($id_pengadaan);
+
+        $detailpengadaan = $this->model_suratpengadaan->detailpengadaan();
+        if ($detailpengadaan)
+        {
+            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat5($id_pengadaan);
+        }
+
+        $this->load->view('suratpengadaan/surat5',$data);
+        
+	}
+
+
+   
+
 }
 
 /* End of file ssh.php */

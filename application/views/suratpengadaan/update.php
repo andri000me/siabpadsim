@@ -72,7 +72,7 @@ $this->load->view('operator/barangpersediaan/menu');
                   </div>  
 
                   <div class="col-md-4">
-                  <tr><a href="suratpengadaan/update/<?php echo $ambil->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
+                  <tr><a href="<?php echo base_url('suratpengadaan/surat1/')?><?php echo $ambil->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
                   </div>
 
                 </div>
@@ -90,7 +90,7 @@ $this->load->view('operator/barangpersediaan/menu');
                   </div>  
 
                   <div class="col-md-4">
-                  <tr><a href="suratpengadaan/update/<?php echo $ambil->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
+                  <tr><a href="<?php echo base_url('suratpengadaan/surat2/')?><?php echo $ambil->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
                   </div>
 
                 </div>
@@ -108,7 +108,7 @@ $this->load->view('operator/barangpersediaan/menu');
                   </div>  
 
                   <div class="col-md-4">
-                  <tr><a href="suratpengadaan/update/<?php echo $ambil->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
+                  <tr><a href="<?php echo base_url('suratpengadaan/surat3/')?><?php echo $ambil->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
                   </div>
 
                 </div>
@@ -126,7 +126,7 @@ $this->load->view('operator/barangpersediaan/menu');
                   </div>  
 
                   <div class="col-md-4">
-                  <tr><a href="suratpengadaan/update/<?php echo $ambil->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
+                  <tr><a href="<?php echo base_url('suratpengadaan/surat4/')?><?php echo $ambil->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
                   </div>
 
                 </div>
@@ -144,7 +144,7 @@ $this->load->view('operator/barangpersediaan/menu');
                   </div>  
 
                   <div class="col-md-4">
-                  <tr><a href="suratpengadaan/update/<?php echo $ambil->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
+                  <tr><a href="<?php echo base_url('suratpengadaan/surat5/')?><?php echo $ambil->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
                   </div>
 
                 </div>
@@ -162,7 +162,7 @@ $this->load->view('operator/barangpersediaan/menu');
                   </div>  
 
                   <div class="col-md-4">
-                  <tr><a href="suratpengadaan/update/<?php echo $ambil->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
+                  <tr><a href="<?php echo base_url('suratpengadaan/surat6/')?><?php echo $ambil->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
                   </div>
 
                 </div>
@@ -180,7 +180,7 @@ $this->load->view('operator/barangpersediaan/menu');
                   </div>  
 
                   <div class="col-md-4">
-                  <tr><a href="suratpengadaan/update/<?php echo $ambil->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
+                  <tr><a href="<?php echo base_url('suratpengadaan/surat7/')?><?php echo $ambil->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
                   </div>
 
                 </div>
@@ -198,7 +198,7 @@ $this->load->view('operator/barangpersediaan/menu');
                   </div>  
 
                   <div class="col-md-4">
-                  <tr><a href="suratpengadaan/update/<?php echo $ambil->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
+                  <tr><a href="<?php echo base_url('suratpengadaan/surat8/')?><?php echo $ambil->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
                   </div>
 
                 </div>
@@ -216,7 +216,7 @@ $this->load->view('operator/barangpersediaan/menu');
                   </div>  
 
                   <div class="col-md-4">
-                  <tr><a href="suratpengadaan/update/<?php echo $ambil->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
+                  <tr><a href="<?php echo base_url('suratpengadaan/surat9/')?><?php echo $ambil->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
                   </div>
 
                 </div>
@@ -234,7 +234,7 @@ $this->load->view('operator/barangpersediaan/menu');
                   </div>  
 
                   <div class="col-md-4">
-                  <tr><a href="suratpengadaan/update/<?php echo $ambil->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
+                  <tr><a href="<?php echo base_url('suratpengadaan/surat10/')?><?php echo $ambil->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
                   </div>
 
                 </div>
