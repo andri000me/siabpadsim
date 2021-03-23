@@ -13,7 +13,7 @@
            </div>
             <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
             <div class="icon"><i class="icofont-chart-bar-graph"></i></div>
-            <h4 class="title"><a href="<?php echo base_url('penyaluranPBP'); ?>">Penyaluran Barang</a></h4>
+            <h4 class="title"><a href="<?php echo base_url('penyaluranPA'); ?>">Penyaluran Barang</a></h4>
             </div>
             <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
             <div class="icon"><i class="icofont-chart-bar-graph"></i></div>
