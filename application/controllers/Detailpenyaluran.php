@@ -82,13 +82,7 @@ class Detailpenyaluran extends CI_Controller {
 
 	function hapus($id_detailpenyaluran,$hasilparsing)
     {
-        $data2 =array(
-            'keterangan'=>$this->input->post('keterangan')
-        );
-        $data2['keterangan'] = "Menunggu Konfirmasi";
-        $this->db->where('id_penyaluran', $hasilparsing);
-        $this->db->update('tbl_penyaluran',$data2);
-        
+       
         $this->model_detailpenyaluran->Hapusdetailpenyaluran($id_detailpenyaluran);
         redirect('detailpenyaluran/index/'.$hasilparsing);
     }

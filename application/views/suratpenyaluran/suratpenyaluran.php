@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="wid_sshth=device-wid_sshth, initial-scale=1.0" name="viewport">
 
   <!-- Favicons -->
   <link href="<?php echo base_url('theme/mamba/assets/img/favicon.png')?>" rel="icon">
@@ -23,7 +23,8 @@
 
   <!-- Template Main CSS File -->
   <link href="<?php echo base_url('theme/mamba/assets/css/style.css')?>" rel="stylesheet">
-
+  <link href="<?php echo base_url().'assets/css/jquery.datatables.min.css'?>" rel="stylesheet" type="text/css"/>
+  <link href="<?php echo base_url().'assets/css/dataTables.bootstrap.css'?>" rel="stylesheet" type="text/css"/>
   <!-- =======================================================
   * Template Name: theme/mamba - v2.5.1
   * Template URL: https://bootstrapmade.com/theme/mamba-one-page-bootstrap-template-free/
@@ -33,81 +34,75 @@
 
 <?php 
 $this->load->view('include/header'); 
-$this->load->view('pptk/barangpersediaan/menu'); 
+$this->load->view('operator/barangpersediaan/menu'); 
 ?>
 
 </head>
 
-<section id="services" class="services">
+<section id_rekanan="services" class="services">
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-        <a href="<?php echo base_url('pptk/barangpersediaan')?>">Halaman Utama</a>
+          <a href="<?php echo base_url('operator/barangpersediaan')?>">Halaman Utama</a>
         </li>
   
-        <li class="breadcrumb-item active">Detail Penyaluran Barang</li>
+        <li class="breadcrumb-item active">Data Surat Penyaluran Barang</li>
       </ol>
- <a href="<?php echo base_url()?>detailpenyaluran/tambah/<?php echo $hasilparsing; ?>" class="btn btn-primary" style="margin-bottom: 10px;"><i class="fa fa-plus">Tambah Data</a></i>
- <div class="card mb-3">
+
+      <div class="container">
+      
+  <!-- Example DataTables Card-->
+  <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Daftar Tabel Detail Penyaluran Barang</div>
-          
+          <i class="fa fa-table"></i> Data Surat Penyaluran Barang</div>
         <div class="card-body">
           <div class="table-responsive">
-          <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>No</th> 
-                        <th>Nama Barang</th> 
-                        <th>Total Barang</th>
-                        <th>Satuan</th> 
-                        <th>Harga Satuan</th>                        
-                        <th>Total Harga</th>
-                        <th colspan='2'>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    $no=1;
-                    $total=0;
-                    foreach ($hasil as $item)
-                    {
-                      $total += $item->total_barang*$item->Hargasatuan_ssh;
-                    ?>
-                    <tr>
-                        <td><?php echo $no;?></td>
-                        <td><?php echo $item->Namabarang_ssh;?></td>
-                        <td align="center"><?php echo $item->total_barang;?></td>   
-                        <td><?php echo $item->Satuan_ssh;?></td>                    
-                        <td align="right"><?= 'Rp'.number_format($item->Hargasatuan_ssh,0,'.','.');?></td>
-                        <td align="right"><?= 'Rp'.number_format(($item->total_barang)*($item->Hargasatuan_ssh),0,'.','.');?></td> <td align="center"> <a href="<?php echo base_url()?>detailpenyaluran/update/<?php echo $item->id_detailpenyaluran;?>/<?php echo $hasilparsing?>" class="btn btn-warning" role="button">Update</a></td>
-                        <td align="center"> <a href="<?php echo base_url()?>detailpenyaluran/hapus/<?php echo $item->id_detailpenyaluran;?>/<?php echo $hasilparsing?>" onclick="return confirm('Apakah anda yakin?');"class="btn btn-danger" role="button">Delete</a></td>
-                    </tr>
-                    <?php
-                            $no++;
-                    }
-                    ?>
-                </tbody>
-                <tr>
-                        <td align="center" colspan="5">Total</td> 
-                        <td align="right"><?= 'Rp'.number_format($total,0,'.','.')?></td>
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+            
+                <tr class="text-center">
+                  <th>No</th>
+                  <th>Tanggal Pesan</th>
+                  <th>Diajukan Oleh</th>
+                  <th>Keterangan</th>
+                  <th>Status Order</th>
+                  <th>Opsi</th>
                 </tr>
+              </thead>
+            <tbody  class="text-center">
+                <tr>
+                <?php 
+                  $i = 1;
+                  foreach ($content as $data) : ?>
+                  <td><?= $i ?></td>
+                  <td><?= $data->tanggal_pesan ?></td>
+                  <td><?= $data->nama ?></td>
+                  <td><?= $data->keterangan ?></td>
+                  <td><?= $data->statusorder ?></td>
+                  <td> 
+                    <a href="suratpenyaluran/update/<?php echo $data->id_penyaluran; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Surat<i class="fa fa-tag"></i></a>
+                  </td> 
+                </tr>
+                    <?php
+                      $i++;
+                    endforeach;
+                  ?>
+              </tbody>
             </table>
+          
+          </div>
+        </div>
+      </div>
     </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-    </section>
-
+  </div>
+  
 <?php $this->load->view('include/footer'); ?>
 
 <!-- Vendor JS Files -->
 <script src="<?php echo base_url('theme/mamba/assets/vendor/jquery/jquery.min.js')?>"></script>
   <script src="<?php echo base_url('theme/mamba/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
   <script src="<?php echo base_url('theme/mamba/assets/vendor/jquery.easing/jquery.easing.min.js')?>"></script>
-  <script src="<?php echo base_url('theme/mamba/assets/vendor/php-email-form/validate.js')?>"></script>
+  <script src="<?php echo base_url('theme/mamba/assets/vendor/php-email-form/valid_sshate.js')?>"></script>
   <script src="<?php echo base_url('theme/mamba/assets/vendor/jquery-sticky/jquery.sticky.js')?>"></script>
   <script src="<?php echo base_url('theme/mamba/assets/vendor/venobox/venobox.min.js')?>"></script>
   <script src="<?php echo base_url('theme/mamba/assets/vendor/waypoints/jquery.waypoints.min.js')?>"></script>
@@ -118,3 +113,21 @@ $this->load->view('pptk/barangpersediaan/menu');
 
   <!-- Template Main JS File -->
   <script src="<?php echo base_url('theme/mamba/assets/js/main.js')?>"></script>
+
+  <!-- Bootstrap core JavaScript-->
+
+  <script src="<?php echo base_url('assets/vendor/jquery/jquery.min.js'); ?>"></script>
+
+<script src="<?php echo base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
+<!-- Core plugin JavaScript-->
+<script src="<?php echo base_url('assets/vendor/jquery-easing/jquery.easing.min.js'); ?>"></script>
+
+<!-- Page level plugin JavaScript-->
+<script src="<?php echo base_url('assets/vendor/chart.js/Chart.min.js'); ?>"></script>
+<script src="<?php echo base_url('assets/vendor/datatables/jquery.dataTables.js'); ?>"></script>
+<script src="<?php echo base_url('assets/vendor/datatables/dataTables.bootstrap4.js'); ?>"></script>
+<!-- Custom scripts for all pages-->
+<script src="<?php echo base_url('assets/js/sb-admin.min.js'); ?>"></script>
+<!-- Custom scripts for this page-->
+<script src="<?php echo base_url('assets/js/sb-admin-datatables.min.js'); ?>"></script>
+<script src="<?php echo base_url('assets/js/sb-admin-charts.min.js'); ?>"></script>

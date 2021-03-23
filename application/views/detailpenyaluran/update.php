@@ -44,20 +44,20 @@ $this->load->view('sekretaris/barangpersediaan/menu');
           <a href="<?php echo config_item('base_url'); ?>">Halaman Utama</a>
         </li>
   
-        <li class="breadcrumb-item active">Update Data Order Barang</li>
+        <li class="breadcrumb-item active">Update Data Penyaluran</li>
       </ol>
 
       
 <!-- Example DataTables Card-->
 <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-plus"></i> Update Data Order Barang</div>
+          <i class="fa fa-plus"></i> Update Data Order Penyaluran</div>
         <div class="card-body">
           <div class="table-responsive">
              <div class="container">
 
-        <form action="<?php echo base_url()?>listorder/simpan_update/<?php echo $hasilparsing; ?>/<?php echo $ambil->id_order; ?>" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="id_order"  value="<?php echo $ambil->id_order; ?>" />
+        <form action="<?php echo base_url()?>detailpenyaluran/simpan_update/<?php echo $hasilparsing; ?>/<?php echo $ambil->id_detailpenyaluran; ?>" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id_detailpenyaluran"  value="<?php echo $ambil->id_detailpenyaluran; ?>" />
        
               
             

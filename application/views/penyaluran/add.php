@@ -44,12 +44,12 @@ $this->load->view('pptk/barangpersediaan/menu');
           <a href="<?php echo config_item('base_url'); ?>">Halaman Utama</a>
         </li>
   
-        <li class="breadcrumb-item active">Tambah Order Barang</li>
+        <li class="breadcrumb-item active">Tambah Data Penyaluran</li>
       </ol>
 <!-- Example DataTables Card-->
 <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-plus"></i> Menambah Data Order Barang</div>
+          <i class="fa fa-plus"></i> Menambah Data Penyaluran</div>
         <div class="card-body">
           <div class="table-responsive">
              <div class="container">
