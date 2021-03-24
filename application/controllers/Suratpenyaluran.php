@@ -57,6 +57,36 @@ class Suratpenyaluran extends CI_Controller {
         redirect('suratpenyaluran');
 	}
 
+    function surat1($id_penyaluran)
+	{
+        
+        $data['penyaluran']= $this->model_suratpenyaluran->penyaluran($id_penyaluran);
+
+        $detailpenyaluran = $this->model_suratpenyaluran->detailpenyaluran();
+        if ($detailpenyaluran)
+        {
+            $data['detailpenyaluran'] = $this->model_suratpenyaluran->detailpenyaluransurat($id_penyaluran);
+        }
+
+        $this->load->view('suratpenyaluran/surat1',$data);
+        
+	}
+
+    function surat2($id_penyaluran)
+	{
+        
+        $data['penyaluran']= $this->model_suratpenyaluran->penyaluran($id_penyaluran);
+
+        $detailpenyaluran = $this->model_suratpenyaluran->detailpenyaluran();
+        if ($detailpenyaluran)
+        {
+            $data['detailpenyaluran'] = $this->model_suratpenyaluran->detailpenyaluransurat($id_penyaluran);
+        }
+
+        $this->load->view('suratpenyaluran/surat2',$data);
+        
+	}
+
 }
 
 /* End of file ssh.php */

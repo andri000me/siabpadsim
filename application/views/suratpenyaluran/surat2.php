@@ -12,7 +12,7 @@ table{
 }
 </style>
 <?php
-$tanggal = $pengadaan->tanggal_bappk;
+$tanggal = $penyaluran->tanggal_bapenyaluranbarang;
 $tgl = date("d-m-Y", strtotime($tanggal));
 
 $hari = date("l", strtotime($tanggal)); 
@@ -111,9 +111,9 @@ $tahun = $tahun_indonesia[$tahun];
 <td>
 <td>
 <h3 class="jarak-lh" align="center">PEMERINTAH KOTA PADANGSIDIMPUAN</h3>
-<h1 class="jarak-lh" align="center"><?php echo $pengadaan->nama_opd; ?></h1>
-<p class="jarak-lh" align="center"><?php echo $pengadaan->alamat_kop_opd; ?></p>
-<p class="jarak-lh" align="center"><?php echo $pengadaan->kecamatan_opd; ?></p>
+<h1 class="jarak-lh" align="center"><?php echo $penyaluran->nama_opd; ?></h1>
+<p class="jarak-lh" align="center"><?php echo $penyaluran->alamat_kop_opd; ?></p>
+<p class="jarak-lh" align="center"><?php echo $penyaluran->kecamatan_opd; ?></p>
 <td>
 </tr>
 <tr>
@@ -125,47 +125,48 @@ $tahun = $tahun_indonesia[$tahun];
 </head>
 
 <body>
-<p class="jarak-lh" align="center"><u>BERITA ACARA SERAH TERIMA BARANG</u></p>
-<p class="jarak-lh" align="center">Nomor : <?php echo $pengadaan->no_bappk; ?> </p>
+<table  align="right">
+<tr><td>No <?php echo $penyaluran->no_bapenyaluranbarang; ?></td></tr>
+</table>
+<table align="left">
+<tr><td><?php echo $penyaluran->nama_opd; ?></td></tr>
+</table>
 <br>
- <p> Pada hari ini <?php echo $hari;?> tanggal <?php echo $tanggalhuruf;?> bulan <?php echo $bulanhuruf;?> tahun <?php echo $tahun;?>, kami yang bertandatangan di bawah ini :   </p>
-
- <table>
-<tr><p><td>&nbsp &nbsp &nbspNama</td>	<td>:</td> <td><?php echo $pengadaan->nama_ppk; ?></td></p></tr>
-<tr><p><td>&nbsp &nbsp &nbspJabatan</td>	<td>:</td> <td> Pejabat Pembuat Komitmen </td></p></tr>
+<br>
+<table align="center">
+<tr><td>BUKTI PENYALURAN BARANG</td></tr>
 </table>
-<p class="jarak-lh"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Selaku Pejabat Pembuat Komitmen (PPK)  </p>
-<table>
-<tr><p><td>&nbsp &nbsp &nbspNama</td>	<td>:</td> <td><?php echo $pengadaan->nama_kepala; ?></td></p></tr>
-<tr><p><td>&nbsp &nbsp &nbspJabatan</td>	<td>:</td><td> Pengguna Anggaran</td></p></tr>
-</table>
-<p class="jarak-lh"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Selaku Pengguna Anggaran (PA)  </p>
-<p>Sesuai dengan Surat Perintah Pengiriman (SPP) / Surat Perintah Kerja (SPK) / Surat Perjanjian (SP) Nomor : <?php echo $pengadaan->no_suratperintahpengiriman; ?> Tanggal <?php echo date("d-m-Y", strtotime($pengadaan->tanggal_suratperintahpengiriman)) ; ?> telah menerima barang yang diserahkan oleh rekanan <?php echo $pengadaan->nama_rekanan; ?> dalam keadaan baik dan cukup sebagaimana tersebut dibawah ini :  </p>
+<br><br><br>
+<tr>
 
-<table border="1" align="center">
+<table border="1" align="center" style="width:100%">
                     <tr>
-                        <th>No</th>
-                        <th>Uraian/Nama Barang</th>
-                        <th>Banyaknya</th> 
-                        <th>Satuan</th> 
-                        <th>Keterangan</th> 
+                        <th>Tanggal Penyerahan Barang Menurut Permintaan</th>
+                        <th>Nama Barang</th>
+                        <th>Unit</th>
+                        <th>Harga Satuan</th> 
+                        <th>Jumlah (Rp.)</th>
+                        <th>Kepada</th>
+                        <th>Keterangan</th>
                     </tr>
                 </thead>
                 <tbody>
                 <?php
                     $no = 1 ;
                     $total = 0;
-                    foreach ($detailpengadaan as $item)
+                    foreach ($detailpenyaluran as $item)
                     {
                         $total += $item->total_barang*$item->Hargasatuan_ssh;
                     ?>
                     <tr>
-                        <td align="center"><?= $no;?></td>
+                        <td align="center"><?php echo $penyaluran->tanggal_bapenyaluranbarang; ?></td>
                         <td><?= $item->Namabarang_ssh;?></td>
                         <td align="center"><?= $item->total_barang;?></td>
-                        <td align="center"><?= $item->Satuan_ssh;?></td>
-                        <td align="center"><?= $item->Spesifikasi_ssh;?></td>
-                        
+                        <td align="right"><?= 'Rp'.number_format($item->Hargasatuan_ssh,0,'.','.'); ?></td>
+                        <td align="right"><?= 'Rp'.number_format($item->total_barang*$item->Hargasatuan_ssh,0,'.','.'); ?></td>
+                        <td align="right"><?= $item->nama;?></td>
+                        <td align="right"><?= $item->Spesifikasi_ssh;?></td>
+                    
                     </tr>
                     <?php
                             $no++;
@@ -173,25 +174,45 @@ $tahun = $tahun_indonesia[$tahun];
                     ?>  
                 </tbody>
             </table>
-<p> Demikian Berita Acara ini dibuat untuk dapat dipergunakan sebagaimana mestinya.   </p>                      
-<table  align="right">
-<tr><td>Padangsidimpuan, <?php echo $tanggalsurat; ?> <?php echo $bulannama;?> <?php echo $tahunsurat;?></td></tr>
+<tr height="30"><br></tr>
+            <table  align="right">
+<tr><td>Dibuat di Padang Sidempuan, <?php echo $tanggalsurat; ?> <?php echo $bulannama;?> <?php echo $tahunsurat;?></td></tr>
 </table>
-</body>
-
-<footer>
 <br><br>
 <table  align="left">
-<tr><td>Yang Menyerahkan </td></tr>
-<tr><td>Pejabat Pembuat Komitmen </td></tr>
-<tr height="75px"></tr><td><u><?php echo $pengadaan->nama_ppk; ?></u></td></tr>
-<tr><td>Direktur</td></tr></table>
+<tr><td>Yang Menerima</td></tr>
+<tr height="75px"></tr><td>(<?php echo $penyaluran->nama; ?>)</td></tr>
+<tr><td>NIP. <?php echo $penyaluran->nip_pptk; ?></td></tr></table>
     
     <table  align="right">
-<tr><td>Diterima </td></tr>
-<tr><td> Pengguna Anggaran </td></tr>
-<tr height="75px"></tr><td><?php echo $pengadaan->nama_kepala; ?></td></tr>
-<tr><td>NIP. <?php echo $pengadaan->nip_kepala; ?></td></tr></table>
-</footer>
+<tr><td>Yang Menyerahkan</td></tr>
+<tr><td>Pengurus Barang</td></tr>
+<tr height="75px"></tr><td>(<?php echo $penyaluran->nama_pbp; ?>)</td></tr>
+<tr><td>NIP. <?php echo $penyaluran->nip_pbp; ?></td></tr></table>
+
+    </tr>
+    <br>
+<br><br><br><br><br><br><br><br>
+<table align="center"
+>
+<tr><td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspMengetahui</td></tr>
+<tr><td>PEJABAT PENATAUSAHAAN BARANG</td></tr>
+<tr height="75px"></tr><td>&nbsp &nbsp (<?php echo $penyaluran->nama_ppb; ?>)</td></tr>
+<tr><td>&nbsp &nbspNIP. <?php echo $penyaluran->nip_ppb; ?></td></tr>
+</table>
+
+    
+           
+</body>
 
 </html>
+
+
+
+
+
+
+
+
+
+   

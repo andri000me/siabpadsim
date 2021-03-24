@@ -149,6 +149,82 @@ class Suratpengadaan extends CI_Controller {
         
 	}
 
+    function surat6($id_pengadaan)
+	{
+        
+        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_pengadaan);
+
+        $detailpengadaan = $this->model_suratpengadaan->detailpengadaan();
+        if ($detailpengadaan)
+        {
+            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_pengadaan);
+        }
+
+        $this->load->view('suratpengadaan/surat6',$data);
+        
+	}
+
+    function surat7($id_pengadaan)
+	{
+        
+        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_pengadaan);
+
+        $detailpengadaan = $this->model_suratpengadaan->detailpengadaan();
+        if ($detailpengadaan)
+        {
+            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_pengadaan);
+        }
+
+        $this->load->view('suratpengadaan/surat7',$data);
+        
+	}
+
+    function surat8($id_pengadaan)
+	{
+        
+        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_pengadaan);
+
+        $detailpengadaan = $this->model_suratpengadaan->detailpengadaan();
+        if ($detailpengadaan)
+        {
+            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_pengadaan);
+        }
+
+        $this->load->view('suratpengadaan/surat8',$data);
+        
+	}
+
+   
+
+    function surat9($id_pengadaan)
+	{
+        
+        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_pengadaan);
+
+        $detailpengadaan = $this->model_suratpengadaan->detailpengadaan();
+        if ($detailpengadaan)
+        {
+            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_pengadaan);
+        }
+
+        $this->load->view('suratpengadaan/surat9',$data);
+        
+	}
+
+    function surat10($id_pengadaan)
+	{
+        
+        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_pengadaan);
+
+        $detailpengadaan = $this->model_suratpengadaan->detailpengadaan();
+        if ($detailpengadaan)
+        {
+            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_pengadaan);
+        }
+
+        $this->load->view('suratpengadaan/surat10',$data);
+        
+	}
 
    
 

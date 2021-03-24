@@ -161,10 +161,7 @@ $tahun = $tahun_indonesia[$tahun];
                     }
                     ?>
                 </tbody>
-                <tr>
-                        <td align="center" colspan="4">Total</td> 
-                        <td><?= 'Rp'.number_format($total,0,'.','.')?></td>
-                </tr>
+                x
             </table>
             <table>
 <tr><p>Hasil pemeriksaan dinyatakan : </p></tr>  

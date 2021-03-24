@@ -72,7 +72,7 @@ $this->load->view('operator/barangpersediaan/menu');
                   </div>  
 
                   <div class="col-md-4">
-                  <tr><a href="suratpenyaluran/update/<?php echo $ambil->id_penyaluran; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
+                  <tr><a href="<?php echo base_url('suratpenyaluran/surat1/')?><?php echo $ambil->id_penyaluran; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
                   </div>
 
                 </div>
@@ -85,12 +85,12 @@ $this->load->view('operator/barangpersediaan/menu');
                   </div>
 
                   <div class="col-md-6">
-                    <label for="no_bapenyaluranbarang">Berita Acara Penyaluran Barangs</label>
+                    <label for="no_bapenyaluranbarang">Berita Acara Penyaluran Barang</label>
                     <input value="<?php echo $ambil->no_bapenyaluranbarang; ?>"class="form-control" id="no_bapenyaluranbarang" type="text" aria-describedby="nameHelp" name="no_bapenyaluranbarang" />
                   </div>  
 
                   <div class="col-md-4">
-                  <tr><a href="suratpenyaluran/update/<?php echo $ambil->id_penyaluran; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
+                  <tr><a href="<?php echo base_url('suratpenyaluran/surat2/')?><?php echo $ambil->id_penyaluran; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
                   </div>
 
                 </div>
