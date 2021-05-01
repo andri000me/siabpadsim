@@ -18,23 +18,23 @@
            </div>
            <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
             <div class="icon"><i class="icofont-chart-bar-graph"></i></div>
-            <h4 class="title"><a href="<?= base_url('laporanbukubarangpersediaan'); ?>">Laporan Buku</a></h4>
+            <h4 class="title"><a href="<?= base_url('laporan/buku'); ?>">Laporan Buku</a></h4>
             </div>
 </div><br><br><br>
 
 <div class="row">
 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
 <div class="icon"><i class="icofont-chart-bar-graph"></i></div>
-<h4 class="title"><a href="<?= base_url('laporanpenerimaanbarangpersediaan'); ?>">Laporan Penerimaan</a></h4>
+<h4 class="title"><a href="<?= base_url('laporan/penerimaan'); ?>">Laporan Penerimaan</a></h4>
 </div>
 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
 <div class="icon"><i class="icofont-chart-bar-graph"></i></div>
-<h4 class="title"><a href="<?= base_url('laporanpengeluaranbarangpersediaan'); ?>">Laporan Pengeluaran</a></h4>
+<h4 class="title"><a href="<?= base_url('laporan/pengeluaran'); ?>">Laporan Pengeluaran</a></h4>
 </a></h4>
 </div>
 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
 <div class="icon"><i class="icofont-chart-bar-graph"></i></div>
-<h4 class="title"><a href="<?= base_url('laporanrekapitulasibarangpersediaan'); ?>">Laporan Rekapitulasi</a></h4>
+<h4 class="title"><a href="<?= base_url('laporan/rekapitulasi'); ?>">Laporan Rekapitulasi</a></h4>
 </div>
 </div><br><br><br>
       
