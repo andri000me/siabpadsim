@@ -21,15 +21,8 @@
   <link href="<?php echo base_url('theme/mamba/assets/vendor/owl.carousel/assets/owl.carousel.min.css')?>" rel="stylesheet">
   <link href="<?php echo base_url('theme/mamba/assets/vendor/aos/aos.css')?>" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
   <link href="<?php echo base_url('theme/mamba/assets/css/style.css')?>" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: theme/mamba - v2.5.1
-  * Template URL: https://bootstrapmade.com/theme/mamba-one-page-bootstrap-template-free/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <link href="<?php echo config_item('datatables'); ?>dataTables.bootstrap4.css" rel="stylesheet">
   
 <!-- ======= Top Bar ======= -->
 <section id="topbar" class="d-none d-lg-block">
