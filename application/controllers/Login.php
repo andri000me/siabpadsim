@@ -12,12 +12,11 @@ class Login extends CI_Controller {
 		$this->load->model('model_login');
 		$this->load->library('session');
 	}
+	
 	public function index()
 	{
 		if ($this->session->userdata('level') == "Admin") {
-			redirect('Admin','refresh');
-		} elseif ($this->session->userdata('level') == "Pengguna Anggaran") {
-			redirect('penggunaanggaran','refresh');
+			redirect('admin','refresh');
         } elseif ($this->session->userdata('level') == "Operator") {
 			redirect('operator','refresh');
 			} elseif ($this->session->userdata('level') == "PPTK") {
@@ -43,8 +42,6 @@ class Login extends CI_Controller {
 				$this->session->set_userdata('nama', $row->nama);
 				if ($this->session->userdata('level') == "Admin") {
 					redirect('admin','refresh');
-				} elseif ($this->session->userdata('level') == "Pengguna Anggaran") {
-					redirect('penggunaanggaran','refresh');
 				} elseif ($this->session->userdata('level') == "Operator") {
 					redirect('operator','refresh');
 				} elseif ($this->session->userdata('level') == "PPTK") {
@@ -55,13 +52,14 @@ class Login extends CI_Controller {
 			}
 		}
 				 else {
-					$this->load->view('login/login');
+					redirect('login','refresh');
 				}
     }
 
+	
+/*
 	public function profil()
 	{
-		
 			$username=$this->session->userdata('username');
 			$this->db->where('username', $username);
             $data['ambil'] = $this->db->get('tbl_akun');
@@ -76,6 +74,8 @@ class Login extends CI_Controller {
         $this->model_login->updatepassword($data, $username);
         redirect('login/profil');
 	}
+*/
+
 }
 /* End of file Login.php */
 /* Location: ./application/controllers/Login.php */

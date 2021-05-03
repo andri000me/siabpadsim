@@ -17,7 +17,7 @@
             </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
             <div class="icon"><i class="icofont-settings"></i></div>
-            <h4 class="title"><a href="<?php echo base_url()?>login/profil/<?php echo $this->session->userdata('username') ?>">Ganti Kata Sandi</a></h4>
+            <h4 class="title"><a href="<?= base_url('gantipassword');?>">Ganti Kata Sandi</a></h4>
             </div>
 
       </div>

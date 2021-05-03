@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Model_login extends CI_Model {
 
+	public function __construct()
+	{
+		parent::__construct();
+        $this->load->library('session');
+	}
+
 	public function action_login($username, $password)
 		{
 			$this->db->select('username,password,level,id_opd,nama');
@@ -26,11 +32,18 @@ class Model_login extends CI_Model {
 			return $this->db->get_where('tbl_akun', array('username' => $username))->row();
 		}
 
-		public function updatepassword($data)
+		function Getgantipassword()
+    	{
+		$username = $this->session->userdata('username');
+        $this->db->where('username', $username);
+        return $this->db->from('tbl_akun')
+    		->get();
+		}
+
+		public function updatedatachangepassword($data, $id)
 		{
-			$username = $this->uri->segment(3);
-			$this->db->where('username', $username);
-			$this->db->update('tbl_akun', $data);
+		$this->db->where('id', $id);
+		$this->db->update('tbl_akun', $data);
 		}
 }
 
