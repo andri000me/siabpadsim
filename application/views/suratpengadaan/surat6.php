@@ -1,6 +1,14 @@
 <html>
 <head>
 <style>
+@media print 
+{
+   @page 
+
+   {
+    size: 8.27in 12.99in;
+  }
+}
 .jarak-lh{
   line-height:10px;
 }
