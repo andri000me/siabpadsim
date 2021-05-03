@@ -9,18 +9,19 @@ class Index extends CI_Controller {
 		//Do your magic here
 		$this->load->library('session');
 	}
+	
 	public function index()
 	{
-		if ($this->session->userdata('level') == "Kepala") {
-			$this->load->view('kepala','refresh');
-		} elseif ($this->session->userdata('level') == "Sekretaris") {
-			redirect('sekretaris','refresh');
-		} elseif ($this->session->userdata('level') == "User") {
-			redirect('user','refresh');
+		if ($this->session->userdata('level') == "PPTK") {
+			redirect('pptk','refresh');
+		} elseif ($this->session->userdata('level') == "Pengurus Barang Pengguna") {
+			redirect('pengurusbarangpengguna','refresh');
+		} elseif ($this->session->userdata('level') == "Operator") {
+			redirect('operator','refresh');
 		} elseif ($this->session->userdata('level') == "Admin") {
 			redirect('admin','refresh');
 		} else {
-			$this->load->view('login/login');
+			redirect('login','refresh');
 		}
 	}
 

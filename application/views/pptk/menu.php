@@ -15,7 +15,7 @@
               </li>
               <li><a href="<?php echo base_url('pptk/barangpersediaan')?>">Barang Persediaan</a>
               </li>
-			        <li><a href="<?php echo base_url()?>login/profil/<?php echo $this->session->userdata('username') ?>">Ganti Kata Sandi</a>
+			        <li><a href="<?= base_url('gantipassword');?>">Ganti Kata Sandi</a>
               </li>
             </ul>
           </li>

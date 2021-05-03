@@ -1,35 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <!-- Favicons -->
-  <link href="<?php echo base_url('theme/mamba/assets/img/favicon.png')?>" rel="icon">
-  <link href="<?php echo base_url('theme/mamba/assets/img/apple-touch-icon.png')?>" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="<?php echo base_url('theme/mamba/assets/vendor/bootstrap/css/bootstrap.min.css')?>" rel="stylesheet">
-  <link href="<?php echo base_url('theme/mamba/assets/vendor/icofont/icofont.min.css')?>" rel="stylesheet">
-  <link href="<?php echo base_url('theme/mamba/assets/vendor/boxicons/css/boxicons.min.css')?>" rel="stylesheet">
-  <link href="<?php echo base_url('theme/mamba/assets/vendor/animate.css/animate.min.css')?>" rel="stylesheet">
-  <link href="<?php echo base_url('theme/mamba/assets/vendor/venobox/venobox.css')?>" rel="stylesheet">
-  <link href="<?php echo base_url('theme/mamba/assets/vendor/owl.carousel/assets/owl.carousel.min.css')?>" rel="stylesheet">
-  <link href="<?php echo base_url('theme/mamba/assets/vendor/aos/aos.css')?>" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="<?php echo base_url('theme/mamba/assets/css/style.css')?>" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: theme/mamba - v2.5.1
-  * Template URL: https://bootstrapmade.com/theme/mamba-one-page-bootstrap-template-free/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 
 <?php 
 $this->load->view('include/header'); 
@@ -43,7 +12,7 @@ $this->load->view('include/header');
           <a href="<?php echo config_item('base_url'); ?>">Halaman Utama</a>
         </li>
   
-        <li class="breadcrumb-item active">Update Password</li>
+        <li class="breadcrumb-item active">Ganti Password</li>
       </ol>
 <!-- Example DataTables Card-->
 <?php foreach ($ambil->result() as $data) {
@@ -52,18 +21,22 @@ $this->load->view('include/header');
 
 <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-plus"></i> Update Data </div>
+        <?php echo $this->session->flashdata('msg'); ?>
+          <i class="fa fa-plus"></i> Ganti Password </div>
         <div class="card-body">
           <div class="table-responsive">
              <div class="container">
 
-        <form action="<?php echo config_item('base_url'); ?>/login/simpan_updatepassword/<?= $data->username?>" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="username"  value="<?= $data->username?>" />
+        <form action="<?php echo config_item('base_url'); ?>/gantipassword/simpan_updatepassword/<?= $data->id?>" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id"  value="<?= $data->id?>" />
         <div class="form-group">
               <div class="form-row">
                   <div class="col-md-6">
-                    <label for="passwordbaru">Password Baru</label>
-                    <input class="form-control" id="password" type="text" aria-describedby="nameHelp" name="password" required/>
+                    <label for="passwordlama">Password Lama</label>
+                    <input class="form-control" id="passwordlama" type="text" aria-describedby="nameHelp" name="passwordlama" required/>
+                  </div>
+                  <div class="col-md-6">
+                    <input value="<?= $data->password?>" type="hidden" class="form-control" id="password" type="text" aria-describedby="nameHelp" name="password" required/>
                   </div>
                   
                 </div>
@@ -71,11 +44,19 @@ $this->load->view('include/header');
 
               <div class="form-group">
               <div class="form-row">
+
               
-              <div class="col-md-6">
-                    <label for="konfirmasipasswordbaru">Konfirmasi Password Baru</label>
-                    <input class="form-control" id="konfirmasipasswordbaru" type="text" aria-describedby="nameHelp" name="konfirmasipasswordbaru" required/>
+                  <div class="col-md-6">
+                    <label for="passwordbaru1">Password Baru</label>
+                    <input class="form-control" id="passwordbaru1" type="text" aria-describedby="nameHelp" name="passwordbaru1" required/>
                   </div>
+              
+                  <div class="col-md-6">
+                    <label for="passwordbaru2">Konfirmasi Password Baru</label>
+                    <input class="form-control" id="passwordbaru2" type="text" aria-describedby="nameHelp" name="passwordbaru2" required/>
+                  </div>
+
+                  
                 </div>
               </div>
               <div class="form-group">
