@@ -20,6 +20,7 @@ h1{
 }
 table{
     font-size: 12pt;
+    border-collapse: collapse;
 }
 .hurufkapital{
     text-transform: uppercase;

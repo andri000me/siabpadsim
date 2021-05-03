@@ -17,6 +17,7 @@ p {
 }
 table{
     font-size: 12pt;
+    border-collapse: collapse;
 }
 h1{
     text-transform: uppercase;
