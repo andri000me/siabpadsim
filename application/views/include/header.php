@@ -22,8 +22,10 @@
   <link href="<?php echo base_url('theme/mamba/assets/vendor/aos/aos.css')?>" rel="stylesheet">
 
   <link href="<?php echo base_url('theme/mamba/assets/css/style.css')?>" rel="stylesheet">
-  <link href="<?php echo config_item('datatables'); ?>dataTables.bootstrap4.css" rel="stylesheet">
   
+  <link href="<?php echo base_url().'assets/css/jquery.datatables.min.css'?>" rel="stylesheet" type="text/css"/>
+  <link href="<?php echo base_url().'assets/css/dataTables.bootstrap.css'?>" rel="stylesheet" type="text/css"/>
+ 
 <!-- ======= Top Bar ======= -->
 <section id="topbar" class="d-none d-lg-block">
     <div class="container clearfix">

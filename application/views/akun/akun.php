@@ -7,7 +7,7 @@ $this->load->view('admin/menu');
 
 </head>
 
-<section id="services" class="services">
+<section id_akun="services" class="services">
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
@@ -16,15 +16,18 @@ $this->load->view('admin/menu');
   
         <li class="breadcrumb-item active">Manajemen Akun</li>
       </ol>
+      
+      <div class="container"> 
  <a href="<?php echo base_url('akun/tambah')?>" class="btn btn-primary" style="margin-bottom: 10px;"><i class="fa fa-plus">Tambah Data</a></i>
      
  <div class="card mb-3">
         <div class="card-header">
+        <?php echo $this->session->flashdata('msg'); ?>
           <i class="fa fa-table"></i> Daftar Tabel Akun</div>
           
         <div class="card-body">
           <div class="table-responsive">
-          <table class="table table-bordered">
+          <table class="table table-bordered" id="example">
                 <thead>
                     <tr>
                         <th> No</th> 

@@ -26,7 +26,7 @@ $this->load->view('kepala/barangpersediaan/menu');
           
         <div class="card-body">
           <div class="table-responsive">
-          <table class="table table-bordered">
+          <table class="table table-bordered" id="example" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>No</th> 

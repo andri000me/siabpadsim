@@ -25,7 +25,7 @@ $this->load->view('operator/barangpersediaan/menu');
           <i class="fa fa-table"></i> Data Surat Pengadaan Barang</div>
         <div class="card-body">
           <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <table class="table table-bordered" id="example" width="100%" cellspacing="0">
               <thead>
             
                 <tr class="text-center">
