@@ -5,8 +5,20 @@ class Model_rekanan extends CI_Model {
     public function __construct()
 	{
 		parent::__construct();
-		//Do your magic here
+		
+		$this->load->library('session');
 	}
+
+	function Tampilrekanan() 
+    {
+		
+		$id_opd=$this->session->userdata('id_opd');
+        $this->db->order_by('nama_rekanan', 'ASC');
+        $this->db->where('tbl_rekanan.id_opd', $id_opd);
+        return $this->db->from('tbl_rekanan')
+			->join('tbl_akun','tbl_akun.username=tbl_rekanan.username') 
+			->get();
+    }
 
 	public function menambahdatarekanan($data)
 	{

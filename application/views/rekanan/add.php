@@ -10,7 +10,7 @@ $this->load->view('asettetap/menu');
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-          <a href="<?php echo config_item('base_url'); ?>">Halaman Utama</a>
+          <a href="<?php echo base_url('rekanan')?>">Data Rekanan</a>
         </li>
   
         <li class="breadcrumb-item active">Tambah Data Rekanan</li>
@@ -30,19 +30,19 @@ $this->load->view('asettetap/menu');
                            
                   
                   <div class="col-md-6">
-                    <label for="nama_pimpinan">Nama Pimpnan</label>
+                    <label for="nama_pimpinan">Nama Pimpinan</label>
                     <input class="form-control" id="nama_pimpinan" type="text" aria-describedby="nameHelp" name="nama_pimpinan" required/>
                   </div>
-                  <div class="col-md-6">
-                    <label for="nama_rekanan">Nama Rekanan</label>
-                    <input class="form-control" id="nama_rekanan" type="text" aria-describedby="nameHelp" name="nama_rekanan" required/>
-                  </div>
+                  
                 </div>
               </div>
 
               <div class="form-group">
               <div class="form-row">
-                                     
+              <div class="col-md-6">
+                    <label for="nama_rekanan">Nama Rekanan</label>
+                    <input class="form-control" id="nama_rekanan" type="text" aria-describedby="nameHelp" name="nama_rekanan" required/>
+                  </div>          
                   
 
                   <div class="col-md-6">
