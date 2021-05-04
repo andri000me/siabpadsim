@@ -6,8 +6,7 @@ class Model_akun extends CI_Model {
     {
         $this->db->order_by('id', 'ASC');
         return $this->db->from('tbl_akun')
-          ->get()
-          ->result();
+          ->get();
     }
 
     function GetId($id = '')

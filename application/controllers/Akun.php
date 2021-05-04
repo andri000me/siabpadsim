@@ -12,7 +12,7 @@ class Akun extends CI_Controller {
 
 	function index()
 	{
-		$data['hasil']=$this->model_akun->Tampilakun();
+		$data['content']=$this->model_akun->Tampilakun();
 			$this->load->view('akun/akun',$data);
 	}
 	

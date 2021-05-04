@@ -12,7 +12,7 @@ class Opd extends CI_Controller {
 
 	function index()
 	{
-		$data['hasil']=$this->model_opd->TampilOpd();
+		$data['content']=$this->model_opd->TampilOpd();
 			$this->load->view('opd/opd',$data);
 	}
 	
