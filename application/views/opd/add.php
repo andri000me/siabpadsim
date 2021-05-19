@@ -28,54 +28,28 @@ $this->load->view('admin/menu');
              
               <div class="form-group">
               <div class="form-row">                  
+                  
+                  <div class="col-md-6">
+                    <label for="id_opd">Kode OPD</label>
+                    <input class="form-control" id="id_opd" type="text" aria-describedby="nameHelp" name="id_opd" required/>
+                  </div>
                   <div class="col-md-6">
                     <label for="nama_opd">Nama OPD</label>
                     <input class="form-control" id="nama_opd" type="text" aria-describedby="nameHelp" name="nama_opd" required/>
                   </div>
                   <div class="col-md-6">
-                    <label for="kode_opd">Kode OPD</label>
-                    <input class="form-control" id="kode_opd" type="text" aria-describedby="nameHelp" name="kode_opd" required/>
+                    <label for="alamat_opd">Alamat</label>
+                    <input class="form-control" id="alamat_opd" type="text" aria-describedby="nameHelp" name="alamat_opd" required/>
                   </div>
                   <div class="col-md-6">
-                    <label for="nip_kepala">Nip Kepala</label>
-                    <input class="form-control" id="nip_kepala" type="text" aria-describedby="nameHelp" name="nip_kepala" required/>
-                  </div>
+                    <label for="kecamatan_opd">Kecamatan</label>
+                    <input class="form-control" id="kecamatan_opd" type="text" aria-describedby="nameHelp" name="kecamatan_opd" required/>
+                  </div>                  
                   <div class="col-md-6">
-                    <label for="nama_kepala">Nama Kepala</label>
-                    <input class="form-control" id="nama_kepala" type="text" aria-describedby="nameHelp" name="nama_kepala" required/>
+                    <label for="alamat_kop_opd">Alamat Kop Surat</label>
+                    <input class="form-control" id="alamat_kop_opd" type="text" aria-describedby="nameHelp" name="alamat_kop_opd" required/>
                   </div>
-                  <div class="col-md-6">
-                    <label for="nip_ppk">Nip Ppk</label>
-                    <input class="form-control" id="nip_ppk" type="text" aria-describedby="nameHelp" name="nip_ppk" required/>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="nama_ppk">Nama Ppk</label>
-                    <input class="form-control" id="nama_ppk" type="text" aria-describedby="nameHelp" name="nama_ppk" required/>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="nip_bendahara">Nip Bendahara</label>
-                    <input class="form-control" id="nip_bendahara" type="text" aria-describedby="nameHelp" name="nip_bendahara" required/>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="nama_bendahara">Nama Bendahara</label>
-                    <input class="form-control" id="nama_bendahara" type="text" aria-describedby="nameHelp" name="nama_bendahara" required/>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="nip_pbp">Nip Pbp</label>
-                    <input class="form-control" id="nip_pbp" type="text" aria-describedby="nameHelp" name="nip_pbp" required/>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="nama_pbp">Nama Pbp</label>
-                    <input class="form-control" id="nama_pbp" type="text" aria-describedby="nameHelp" name="nama_pbp" required/>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="nip_ppb">Nip Ppb</label>
-                    <input class="form-control" id="nip_ppb" type="text" aria-describedby="nameHelp" name="nip_ppb" required/>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="nama_ppb">Nama Ppb</label>
-                    <input class="form-control" id="nama_ppb" type="text" aria-describedby="nameHelp" name="nama_ppb" required/>
-                  </div>
+                  
                 </div>
               </div>
 

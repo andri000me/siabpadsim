@@ -13,7 +13,7 @@ class Opd extends CI_Controller {
 	function index()
 	{
 		$data['content']=$this->model_opd->TampilOpd();
-			$this->load->view('opd/opd',$data);
+		$this->load->view('opd/opd',$data);
 	}
 	
 	function tambah()
@@ -25,21 +25,11 @@ class Opd extends CI_Controller {
     {
         $data = array(
 			'id_opd'=>$this->input->post('id_opd'),
-			'kode_opd'=>$this->input->post('kode_opd'),
             'nama_opd'=>$this->input->post('nama_opd'),
-            'nip_kepala'=>$this->input->post('nip_kepala'),
-            'nama_kepala'=>$this->input->post('nama_kepala'),
-            'nip_ppk'=>$this->input->post('nip_ppk'),
-            'nama_ppk'=>$this->input->post('nama_ppk'),
-            'nip_bendahara'=>$this->input->post('nip_bendahara'),
-            'nama_bendahara'=>$this->input->post('nama_bendahara'),
-            'nip_pbp'=>$this->input->post('nip_pbp'),
-            'nama_pbp'=>$this->input->post('nama_pbp'),
-            'nip_ppb'=>$this->input->post('nip_ppb'),
-            'nama_ppb'=>$this->input->post('nama_ppb'),
-            'username'=>$this->input->post('username')
+            'alamat_opd'=>$this->input->post('alamat_opd'),
+            'kecamatan_opd'=>$this->input->post('kecamatan_opd'),
+            'alamat_kop_opd'=>$this->input->post('alamat_kop_opd')
         );
-        $data['username'] = $this->session->userdata('username');
         $this->db->insert('tbl_opd',$data);
         redirect('opd');
 	}
@@ -53,24 +43,13 @@ class Opd extends CI_Controller {
     function simpan_update()
     {
         $data = array(
-			
 			'id_opd'=>$this->input->post('id_opd'),
-			'kode_opd'=>$this->input->post('kode_opd'),
-			'nama_opd'=>$this->input->post('nama_opd'),
-            'nip_kepala'=>$this->input->post('nip_kepala'),
-            'nama_kepala'=>$this->input->post('nama_kepala'),
-            'nip_ppk'=>$this->input->post('nip_ppk'),
-            'nama_ppk'=>$this->input->post('nama_ppk'),
-            'nip_bendahara'=>$this->input->post('nip_bendahara'),
-            'nama_bendahara'=>$this->input->post('nama_bendahara'),
-            'nip_pbp'=>$this->input->post('nip_pbp'),
-            'nama_pbp'=>$this->input->post('nama_pbp'),
-            'nip_ppb'=>$this->input->post('nip_ppb'),
-            'nama_ppb'=>$this->input->post('nama_ppb'),
-            'username'=>$this->input->post('username')
+            'nama_opd'=>$this->input->post('nama_opd'),
+            'alamat_opd'=>$this->input->post('alamat_opd'),
+            'kecamatan_opd'=>$this->input->post('kecamatan_opd'),
+            'alamat_kop_opd'=>$this->input->post('alamat_kop_opd')
         );
-        $data['username'] = $this->session->userdata('username');
-		$id_opd = $this->input->post('id_opd');
+        $id_opd = $this->input->post('id_opd');
 		$this->db->where('id_opd', $id_opd);
         $this->db->update('tbl_opd',$data);
         redirect('opd');

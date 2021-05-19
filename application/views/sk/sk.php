@@ -50,8 +50,8 @@ $this->load->view('admin/menu');
                   <td><?= $data->kecamatan_opd ?></td>
                   <td><?= $data->alamat_kop_opd ?></td>
                   <td> 
-                    <a href="<?php echo base_url()?>opd/update/<?php echo $data->id_opd; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Edit<i class="fa fa-tag"></i></a>
-                    <a href="<?php echo base_url()?>opd/hapus/<?php echo $data->id_opd; ?>" onclick="return confirm('Apakah anda yakin?');" class="btn btn-danger">Hapus<i class="fa fa-trash"></i></a>
+                    <a href="<?php echo base_url()?>opd/updatedataopd/<?php echo $data->id_opd; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Edit<i class="fa fa-tag"></i></a>
+                    <a href="<?php echo base_url()?>opd/action_deletedataopd/<?php echo $data->id_opd; ?>" onclick="return confirm('Apakah anda yakin?');" class="btn btn-danger">Hapus<i class="fa fa-trash"></i></a>
                   </td> 
                 </tr>
                     <?php

@@ -4,7 +4,7 @@ class Model_opd extends CI_Model {
 
 	function TampilOpd() 
     {
-        $this->db->order_by('kode_opd', 'ASC');
+        $this->db->order_by('id_opd', 'ASC');
         return $this->db->from('tbl_opd')
           ->get();
     }
