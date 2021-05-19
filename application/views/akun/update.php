@@ -35,7 +35,7 @@ $this->load->view('admin/menu');
                         <?php $id_opd = $this->db->query("SELECT * FROM tbl_opd");
                 
                         foreach ($id_opd->result() as $id_opd) : ?>
-                        <option><?= $id_opd->nama_opd?></option>
+                        <option value="<?= $id_opd->id_opd?>"><?= $id_opd->nama_opd?></option>
                          <?php endforeach; ?>
                        </select>
                      </div>

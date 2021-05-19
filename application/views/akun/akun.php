@@ -17,7 +17,7 @@ $this->load->view('admin/menu');
       </ol>
 
       <div class="container">
-      <a href="<?php echo base_url('akun/menambahdataakun')?>" class="btn btn-primary" style="margin-bottom: 10px;"><i class="fa fa-plus">Tambah Data</a></i>
+      <a href="<?php echo base_url('akun/tambah')?>" class="btn btn-primary" style="margin-bottom: 10px;"><i class="fa fa-plus">Tambah Data</a></i>
   
   <!-- Example DataTables Card-->
   <div class="card mb-3">
@@ -48,10 +48,10 @@ $this->load->view('admin/menu');
                   <td><?= $data->nama ?></td>
                   <td><?= $data->jabatan ?></td>
                   <td><?= $data->level ?></td>
-                  <td><?= $data->id_opd ?></td>
+                  <td><?= $data->nama_opd ?></td>
                   <td> 
-                    <a href="<?php echo base_url()?>akun/updatedataakun/<?php echo $data->id; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Edit<i class="fa fa-tag"></i></a>
-                    <a href="<?php echo base_url()?>akun/action_deletedataakun/<?php echo $data->id; ?>" onclick="return confirm('Apakah anda yakin?');" class="btn btn-danger">Hapus<i class="fa fa-trash"></i></a>
+                    <a href="<?php echo base_url()?>akun/update/<?php echo $data->id; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Edit<i class="fa fa-tag"></i></a>
+                    <a href="<?php echo base_url()?>akun/hapus/<?php echo $data->id; ?>" onclick="return confirm('Apakah anda yakin?');" class="btn btn-danger">Hapus<i class="fa fa-trash"></i></a>
                   </td> 
                 </tr>
                     <?php

@@ -6,6 +6,7 @@ class Model_akun extends CI_Model {
     {
         $this->db->order_by('id', 'ASC');
         return $this->db->from('tbl_akun')
+          ->join('tbl_opd','tbl_opd.id_opd=tbl_akun.id_opd')
           ->get();
     }
 
