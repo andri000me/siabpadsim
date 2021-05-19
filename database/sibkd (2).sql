@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2021 at 10:53 AM
+-- Generation Time: May 19, 2021 at 02:56 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.30
 
@@ -44,11 +44,14 @@ CREATE TABLE `tbl_akun` (
 
 INSERT INTO `tbl_akun` (`id`, `username`, `password`, `nama`, `jabatan`, `level`, `id_opd`, `admin`) VALUES
 (1, '1111', '1111', 'Arin Dewi Jayanti', 'Admin', 'Admin', 35, 'admin'),
-(2, '2222', '2222', 'Sulaiman Lubis, S.E.', 'Pengguna Anggaran', 'Pengguna Anggaran', 35, 'admin'),
 (3, '3333', '3333', 'Sori', 'Bidang Aset', 'PPTK', 35, 'admin'),
 (4, '4444', '4444', 'Hj. Rosti Megawati Harahap', 'Sekretariat', 'PPTK', 35, 'admin'),
 (5, '5555', '5555', 'Siti Armida Siregar, S.H.', 'Pengurus Barang Pengguna', 'Pengurus Barang Pengguna', 35, 'admin'),
-(6, '0000', '0000', 'Operator', 'Operator', 'Operator', 35, '111111111');
+(6, '0000', '0000', 'Operator', 'Operator', 'Operator', 35, 'admin'),
+(9, 'admin', 'admin', 'admin', 'admin', 'Admin', 35, 'admin'),
+(10, 'pptk', 'pptk', 'pptk', 'pptk', 'PPTK', 35, 'admin'),
+(11, 'pbp', 'pbp', 'pbp', 'pbp', 'Pengurus Barang Pengguna', 35, 'admin'),
+(12, 'operator', 'operator', 'operator', 'operator', 'Operator', 1, 'admin');
 
 -- --------------------------------------------------------
 
@@ -78,11 +81,11 @@ INSERT INTO `tbl_detailpengadaan` (`id_detailpengadaan`, `id_pengadaan`, `id_ssh
 (44, 26, 9, 20, '321321321', '2021-03-03 01:21:24', 2021, 'Sudah Diterima'),
 (45, 27, 2, 1, '321321321', '2021-03-03 01:45:15', 2021, 'Sudah Diterima'),
 (46, 27, 3, 3, '321321321', '2021-03-03 01:45:21', 2021, 'Sudah Diterima'),
-(47, 27, 9, 4, '321321321', '2021-03-03 01:45:27', 2021, 'Sudah Diterima'),
-(48, 27, 2, 3, '321321321', '2021-03-03 01:45:34', 2021, 'Sudah Diterima'),
-(50, 28, 2, 1, '321321321', '2021-03-03 01:46:41', 2021, 'Belum Diterima'),
+(47, 28, 12, 4, '321321321', '2021-03-03 01:45:27', 2021, 'Sudah Diterima'),
+(48, 29, 2, 3, '5', '2021-03-03 01:45:34', 2021, 'Sudah Diterima'),
+(50, 29, 12, 1, '5', '2021-03-03 01:46:41', 2021, 'Belum Diterima'),
 (52, 29, 12, 2, '3333', '2021-03-18 02:16:25', 2021, 'Belum Diterima'),
-(54, 30, 15, 1, '3333', '2021-03-18 02:34:14', 2021, 'Belum Diterima'),
+(54, 30, 15, 1, '5', '2021-03-18 02:34:14', 2021, 'Belum Diterima'),
 (55, 29, 14, 2, '3333', '2021-03-23 13:01:37', 2021, 'Belum Diterima');
 
 -- --------------------------------------------------------
@@ -109,8 +112,8 @@ CREATE TABLE `tbl_detailpenyaluran` (
 INSERT INTO `tbl_detailpenyaluran` (`id_detailpenyaluran`, `id_penyaluran`, `id_ssh`, `total_barang`, `username`, `tanggal_input`, `tahun_penyaluran`, `statusorder`) VALUES
 (11, 19, 3, 2, '432432432', '2021-03-03 01:49:48', 2021, 'Belum Diterima'),
 (12, 19, 4, 1, '432432432', '2021-03-03 01:49:52', 2021, 'Belum Diterima'),
-(13, 20, 3, 1, '432432432', '2021-03-03 01:55:17', 2021, 'Belum Diterima'),
-(14, 21, 9, 1, '432432432', '2021-03-03 01:55:47', 2021, 'Belum Diterima'),
+(13, 20, 12, 1, '432432432', '2021-03-03 01:55:17', 2021, 'Belum Diterima'),
+(14, 25, 12, 1, '3333', '2021-03-03 01:55:47', 2021, 'Belum Diterima'),
 (18, 24, 12, 2, '3333', '2021-03-23 13:50:42', 2021, 'Belum Diterima');
 
 -- --------------------------------------------------------
@@ -186,32 +189,20 @@ INSERT INTO `tbl_mutasi` (`id_mutasi`, `id_order`, `id_orderrekanan`, `year`) VA
 --
 
 CREATE TABLE `tbl_opd` (
-  `id_opd` int(11) NOT NULL,
-  `kode_opd` varchar(50) NOT NULL,
+  `id_opd` varchar(50) NOT NULL,
   `nama_opd` varchar(50) NOT NULL,
-  `nip_kepala` int(11) NOT NULL,
-  `nama_kepala` varchar(50) NOT NULL,
   `alamat_opd` varchar(100) NOT NULL,
   `kecamatan_opd` varchar(50) NOT NULL,
-  `alamat_kop_opd` varchar(100) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `nip_ppk` varchar(128) DEFAULT NULL,
-  `nama_ppk` varchar(128) DEFAULT NULL,
-  `nip_bendahara` varchar(128) NOT NULL,
-  `nama_bendahara` varchar(128) NOT NULL,
-  `nip_pbp` varchar(200) NOT NULL,
-  `nama_pbp` varchar(200) NOT NULL,
-  `nip_ppb` varchar(200) NOT NULL,
-  `nama_ppb` varchar(200) NOT NULL
+  `alamat_kop_opd` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_opd`
 --
 
-INSERT INTO `tbl_opd` (`id_opd`, `kode_opd`, `nama_opd`, `nip_kepala`, `nama_kepala`, `alamat_opd`, `kecamatan_opd`, `alamat_kop_opd`, `username`, `nip_ppk`, `nama_ppk`, `nip_bendahara`, `nama_bendahara`, `nip_pbp`, `nama_pbp`, `nip_ppb`, `nama_ppb`) VALUES
-(2132, '1', 'Dinas Pendidikan', 0, '', '', '', '', '1111', '211', NULL, '', '', '', '', '', ''),
-(2133, '35', 'Badan Keuangan Daerah', 111, 'SUlaiman', 'Jln. Jen. Dr. Abd.Haris Nasution Pal - IV Pijorkoling', 'Kec. Padangsidimpuan Tenggara', 'Jln. Jen. Dr. Abd.Haris Nasution Pal - IV Pijorkoling Telp (0634)27075 Fax. (0634) 27075', '1111', '222', 'sulaiman', '', '', '', '', '', '');
+INSERT INTO `tbl_opd` (`id_opd`, `nama_opd`, `alamat_opd`, `kecamatan_opd`, `alamat_kop_opd`) VALUES
+('1', 'Dinas Pendidikan', '', '', ''),
+('35', 'Badan Keuangan Daerah', 'Jln. Jen. Dr. Abd.Haris Nasution Pal - IV Pijorkoling', 'Kec. Padangsidimpuan Tenggara', 'Jln. Jen. Dr. Abd.Haris Nasution Pal - IV Pijorkoling Telp (0634)27075 Fax. (0634) 27075');
 
 -- --------------------------------------------------------
 
@@ -344,7 +335,7 @@ CREATE TABLE `tbl_pengadaan` (
 --
 
 INSERT INTO `tbl_pengadaan` (`id_pengadaan`, `tahun_pesan`, `tanggal_pesan`, `id_rekanan`, `keterangan`, `username`, `no_suratpermohonanpptk`, `no_suratpermohonanpenyedia`, `no_suratbalasan`, `no_suratperintahpengiriman`, `no_bapenyedia`, `no_bappk`, `statusorder`, `tanggalterimabarang`, `id_paketpekerjaan`, `tanggal_suratpermohonanpptk`, `tanggal_suratpermohonanpenyedia`, `tanggal_suratbalasan`, `tanggal_suratperintahpengiriman`, `tanggal_bapenyedia`, `tanggal_bappk`, `belanja`, `memesan`, `no_kwitansi`, `no_faktur`, `no_suratpermohonanpembayaran`, `no_bapembayaran`, `tanggal_kwitansi`, `tanggal_faktur`, `tanggal_suratpermohonanpembayaran`, `tanggal_bapembayaran`) VALUES
-(28, 2021, '2021-03-24', 1, 'Disetujui', '1', NULL, NULL, NULL, NULL, NULL, NULL, 'Belum Diterima', '2021-03-02', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(28, 2021, '2021-03-24', 1, 'Disetujui', '3333', NULL, NULL, NULL, NULL, NULL, NULL, 'Belum Diterima', '2021-03-02', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (29, 2021, '2021-03-18', 1, 'Menunggu Konfirmasi', '3333', '1', '1', '1', '1', 'ba penyedia ke ppk', 'ba ppk ke pa', 'Sudah Diterima', '2021-03-19', 1, '2021-03-01', '2021-03-02', '2021-03-03', '2021-03-01', '2021-03-19', '2021-03-25', 'asd', 'asd', '1', '1', '1', '1', '2021-03-09', '0000-00-00', '0000-00-00', '2021-03-01'),
 (30, 2021, '2021-03-18', 1, 'Disetujui', '3333', '1', '2', '3', '4', '5', '6', 'Belum Diterima', NULL, 0, '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', 'asd', 'asd', '7', '8', '9', '10', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00');
 
@@ -388,16 +379,18 @@ CREATE TABLE `tbl_rekanan` (
   `nama_pimpinan` varchar(50) NOT NULL,
   `nama_rekanan` varchar(50) NOT NULL,
   `alamat_rekanan` varchar(100) NOT NULL,
-  `username` varchar(50) NOT NULL
+  `username` varchar(50) NOT NULL,
+  `id_opd` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_rekanan`
 --
 
-INSERT INTO `tbl_rekanan` (`id_rekanan`, `nama_pimpinan`, `nama_rekanan`, `alamat_rekanan`, `username`) VALUES
-(1, 'Dra. Sulhana Lely Lubis.Ak., M.M.', 'UD. PERCETAKAN PUSTAKA TIMUR', 'Jln. H. Sulaiman Gg. Kelapa I No. 4 Kel. Timbangan Kec. Padangsidimpuan Utara', '3333'),
-(5, 'asd', 'asd', 'asd', '1');
+INSERT INTO `tbl_rekanan` (`id_rekanan`, `nama_pimpinan`, `nama_rekanan`, `alamat_rekanan`, `username`, `id_opd`) VALUES
+(1, 'Dra. Sulhana Lely Lubis.Ak., M.M.', 'UD. PERCETAKAN PUSTAKA TIMUR', 'Jln. H. Sulaiman Gg. Kelapa I No. 4 Kel. Timbangan Kec. Padangsidimpuan Utara', '3333', '35'),
+(5, 'asd', 'asd', 'asd', 'pptk', '1'),
+(6, 'coba pimpinan', 'coba rekanan', 'coba alamat', 'pptk', '35');
 
 -- --------------------------------------------------------
 
@@ -519,7 +512,7 @@ ALTER TABLE `tbl_ssh`
 -- AUTO_INCREMENT for table `tbl_akun`
 --
 ALTER TABLE `tbl_akun`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tbl_detailpengadaan`
@@ -544,12 +537,6 @@ ALTER TABLE `tbl_fakturrekanan`
 --
 ALTER TABLE `tbl_mutasi`
   MODIFY `id_mutasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
-
---
--- AUTO_INCREMENT for table `tbl_opd`
---
-ALTER TABLE `tbl_opd`
-  MODIFY `id_opd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2134;
 
 --
 -- AUTO_INCREMENT for table `tbl_order`
@@ -585,7 +572,7 @@ ALTER TABLE `tbl_penyaluran`
 -- AUTO_INCREMENT for table `tbl_rekanan`
 --
 ALTER TABLE `tbl_rekanan`
-  MODIFY `id_rekanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_rekanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_ssh`
