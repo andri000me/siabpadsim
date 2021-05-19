@@ -7,21 +7,30 @@
 		  <br><br>
         </div>
          <div class="row">
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+          <div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up">
+            <div class="icon"><i class="icofont-computer"></i></div>
+            <h4 class="title"><a href="<?php echo base_url('ssh'); ?>">Data SSH</a></h4>
+          </div>
+          <div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="icofont-computer"></i></div>
             <h4 class="title"><a href="<?php echo base_url('rekanan'); ?>">Data Rekanan</a></h4>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+         
+       
+      </div>
+      <br><br><br><br>
+      <div class="row">
+          <div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="icofont-computer"></i></div>
             <h4 class="title"><a href="<?php echo base_url('pengadaan'); ?>">Pengadaan Barang</a></h4>
            </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+          <div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="icofont-computer"></i></div>
             <h4 class="title"><a href="<?php echo base_url('penyaluran'); ?>">Penyaluran Barang</a></h4>
            </div>
        
       </div>
-      <br><br><br><br>
+      <br><br>
       
     </section><!-- End Services Section -->
 

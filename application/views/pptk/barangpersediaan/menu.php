@@ -11,6 +11,8 @@
           <li><a href="#about">About Us</a></li>
           <li class="drop-down"><a href="">Menu</a>
             <ul>
+            <li><a href="<?php echo base_url('ssh')?>">Data SSH</a>
+              </li>
             <li><a href="<?php echo base_url('rekanan')?>">Data Rekanan</a>
               </li>
               <li><a href="<?php echo base_url('pengadaan')?>">Pengadaan Barang</a>

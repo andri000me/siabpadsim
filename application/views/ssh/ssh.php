@@ -1,7 +1,11 @@
-
 <?php 
+$level=$this->session->userdata('level');
 $this->load->view('include/header'); 
-$this->load->view('admin/menu'); 
+if ($level=="Admin"){
+  $this->load->view('admin/menu');
+}else if ($level=="PPTK"){
+  $this->load->view('pptk/barangpersediaan/menu');
+}
 ?>
 
 </head>
@@ -22,7 +26,7 @@ $this->load->view('admin/menu');
   <!-- Example DataTables Card-->
   <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Data Tabel ssh</div>
+          <i class="fa fa-table"></i> Data Tabel SSH</div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" id="example" width="100%" cellspacing="0">

@@ -1,8 +1,11 @@
-
-
 <?php 
+$level=$this->session->userdata('level');
 $this->load->view('include/header'); 
-$this->load->view('admin/menu');
+if ($level=="Admin"){
+  $this->load->view('admin/menu');
+}else if ($level=="PPTK"){
+  $this->load->view('pptk/barangpersediaan/menu');
+}
 ?>
 
 </head>
