@@ -11,11 +11,19 @@
           <li><a href="#about">About Us</a></li>
           <li class="drop-down"><a href="">Menu</a>
             <ul>
-              <li><a href="#">Aset Tetap</a>
+              <li><a href="<?php echo base_url('nomorsk'); ?>">SK Walikota</a>
               </li>
-              <li><a href="<?php echo base_url('operator/barangpersediaan')?>">Barang Persediaan</a>
+              <li><a href="<?php echo base_url('suratpengadaan'); ?>">Surat Pengadaan Barang</a>
               </li>
-			        <li><a href="#">Profil</a>
+			        <li><a href="<?php echo base_url('suratpenyaluran'); ?>">Surat Penyaluran Barang</a>
+              </li>
+			        <li><a href="<?= base_url('laporanpenerimaanbarangpersediaan'); ?>">Laporan Penerimaan</a>
+              </li>
+			        <li><a href="<?= base_url('laporanpengeluaranbarangpersediaan'); ?>">Laporan Pengeluaran</a>
+              </li>
+			        <li><a href="<?= base_url('laporanbukubarangpersediaan'); ?>">Laporan Buku</a>  
+              </li>
+			        <li><a href="<?= base_url('laporanrekapitulasibarangpersediaan'); ?>">Laporan Rekapitulasi</a>
               </li>
             </ul>
           </li>
