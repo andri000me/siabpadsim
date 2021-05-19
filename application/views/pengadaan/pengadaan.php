@@ -11,7 +11,7 @@ $this->load->view('pptk/barangpersediaan/menu');
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-          <a href="<?php echo base_url('pptk/barangpersediaan')?>">Halaman Utama</a>
+          <a href="<?php echo base_url('pptk/barangpersediaan')?>">Barang Persediaan</a>
         </li>
   
         <li class="breadcrumb-item active">Daftar Pengadaan Barang</li>

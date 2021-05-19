@@ -10,7 +10,7 @@ $this->load->view('pptk/barangpersediaan/menu');
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-          <a href="<?php echo config_item('base_url'); ?>">Halaman Utama</a>
+          <a href="<?php echo base_url('pptk/barangpersediaan')?>">Barang Persediaan</a>
         </li>
   
         <li class="breadcrumb-item active">Tambah Order Barang</li>
@@ -34,11 +34,11 @@ $this->load->view('pptk/barangpersediaan/menu');
                            
                   <div class="col-md-6">
                     <label for="id_rekanan">Nama Rekanan</label>
-                    <select class="form-control form-control-sm" id="id_rekanan" name="id_rekanan" required />
+                    <select class="form-control form-control-sm" id="id_rekanan" name="id_rekanan" required/>
                     <option>Silahkan Pilih Nama Rekanan</option>
                         <?php 
-                        $username = $this->session->userdata('username');
-                        $id_rekanan = $this->db->query("SELECT * FROM tbl_rekanan where username=$username");
+                        $id_opd = $this->session->userdata('id_opd');
+                        $id_rekanan = $this->db->query("SELECT * FROM tbl_rekanan where id_opd=$id_opd");
                 
                         foreach ($id_rekanan->result() as $id_rekanan) : ?>
                         
