@@ -36,7 +36,7 @@ $this->load->view('operator/barangpersediaan/menu');
                   <th>Nip</th>
                   <th>Jabatan</th>
                   <th>Golongan Jabatan</th>
-                  <th>Golongan Nomor</th>
+                  <th>Level</th>
                   <th>Opsi</th>
                 </tr>
               </thead>

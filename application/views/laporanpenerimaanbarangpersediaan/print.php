@@ -6,14 +6,14 @@
    @page 
 
    {
-    size: 8.27in 12.99in;
+    size: 12.99in 8.27in ;
   }
 }
 .jarak-lh{
   line-height:10px;
 }
 p {
-    font-size: 12spt;
+    font-size: 12pt;
 }
 h1{
     text-transform: uppercase;
@@ -91,19 +91,19 @@ table{
                     ?>
                     <tr>
                         <td align="center"><?= $no;?></td>
-                        <td><?= $item->tanggal_pesan;?></td>
+                        <td align="center"><?= $item->tanggal_pesan;?></td>
                         <td><?= $item->nama_rekanan;?></td>
-                        <td><?= $item->no_faktur;?></td>
-                        <td><?= $item->tanggal_faktur;?></td>
-                        <td><?= $item->no_suratperintahpengiriman;?></td>
-                        <td><?= $item->tanggal_suratperintahpengiriman;?></td>
+                        <td align="center"><?= $item->no_faktur;?></td>
+                        <td align="center"><?= $item->tanggal_faktur;?></td>
+                        <td align="center"><?= $item->no_suratperintahpengiriman;?></td>
+                        <td align="center"><?= $item->tanggal_suratperintahpengiriman;?></td>
                         <td><?= $item->Namabarang_ssh;?></td>                        
                         <td align="center"><?= $item->total_barang_in;?></td>
                         <td><?= $item->Satuan_ssh;?></td>
                         <td align="right"><?= 'Rp'.number_format($item->Hargasatuan_ssh,0,'.','.'); ?></td>
                         <td align="right"><?= 'Rp'.number_format($item->total_barang_in*$item->Hargasatuan_ssh,0,'.','.'); ?></td>
-                        <td><?= $item->no_beritaacarapb;?></td>
-                        <td><?= $item->tanggal_beritaacarapb;?></td>
+                        <td align="center"><?= $item->no_bappk;?></td>
+                        <td align="center"><?= $item->tanggal_bappk;?></td>
                         <td></td>
                
                        

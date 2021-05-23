@@ -23,15 +23,13 @@ class Model_laporanpenerimaanbarangpersediaan extends CI_Model {
       
     }
 
-    function Gettahun_pesan()
+    function Gettahun_pesan($tahun_order)
     {
-      
-        $tahun_order = $this->uri->segment(3);
         $this->db->order_by('id_detailmutasi', 'ASC');        
         $this->db->where('tahun_order',$tahun_order);
         return $this->db->from('tbl_detailmutasi')
           ->join('tbl_ssh','tbl_ssh.id_ssh=tbl_detailmutasi.id_ssh')
-          ->join('tbl_mutasi','tbl_mutasi.id_mutasi=tbl_detailmutasi.id_detailmutasi')          
+          ->join('tbl_mutasi','tbl_mutasi.id_mutasi=tbl_detailmutasi.id_mutasi')          
           ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_mutasi.id_rekanan')             
           ->join('tbl_akun','tbl_akun.username=tbl_mutasi.username')   
           ->join('tbl_opd','tbl_opd.id_opd=tbl_akun.id_opd')

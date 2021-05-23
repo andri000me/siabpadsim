@@ -59,7 +59,7 @@ $this->load->view('operator/barangpersediaan/menu');
                     <input value="<?= $data->jabatan?>"class="form-control" id="gol_jabatan" type="text" aria-describedby="nameHelp" name="gol_jabatan" required/>
                   </div>
                   <div class="col-md-6">
-                    <label for="gol">Golongan</label>
+                    <label for="gol">Level</label>
                     <input value="<?= $data->gol?>"class="form-control" id="gol" type="text" aria-describedby="nameHelp" name="gol" required/>
                   </div>
                   

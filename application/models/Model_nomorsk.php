@@ -11,10 +11,9 @@ class Model_nomorsk extends CI_Model {
 
 	function GetNomorsk()
     {
-
 		$id_opd = $this->session->userdata('id_opd');
-        $this->db->where('tbl_sk.id_opd', $id_opd);
-        $this->db->order_by('tbl_sk.no_sk', 'ASC');
+        $this->db->where('id_opd', $id_opd);
+        $this->db->order_by('no_sk', 'ASC');
         return $this->db->from('tbl_sk')
     		->get();
     }

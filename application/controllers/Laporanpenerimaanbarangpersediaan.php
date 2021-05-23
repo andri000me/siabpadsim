@@ -20,7 +20,8 @@ class Laporanpenerimaanbarangpersediaan extends CI_Controller {
 	
     function print()
 	{   
-        $data['hasil']=$this->model_laporanpenerimaanbarangpersediaan->Gettahun_pesan();
+        $tahun_order = $this->input->post('tahun_order');
+        $data['hasil']=$this->model_laporanpenerimaanbarangpersediaan->Gettahun_pesan($tahun_order);
         $this->load->view('laporanpenerimaanbarangpersediaan/print',$data);
 	}
 
