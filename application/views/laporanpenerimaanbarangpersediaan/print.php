@@ -35,8 +35,8 @@ table{
 <?php foreach ($hasil as $item){}?>
 
 <table>
-<tr><p><td>SKPD</td>	<td>:</td> <td></td></p></tr>
-<tr><p><td>T.A</td>	    <td>:</td> <td></td></p></tr>
+<tr><p><td>SKPD</td>	<td>:</td> <td>Badan Keuangan Daerah</td></p></tr>
+<tr><p><td>T.A</td>	    <td>:</td> <td>2021</td></p></tr>
 </table>
 
 <table border="1" align="center">
@@ -143,7 +143,7 @@ table{
 </tr>
 <tr height="75px"></tr>
 <tr>
-    <td></td>
+    <td>NAMA</td>
     <td>NAMA</td>
     <td>NAMA</td>
 </tr>

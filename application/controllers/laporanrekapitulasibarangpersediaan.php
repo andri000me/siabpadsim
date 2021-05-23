@@ -17,18 +17,11 @@ class Laporanrekapitulasibarangpersediaan extends CI_Controller {
 		$data['hasil']=$this->model_laporanrekapitulasibarangpersediaan->Tampillaporanrekapitulasibarangpersediaan();
 			$this->load->view('laporanrekapitulasibarangpersediaan/laporanrekapitulasibarangpersediaan',$data);
 	}
-
-	function lihat($tahun_pesan)
-    {
-        $data['hasil']=$this->model_laporanrekapitulasibarangpersediaan->Gettahun_pesan($tahun_pesan);
-        $this->load->view('laporanrekapitulasibarangpersediaan/lihat',$data);
-	}
 	
-    function print($tahun_pesan)
-	{
-    
-        $ambil = $this->model_laporanrekapitulasibarangpersediaan->TampilOrder();
-        $data['ambil'] = $this->model_laporanrekapitulasibarangpersediaan->Gettahun_pesan($tahun_pesan);
+    function print()
+	{   
+        $tahun_order = $this->input->post('tahun_order');
+        $data['hasil']=$this->model_laporanrekapitulasibarangpersediaan->Gettahun_pesan($tahun_order);
         $this->load->view('laporanrekapitulasibarangpersediaan/print',$data);
 	}
 

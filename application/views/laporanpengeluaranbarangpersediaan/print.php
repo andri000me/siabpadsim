@@ -35,8 +35,8 @@ table{
 <?php foreach ($hasil as $item){}?>
 
 <table>
-<tr><p><td>SKPD</td>	<td>:</td> <td><?= $item->nama_opd;?></td></p></tr>
-<tr><p><td>T.A</td>	    <td>:</td> <td><?= $item->tahun_order;?></td></p></tr>
+<tr><p><td>SKPD</td>	<td>:</td> <td>Badan Keuangan Daerah</td></p></tr>
+<tr><p><td>T.A</td>	    <td>:</td> <td>2021</td></p></tr>
 </table>
 
 <table border="1" align="center">
@@ -81,22 +81,22 @@ table{
                     $total = 0;
                     foreach ($hasil as $item)
                     {
-                        $totalbarang += $item->total_barang;
-                        $total += $item->total_barang*$item->Hargasatuan_ssh;
+                        $totalbarang += $item->total_barang_out;
+                        $total += $item->total_barang_out*$item->Hargasatuan_ssh;
                     ?>
                     <tr>
                         <td align="center"><?= $no;?></td>
                         <td><?= $item->tanggal_pesan;?></td>
-                        <td><?= $item->no_sppb;?></td>
-                        <td><?= $item->tanggal_sppb;?></td>
+                        <td align="center"><?= $item->no_sppb;?></td>
+                        <td align="center"><?= $item->tanggal_sppb;?></td>
                         <td><?= $item->Namabarang_ssh;?></td>
-                        <td align="center"><?= $item->total_barang;?></td>
+                        <td align="center"><?= $item->total_barang_out;?></td>
                         <td><?= $item->Satuan_ssh;?></td>
                         <td align="right"><?= 'Rp'.number_format($item->Hargasatuan_ssh,0,'.','.'); ?></td>
-                        <td align="right"><?= 'Rp'.number_format($item->total_barang*$item->Hargasatuan_ssh,0,'.','.'); ?></td>
-                        <td><?= $item->nama;?></td>        
-                        <td><?= $item->no_beritaacarapb;?></td>
-                        <td><?= $item->tanggal_beritaacarapb;?></td>
+                        <td align="right"><?= 'Rp'.number_format($item->total_barang_out*$item->Hargasatuan_ssh,0,'.','.'); ?></td>
+                        <td><?= $item->untuk;?></td>        
+                        <td align="center"><?= $item->no_bapenyaluranbarang;?></td>
+                        <td align="center"><?= $item->tanggal_bapenyaluranbarang;?></td>
                         <td></td>
                
                        
