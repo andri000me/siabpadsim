@@ -26,99 +26,7 @@ table{
     text-transform: uppercase;
 }
 </style>
-<?php
-$tanggal = $pengadaan->tanggal_suratperintahpengiriman;
-$tgl = date("d-m-Y", strtotime($tanggal));
 
-$hari = date("l", strtotime($tanggal)); 
-$hari_indonesia = array('Monday'  => 'senin',
-'Tuesday'  => 'selasa',
-'Wednesday' => 'rabu',
-'Thursday' => 'kamis',
-'Friday' => 'jumat',
-'Saturday' => 'sabtu',
-'Sunday' => 'minggu');
-$hari = $hari_indonesia[$hari];
-
-
-$bulanhuruf = date("m", strtotime($tanggal)); 
-$bulanhuruf_indonesia = array(
-'01'  => 'satu',
-'02'  => 'dua',
-'03' => 'tiga',
-'04' => 'empat',
-'05' => 'lima',
-'06' => 'enam',
-'07' => 'tujuh',
-'08' => 'delapan',
-'09' => 'sembilan',
-'10' => 'sepuluh',
-'11' => 'sebelas',
-'12' => 'dua belas');
-$bulanhuruf = $bulanhuruf_indonesia[$bulanhuruf];
-$bulannama_indonesia = array(
-    'satu'  => 'Januari',
-    'dua'  => 'Februari',
-    'tiga' => 'Maret',
-    'empat' => 'April',
-    'lima' => 'Mei',
-    'enam' => 'Juni',
-    'tujuh' => 'Juli',
-    'delapan' => 'Agustus',
-    'sembilan' => 'September',
-    'sepuluh' => 'Oktober',
-    'sebelas' => 'November',
-    'dua belas' => 'Desember');
-$bulannama = $bulannama_indonesia[$bulanhuruf];
-
-$tanggalhuruf = date("d", strtotime($tanggal)); 
-$tanggalsurat = date("d", strtotime($tanggal)); 
-$tahunsurat = date("Y", strtotime($tanggal)); 
-$tanggalhuruf_indonesia = array(
-'01'  => 'satu',
-'02'  => 'dua',
-'03' => 'tiga',
-'04' => 'empat',
-'05' => 'lima',
-'06' => 'enam',
-'07' => 'tujuh',
-'08' => 'delapan',
-'09' => 'sembilan',
-'10' => 'sepuluh',
-'11' => 'sebelas',
-'12' => 'dua belas',
-'13' => 'tiga belas',
-'14' => 'empat belas',
-'15' => 'lima belas',
-'16' => 'enam belas',
-'17' => 'tujuh belas',
-'18' => 'delapan belas',
-'19' => 'sembilan belas',
-'20' => 'dua puluh',
-'21' => 'dua puluh satu',
-'22' => 'dua puluh dua',
-'23' => 'dua puluh tiga',
-'24' => 'dua puluh empat',
-'25' => 'dua puluh lima',
-'26' => 'dua puluh enam',
-'27' => 'dua puluh tujuh',
-'28' => 'dua puluh delapan',
-'29' => 'dua puluh sembilan',
-'30' => 'tiga puluh',
-'31' => 'tiga puluh satu');
-$tanggalhuruf = $tanggalhuruf_indonesia[$tanggalhuruf];
-
-$tahun = date("y", strtotime($tanggal)); 
-$tahun_indonesia = array(
-'20'  => 'dua ribu dua puluh',
-'21'  => 'dua ribu dua puluh satu',
-'22' => 'dua ribu dua puluh dua',
-'23' => 'dua ribu dua puluh tiga',
-'24' => 'dua ribu dua puluh empat',
-'25' => 'dua ribu dua puluh lima',
-'26' => 'dua ribu dia puluh enam');
-$tahun = $tahun_indonesia[$tahun];
-?>
 <table align="center" style="width:100%">
 <tr>
 <td>
@@ -126,9 +34,9 @@ $tahun = $tahun_indonesia[$tahun];
 <td>
 <td>
 <h3 class="jarak-lh" align="center">PEMERINTAH KOTA PADANGSIDIMPUAN</h3>
-<h1 class="jarak-lh" align="center"><?php echo $pengadaan->nama_opd; ?></h1>
-<p class="jarak-lh" align="center"><?php echo $pengadaan->alamat_kop_opd; ?></p>
-<p class="jarak-lh" align="center"><?php echo $pengadaan->kecamatan_opd; ?></p>
+<h1 class="jarak-lh" align="center">BADAN KEUANGAN DAERAH</h1>
+<p class="jarak-lh" align="center">Jln. Jen. Dr. Abd.Haris Nasution Pal - IV Pijorkoling Telp (0634)27075 Fax. (0634) 27075</p>
+<p class="jarak-lh" align="center">Kec. Padangsidimpuan Tenggara</p>
 <td>
 </tr>
 <tr>
@@ -141,26 +49,26 @@ $tahun = $tahun_indonesia[$tahun];
 
 <body>
 <p class="jarak-lh" align="center"><u><b>SURAT PERINTAH PENGIRIMAN (SPP)</u></b></p>
-<p class="jarak-lh" align="center">Nomor : <?php echo $pengadaan->no_suratperintahpengiriman; ?></p>
+<p class="jarak-lh" align="center">Nomor : 000000001</p>
 <p class="jarak-lh" align="center">Paket Pekerjaan : </p>   
-<p class="jarak-lh" align="center"><?php echo $pengadaan->paketpekerjaan; ?> </p>  
+<p class="jarak-lh" align="center">Paket Pekerjaan </p>  
 
 
 <p>Yang bertanda tangan di bawah ini :</p>
 
 <table>
-<tr><td><b><?php echo $pengadaan->nama_kepala; ?></b><td></tr>
-<tr><td>KEPALA <?php echo $pengadaan->nama_opd; ?> KOTA PADANG SIDIMPUAN<td></tr>
-<tr><td><?php echo $pengadaan->alamat_opd; ?><td></tr>
+<tr><td><b>Sulaiman Lubis</b><td></tr>
+<tr><td>KEPALA Badan Keuangan Daerah KOTA PADANG SIDIMPUAN<td></tr>
+<tr><td>Jln. Jen. Dr. Abd.Haris Nasution Pal - IV Pijorkoling<td></tr>
 <tr><td>selanjutnya disebut sebagai <b>Pejabat Pembuat Komitmen;</b><td></tr>
 </table>
 
-<p>berdasarkan <?php echo $pengadaan->spk_paketpekerjaan; ?>, bersama ini memerintahkan:</p>
+<p>berdasarkan SPK (Paker pekerjaan), bersama ini memerintahkan:</p>
 
 <table>
-<tr><td><b><?php echo $pengadaan->nama_rekanan; ?></b><td></tr>
-<tr><td><?php echo $pengadaan->alamat_rekanan; ?><td></tr>
-<tr><td>yang dalam hal ini diwakili oleh : <b><?php echo $pengadaan->nama_pimpinan; ?>, Pimpinan/Penanggung Jawab</b><td></tr>
+<tr><td><b>NAMA REKANAN</b><td></tr>
+<tr><td>ALAMAT REKANAN<td></tr>
+<tr><td>yang dalam hal ini diwakili oleh : <b>NAMA PIMPINAN, Pimpinan/Penanggung Jawab</b><td></tr>
 <tr><td>selanjutnya disebut sebagai <b>Penyedia;</b><td></tr>
 </table>
 
@@ -185,15 +93,15 @@ $tahun = $tahun_indonesia[$tahun];
                     $total = 0;
                     foreach ($detailpengadaan as $item)
                     {
-                        $total += $item->total_barang*$item->Hargasatuan_ssh;
+                        $total += $item->total_barang_in*$item->Hargasatuan_ssh;
                     ?>
                     <tr>
                         <td align="center"><?= $no;?></td>
                         <td><?= $item->Namabarang_ssh;?></td>
-                        <td align="center"><?= $item->total_barang;?></td>
+                        <td align="center"><?= $item->total_barang_in;?></td>
                         <td align="right"><?= 'Rp'.number_format($item->Hargasatuan_ssh,0,'.','.'); ?></td>
                         <td align="right">... pajak</td>
-                        <td align="right"><?= 'Rp'.number_format($item->total_barang*$item->Hargasatuan_ssh,0,'.','.'); ?></td>
+                        <td align="right"><?= 'Rp'.number_format($item->total_barang_in*$item->Hargasatuan_ssh,0,'.','.'); ?></td>
                         <td align="right">....</td>
                     
                     </tr>
@@ -229,7 +137,7 @@ $tahun = $tahun_indonesia[$tahun];
 
 <table align="center" style="width:100%">
 <tr>
-    <td>Padang Sidempuan, <?php echo $tanggalsurat; ?> <?php echo $bulannama;?> <?php echo $tahunsurat;?></td>
+    <td>Padang Sidempuan, 01 Januari 2021</td>
     <td>Menerima dan menyetujui</td>
 </tr>
 <tr>
@@ -237,8 +145,8 @@ $tahun = $tahun_indonesia[$tahun];
     <td>Untuk dan atas nama</td>
 </tr>
 <tr>
-    <td><?php echo $pengadaan->nama_opd; ?> Kota Padangsidimpuan</td>
-    <td><?php echo $pengadaan->nama_rekanan; ?></td>
+    <td>Badan Keuangan Daerah Kota Padangsidimpuan</td>
+    <td>Nama Rekanan</td>
 </tr>
 <tr>
     <td>PEJABAT PEMBUAT KOMITMEN</td>
@@ -246,17 +154,17 @@ $tahun = $tahun_indonesia[$tahun];
 </tr>
 <tr height="75px"></tr>
 <tr>
-    <td><b><?php echo $pengadaan->nama_kepala; ?></b></td>
-    <td><b><?php echo $pengadaan->nama_pimpinan; ?></b></td>
+    <td><b>NAMA KEPALA</b></td>
+    <td><b>NAMA PIMPINAN</b></td>
 </tr>
 
 <tr>
-    <td><b>Kepala <?php echo $pengadaan->nama_opd; ?> Kota Padang Sidempuan</b></td>
+    <td><b>Kepala Badan Keuangan Daerah Kota Padang Sidempuan</b></td>
     <td><b>PIMPINAN/PENANGGUNG JAWAB</b></td>
 </tr>
 
 <tr>
-    <td><b>NIP. <?php echo $pengadaan->nip_kepala; ?></b></td>
+    <td><b>NIP. </b></td>
     <td></td>
 </tr>
 

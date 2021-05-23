@@ -120,9 +120,9 @@ $tahun = $tahun_indonesia[$tahun];
 <td>
 <td>
 <h3 class="jarak-lh" align="center">PEMERINTAH KOTA PADANGSIDIMPUAN</h3>
-<h1 class="jarak-lh" align="center"><?php echo $penyaluran->nama_opd; ?></h1>
-<p class="jarak-lh" align="center"><?php echo $penyaluran->alamat_kop_opd; ?></p>
-<p class="jarak-lh" align="center"><?php echo $penyaluran->kecamatan_opd; ?></p>
+<h1 class="jarak-lh" align="center">BADAN KEUANGAN DAERAH</h1>
+<p class="jarak-lh" align="center">Jln. Jen. Dr. Abd.Haris Nasution Pal - IV Pijorkoling Telp (0634)27075 Fax. (0634) 27075</p>
+<p class="jarak-lh" align="center">Kec. Padangsidimpuan Tenggara</p>
 <td>
 </tr>
 <tr>

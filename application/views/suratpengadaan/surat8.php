@@ -46,7 +46,7 @@ table{
 <table  align="right">
 <tr><td>Padangsidimpuan</td></tr>
 <tr><td>Kepada </td></tr>
-<tr><td>Yth : Kepala <?php echo $pengadaan->nama_opd; ?></td></tr>
+<tr><td>Yth : Kepala BKD</td></tr>
 <tr><td>Di -</td></tr>
 <tr><td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp PADANGSIDIMPUAN</td></tr>
 </table>
@@ -66,13 +66,13 @@ table{
                     $total = 0;
                     foreach ($detailpengadaan as $item)
                     {
-                        $total += $item->total_barang*$item->Hargasatuan_ssh;
+                        $total += $item->total_barang_in*$item->Hargasatuan_ssh;
                     ?>
                     <tr>
-                        <td align="center"><?= $item->total_barang;?></td>
+                        <td align="center"><?= $item->total_barang_in;?></td>
                         <td><?= $item->Namabarang_ssh;?></td>
                         <td align="right"><?= 'Rp'.number_format($item->Hargasatuan_ssh,0,'.','.'); ?></td>
-                        <td align="right"><?= 'Rp'.number_format($item->total_barang*$item->Hargasatuan_ssh,0,'.','.'); ?></td>
+                        <td align="right"><?= 'Rp'.number_format($item->total_barang_in*$item->Hargasatuan_ssh,0,'.','.'); ?></td>
                     
                     </tr>
                     <?php
@@ -87,11 +87,11 @@ table{
             </table>
 
             <table  align="right">
-<tr><td><?php echo $pengadaan->nama_rekanan; ?></td></tr>
+<tr><td>Nama rekanan</td></tr>
 <tr height="75px"></tr>
 <tr>
 <br> <br>
-    <td><?php echo $pengadaan->nama_pimpinan; ?></td>
+    <td>Nama Pimpinan</td>
     
 </table>
            
