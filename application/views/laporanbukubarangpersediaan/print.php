@@ -36,14 +36,13 @@ table{
 <?php foreach ($hasil as $item){}?>
 
 <table>
-<tr><p><td>SKPD</td>	<td>:</td> <td></td></p></tr>
-<tr><p><td>T.A</td>	    <td>:</td> <td></td></p></tr>
+<tr><p><td>SKPD</td>	<td>:</td> <td>Badan Keuangan Daerah</td></p></tr>
+<tr><p><td>T.A</td>	    <td>:</td> <td>2021</td></p></tr>
 </table>
 
 <table border="1" align="center">
                     <tr>
                         <th rowspan="2">No</th>
-                        <th rowspan="2">Tanggal</th>
                         <th rowspan="2">Nama Barang</th>
                         <th colspan="3">MASUK</th>        
                         <th colspan="3">KELUAR</th>        
@@ -74,7 +73,6 @@ table{
                         <th>10</th>
                         <th>11</th>                        
                         <th>12</th>
-                        <th>13</th>
                     </tr>
                 </thead>
                 <?php
@@ -113,7 +111,6 @@ table{
                     ?>
                     <tr>
                         <td align="center"><?= $no;?></td>
-                        <td><?= $item->tanggal_input;?></td>
                         <td><?= $item->Namabarang_ssh;?></td>
                         <td align="center"><?= $item->total_barang_in;?></td>
                         <td align="right"><?= $harga_satuan_barang_in;?></td>
@@ -121,9 +118,9 @@ table{
                         <td align="center"><?= $item->total_barang_out;?></td>
                         <td align="right"><?= $harga_satuan_barang_out;?></td>
                         <td align="right"><?= $total_harga_out;?></td>
-                        <td align="center"></td>
-                        <td align="right"></td>
-                        <td align="right"></td>
+                        <td align="center"><?= $item->total_barang_in-$item->total_barang_out;?></td>
+                        <td align="right"><?= $harga_satuan_barang_in;?></td>
+                        <td align="right"><?= $total_harga_in-$total_harga_out;?></td>
                         <td></td>
                
                        
@@ -140,7 +137,6 @@ table{
                         <td></td>
                         <td></td>
                         <td></td>                        
-                        <td></td>
                         <td></td>
                         <td></td>
                 </tr>

@@ -49,7 +49,7 @@ class Model_suratpenyaluran extends CI_Model {
           //->join('tbl_paketpekerjaan','tbl_paketpekerjaan.id_paketpekerjaan=tbl_mutasi.id_paketpekerjaan')
           //->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_mutasi.id_rekanan')
           ->join('tbl_akun','tbl_akun.username=tbl_mutasi.username')
-          ->join('tbl_opd','tbl_opd.kode_opd=tbl_akun.id_opd')
+          ->join('tbl_opd','tbl_opd.id_opd=tbl_akun.id_opd')
           
           ->get()
           ->row();

@@ -2,79 +2,56 @@
 
 class Model_laporanbukubarangpersediaan extends CI_Model {
 
-	function Tampillaporanbukubarangpersediaan() 
-    {
-        $this->db->order_by('id_pengadaan', 'ASC');
-        $this->db->where('keterangan', "Disetujui");
-        $this->db->group_by('tahun_pesan');
-        return $this->db->from('tbl_pengadaan')
-          ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_pengadaan.id_rekanan')
-          ->get()
-          ->result();
-      
-    }
-
-    function TampilPenerimaanPengeluaran() 
-    {
-      $this->db->order_by('id_detailpengadaan', 'ASC');
-      return $this->db->from('tbl_detailpengadaan')
+  function Tampillaporanbukubarangpersediaan() 
+  {
+      $this->db->order_by('id_mutasi', 'ASC');
+      $this->db->where('tbl_mutasi.statuspenyaluran', "Sudah Disalurkan");
+      $this->db->group_by('tahun_pesan');
+      return $this->db->from('tbl_mutasi')
+        ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_mutasi.id_rekanan')
         ->get()
         ->result();
-      
-    }
-  
-    function GetPenerimaanPengeluaran($tahun_order='')
-    {
-      $sql = "
-      SELECT * FROM `tbl_detailmutasi` 
-	      JOIN tbl_ssh ON tbl_ssh.id_ssh=tbl_detailmutasi.id_ssh
-        JOIN tbl_akun ON tbl_akun.username=tbl_detailmutasi.username
-          WHERE tbl_akun.id_opd=35 AND tbl_detailmutasi.tahun_order=2021
-      ";
-      $query = $this->db->query($sql);
-      return $query->result();
+    
+  }
 
-  
-    }
+  function TampilOrder() 
+  {
+    $this->db->order_by('id_detailmutasi', 'ASC');
+    return $this->db->from('tbl_detailmutasi')
+      ->get()
+      ->result();
+    
+  }
 
-    function GetSisa($tahun_order='')
-    {
-      $sql = "
-      SELECT * FROM `tbl_detailmutasi` 
-	      JOIN tbl_ssh ON tbl_ssh.id_ssh=tbl_detailmutasi.id_ssh
-        JOIN tbl_akun ON tbl_akun.username=tbl_detailmutasi.username
-          WHERE tbl_akun.id_opd=35 AND tbl_detailmutasi.tahun_order=2021
-      ";
-      $query = $this->db->query($sql);
-      return $query->result();
-    }
-
-
-
-
-    function GetPenerimaan ($tahun_order='')
-    {
-        $this->db->order_by('id_detailpengadaan', 'ASC');        
-        $this->db->where('tahun_order',$tahun_order);
-        return $this->db->from('tbl_detailpengadaan')
-          ->join('tbl_ssh','tbl_ssh.id_ssh=tbl_detailpengadaan.id_ssh')
-          ->join('tbl_pengadaan','tbl_pengadaan.id_pengadaan=tbl_detailpengadaan.id_pengadaanrekanan')          
-          ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_pengadaan.id_rekanan')             
-          ->join('tbl_akun','tbl_akun.username=tbl_pengadaan.username')   
-          ->join('tbl_opd','tbl_opd.id_opd=tbl_akun.id_opd')   
-          
-          ->get()
-          ->result();
-    }
-
-    function TampilPengeluaran() 
-    {
-      $this->db->order_by('id_order', 'ASC');
-      return $this->db->from('tbl_order')
+  function Gettahun_pesan($tahun_order)
+  {
+      $this->db->select('*');
+      $this->db->select_sum('tbl_detailmutasi.total_barang_in');
+      $this->db->select_sum('tbl_detailmutasi.total_barang_out');
+      $this->db->order_by('id_detailmutasi', 'ASC');    
+      $this->db->or_where('tbl_mutasi.statusorder', 'Selesai');    
+      $this->db->or_where('tbl_mutasi.statuspenyaluran', 'Sudah Disalurkan');  
+      $this->db->where('tahun_order',$tahun_order); 
+      $this->db->group_by('tbl_detailmutasi.id_ssh');
+      return $this->db->from('tbl_detailmutasi')
+        ->join('tbl_ssh','tbl_ssh.id_ssh=tbl_detailmutasi.id_ssh')
+        ->join('tbl_mutasi','tbl_mutasi.id_mutasi=tbl_detailmutasi.id_mutasi')    
         ->get()
         ->result();
-      
-    }
+  }
+
+  function GetId_Print($id_mutasi='') 
+  {
+    return $this->db->get_where('tbl_mutasi', array('id_mutasi' => $id_mutasi))
+          ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_mutasi.id_rekanan')
+          ->row();
+    
+  }
+
+  function Getid_mutasi($id_mutasi='')
+  {
+    return $this->db->get_where('tbl_mutasi', array('id_mutasi' => $id_mutasi))->row();
+  }
 
     
 

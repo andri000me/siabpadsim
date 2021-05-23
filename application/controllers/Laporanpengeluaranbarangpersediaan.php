@@ -17,19 +17,13 @@ class Laporanpengeluaranbarangpersediaan extends CI_Controller {
 		$data['hasil']=$this->model_laporanpengeluaranbarangpersediaan->Tampillaporanpengeluaranbarangpersediaan();
 			$this->load->view('laporanpengeluaranbarangpersediaan/laporanpengeluaranbarangpersediaan',$data);
 	}
-
-	function lihat($tahun_penyaluran)
-    {
-        $data['hasil']=$this->model_laporanpengeluaranbarangpersediaan->Gettahun_penyaluran($tahun_penyaluran);
-        $this->load->view('laporanpengeluaranbarangpersediaan/lihat',$data);
-	}
 	
-    function print($tahun_penyaluran)
-	{
-        $data['hasil']=$this->model_laporanpengeluaranbarangpersediaan->Gettahun_penyaluran($tahun_penyaluran);
+    function print()
+	{   
+        $tahun_order = $this->input->post('tahun_order');
+        $data['hasil']=$this->model_laporanpengeluaranbarangpersediaan->Gettahun_pesan($tahun_order);
         $this->load->view('laporanpengeluaranbarangpersediaan/print',$data);
 	}
-
 }
 
 /* End of file laporanpengeluaranbarangpersediaan.php */

@@ -15,22 +15,15 @@ class Laporanbukubarangpersediaan extends CI_Controller {
 	function index()
 	{
 		$data['hasil']=$this->model_laporanbukubarangpersediaan->Tampillaporanbukubarangpersediaan();
-		$this->load->view('laporanbukubarangpersediaan/laporanbukubarangpersediaan',$data);
-	}
-
-	function lihat($tahun_order)
-    {
-        $data['hasil']=$this->model_laporanbukubarangpersediaan->Gettahun_order($tahun_order);
-        $this->load->view('laporanbukubarangpersediaan/lihat',$data);
+			$this->load->view('laporanbukubarangpersediaan/laporanbukubarangpersediaan',$data);
 	}
 	
-    function print($tahun_order)
-	{
-        $data['hasil'] = $this->model_laporanbukubarangpersediaan->GetPenerimaanPengeluaran($tahun_order);
-        $data['hasilsisa'] = $this->model_laporanbukubarangpersediaan->GetSisa($tahun_order);
+    function print()
+	{   
+        $tahun_order = $this->input->post('tahun_order');
+        $data['hasil']=$this->model_laporanbukubarangpersediaan->Gettahun_pesan($tahun_order);
         $this->load->view('laporanbukubarangpersediaan/print',$data);
 	}
-
 }
 
 /* End of file laporanbukubarangpersediaan.php */
