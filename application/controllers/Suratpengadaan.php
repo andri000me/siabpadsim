@@ -21,7 +21,7 @@ class Suratpengadaan extends CI_Controller {
     {       
             $data = array(
             'tanggal_pesan'=>$this->input->post('tanggal_pesan'),
-			'id_pengadaan'=>$this->input->post('id_pengadaan'),
+			'id_mutasi'=>$this->input->post('id_mutasi'),
             'keterangan'=>$this->input->post('keterangan'),            
 			'memesan'=>$this->input->post('memesan'),			        
 			'belanja'=>$this->input->post('belanja'),
@@ -29,16 +29,16 @@ class Suratpengadaan extends CI_Controller {
             'username'=>$this->input->post('username')
 					);
 					$data['keterangan'] = "Menunggu Konfirmasi";
-					$data['statusorder'] = "Belum Diterima";
+					$data['statusorder'] = "Sedang Diproses";
 					$data['username'] = $this->session->userdata('username');
 					
 					$this->model_suratpengadaan->menambahdatapengadaan($data);
 					redirect('pengadaan','refresh');
 	}
 
-	function update($id_pengadaan = NULL)
+	function update($id_mutasi = NULL)
     {
-        $data['ambil']=$this->model_suratpengadaan->GetId_suratpengadaan($id_pengadaan);
+        $data['ambil']=$this->model_suratpengadaan->GetId_suratpengadaan($id_mutasi);
         $this->load->view('suratpengadaan/update',$data);
 	}
 	
@@ -67,66 +67,66 @@ class Suratpengadaan extends CI_Controller {
             'tanggal_bapembayaran'=>$this->input->post('tanggal_bapembayaran'),
 
         );
-        $id_pengadaan = $this->input->post('id_pengadaan');
-		$this->db->where('id_pengadaan', $id_pengadaan);
-        $this->db->update('tbl_pengadaan',$data);
+        $id_mutasi = $this->input->post('id_mutasi');
+		$this->db->where('id_mutasi', $id_mutasi);
+        $this->db->update('tbl_mutasi',$data);
         redirect('suratpengadaan');
 	}
     
-    function surat1($id_pengadaan)
+    function surat1($id_mutasi)
 	{
         
-        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_pengadaan);
+        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_mutasi);
 
         $detailpengadaan = $this->model_suratpengadaan->detailpengadaan();
         if ($detailpengadaan)
         {
-            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_pengadaan);
+            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_mutasi);
         }
 
         $this->load->view('suratpengadaan/surat1',$data);
         
 	}
 
-    function surat2($id_pengadaan)
+    function surat2($id_mutasi)
 	{
         
-        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_pengadaan);
+        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_mutasi);
 
         $detailpengadaan = $this->model_suratpengadaan->detailpengadaan();
         if ($detailpengadaan)
         {
-            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_pengadaan);
+            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_mutasi);
         }
 
         $this->load->view('suratpengadaan/surat2',$data);
         
 	}
 
-    function surat3($id_pengadaan)
+    function surat3($id_mutasi)
 	{
         
-        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_pengadaan);
+        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_mutasi);
 
         $detailpengadaan = $this->model_suratpengadaan->detailpengadaan();
         if ($detailpengadaan)
         {
-            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_pengadaan);
+            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_mutasi);
         }
 
         $this->load->view('suratpengadaan/surat3',$data);
         
 	}
 
-    function surat4($id_pengadaan)
+    function surat4($id_mutasi)
 	{
         
-        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_pengadaan);
+        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_mutasi);
 
         $detailpengadaan = $this->model_suratpengadaan->detailpengadaan();
         if ($detailpengadaan)
         {
-            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_pengadaan);
+            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_mutasi);
         }
 
         $this->load->view('suratpengadaan/surat4',$data);
@@ -134,60 +134,60 @@ class Suratpengadaan extends CI_Controller {
 	}
 
 
-    function surat5($id_pengadaan)
+    function surat5($id_mutasi)
 	{
         
-        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_pengadaan);
+        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_mutasi);
 
         $detailpengadaan = $this->model_suratpengadaan->detailpengadaan();
         if ($detailpengadaan)
         {
-            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_pengadaan);
+            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_mutasi);
         }
 
         $this->load->view('suratpengadaan/surat5',$data);
         
 	}
 
-    function surat6($id_pengadaan)
+    function surat6($id_mutasi)
 	{
         
-        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_pengadaan);
+        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_mutasi);
 
         $detailpengadaan = $this->model_suratpengadaan->detailpengadaan();
         if ($detailpengadaan)
         {
-            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_pengadaan);
+            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_mutasi);
         }
 
         $this->load->view('suratpengadaan/surat6',$data);
         
 	}
 
-    function surat7($id_pengadaan)
+    function surat7($id_mutasi)
 	{
         
-        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_pengadaan);
+        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_mutasi);
 
         $detailpengadaan = $this->model_suratpengadaan->detailpengadaan();
         if ($detailpengadaan)
         {
-            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_pengadaan);
+            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_mutasi);
         }
 
         $this->load->view('suratpengadaan/surat7',$data);
         
 	}
 
-    function surat8($id_pengadaan)
+    function surat8($id_mutasi)
 	{
         
-        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_pengadaan);
+        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_mutasi);
 
         $detailpengadaan = $this->model_suratpengadaan->detailpengadaan();
         if ($detailpengadaan)
         {
-            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_pengadaan);
+            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_mutasi);
         }
 
         $this->load->view('suratpengadaan/surat8',$data);
@@ -196,30 +196,30 @@ class Suratpengadaan extends CI_Controller {
 
    
 
-    function surat9($id_pengadaan)
+    function surat9($id_mutasi)
 	{
         
-        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_pengadaan);
+        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_mutasi);
 
         $detailpengadaan = $this->model_suratpengadaan->detailpengadaan();
         if ($detailpengadaan)
         {
-            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_pengadaan);
+            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_mutasi);
         }
 
         $this->load->view('suratpengadaan/surat9',$data);
         
 	}
 
-    function surat10($id_pengadaan)
+    function surat10($id_mutasi)
 	{
         
-        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_pengadaan);
+        $data['pengadaan']= $this->model_suratpengadaan->pengadaan($id_mutasi);
 
         $detailpengadaan = $this->model_suratpengadaan->detailpengadaan();
         if ($detailpengadaan)
         {
-            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_pengadaan);
+            $data['detailpengadaan'] = $this->model_suratpengadaan->detailpengadaansurat($id_mutasi);
         }
 
         $this->load->view('suratpengadaan/surat10',$data);

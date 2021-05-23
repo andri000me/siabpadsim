@@ -48,14 +48,14 @@ $this->load->view('pengurusbarangpengguna/barangpersediaan/menu');
                   <td><?= $data->tanggal_pesan ?></td>
                   <td><?= $data->nama ?></td>
                   <td><?= $data->keterangan ?></td>
-                  <td><?= $data->statusorder ?></td>
-                  <td><?= $data->tanggalterimabarang ?></td>
+                  <td><?= $data->statuspenyaluran ?></td>
+                  <td><?= $data->tanggalpenyaluran ?></td>
                   <td> 
-                    <a href="penyaluranPBP/lihatlistpenyaluran/<?php echo $data->id_penyaluran; ?>" class="btn btn-success" style="margin-bottom: 1px;">Lihat<i class="fa fa-tag"></i></a>
+                    <a href="penyaluranPBP/lihatlistpenyaluran/<?php echo $data->id_mutasi; ?>" class="btn btn-success" style="margin-bottom: 1px;">Lihat<i class="fa fa-tag"></i></a>
                       </td> 
                   <td> 
-                    <a href="penyaluranPBP/updateketerangan/<?php echo $data->id_penyaluran; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Disetujui<i class="fa fa-tag"></i></a>
-                    <a href="penyaluranPBP/updatestatusorder/<?php echo $data->id_penyaluran; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Sudah Disalurkan<i class="fa fa-tag"></i></a>
+                    <a href="penyaluranPBP/updateketerangan/<?php echo $data->id_mutasi; ?>" onclick="return confirm('Apakah anda yakin?');"class="btn btn-warning" style="margin-bottom: 1px;">Konfirmasi Setuju<i class="fa fa-tag"></i></a>
+                    <a href="penyaluranPBP/updatestatusorder/<?php echo $data->id_mutasi; ?>" onclick="return confirm('Apakah anda sudah memeriksa barang dan ingin konfirmasi selesai?');" class="btn btn-danger" style="margin-bottom: 1px;">Konfirmasi Selesai<i class="fa fa-tag"></i></a>
                    </td> 
                 </tr>
                     <?php

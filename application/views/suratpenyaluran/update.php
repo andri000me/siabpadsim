@@ -10,7 +10,7 @@ $this->load->view('operator/barangpersediaan/menu');
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-          <a href="<?php echo base_url('operator/barangpersediaan')?>">Halaman Utama</a>
+          <a href="<?php echo base_url('suratpenyaluran')?>">Surat Penyaluran</a>
         </li>
   
         <li class="breadcrumb-item active">Data Surat Penyaluran</li>
@@ -26,7 +26,7 @@ $this->load->view('operator/barangpersediaan/menu');
              <div class="container">
 
         <form action="<?php echo base_url('suratpenyaluran/simpan_update')?>" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="id_penyaluran"  value="<?php echo $ambil->id_penyaluran; ?>" />
+        <input type="hidden" name="id_mutasi"  value="<?php echo $ambil->id_mutasi; ?>" />
        
               <div class="form-group">
               <div class="form-row">
@@ -41,7 +41,7 @@ $this->load->view('operator/barangpersediaan/menu');
                   </div>  
 
                   <div class="col-md-4">
-                  <tr><a href="<?php echo base_url('suratpenyaluran/surat1/')?><?php echo $ambil->id_penyaluran; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
+                  <tr><a href="<?php echo base_url('suratpenyaluran/surat1/')?><?php echo $ambil->id_mutasi; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
                   </div>
 
                 </div>
@@ -59,7 +59,7 @@ $this->load->view('operator/barangpersediaan/menu');
                   </div>  
 
                   <div class="col-md-4">
-                  <tr><a href="<?php echo base_url('suratpenyaluran/surat2/')?><?php echo $ambil->id_penyaluran; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
+                  <tr><a href="<?php echo base_url('suratpenyaluran/surat2/')?><?php echo $ambil->id_mutasi; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Print<i class="fa fa-tag"></i></a></tr>
                   </div>
 
                 </div>

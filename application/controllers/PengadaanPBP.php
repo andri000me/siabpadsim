@@ -17,35 +17,35 @@ class PengadaanPBP extends CI_Controller {
         $this->load->view('pengadaanPBP/pengadaanPBP', $data);
 	}
 
-    function updateketerangan($id_pengadaan)
+    function updateketerangan($id_mutasi)
     {
         $data = array(
             'keterangan'=>$this->input->post('statusorder')
         );
         $data['keterangan'] = "Disetujui";
-		$id = $this->input->post('id_pengadaan');
-		$this->db->where('id_pengadaan', $id_pengadaan);
-        $this->db->update('tbl_pengadaan',$data);
+		$id = $this->input->post('id_mutasi');
+		$this->db->where('id_mutasi', $id_mutasi);
+        $this->db->update('tbl_mutasi',$data);
         redirect('pengadaanPBP');
     }
 
-    function updatestatusorder($id_pengadaan)
+    function updatestatusorder($id_mutasi)
     {
         $data = array(
             'statusorder'=>$this->input->post('statusorder'),
             'tanggalterimabarang'=>$this->input->post('tanggalterimabarang')
         );
-        $data['statusorder'] = "Sudah Diterima";
+        $data['statusorder'] = "Selesai";
         $data['tanggalterimabarang'] = date("Y-m-d");        
-		$id = $this->input->post('id_pengadaan');
-		$this->db->where('id_pengadaan', $id_pengadaan);
-        $this->db->update('tbl_pengadaan',$data);
+		$id = $this->input->post('id_mutasi');
+		$this->db->where('id_mutasi', $id_mutasi);
+        $this->db->update('tbl_mutasi',$data);
         redirect('pengadaanPBP');
     }
 
-    function lihatlistpengadaan($id_pengadaan)
+    function lihatlistpengadaan($id_mutasi)
 	{
-        $data['hasil']=$this->model_pengadaanPBP->Lihatlistpengadaan($id_pengadaan);
+        $data['hasil']=$this->model_pengadaanPBP->Lihatlistpengadaan($id_mutasi);
         $this->load->view('pengadaanPBP/lihatlistorder',$data);
 	}
 

@@ -21,24 +21,24 @@ class Suratpenyaluran extends CI_Controller {
     {       
             $data = array(
             'tanggal_pesan'=>$this->input->post('tanggal_pesan'),
-			'id_penyaluran'=>$this->input->post('id_penyaluran'),
+			'id_mutasi'=>$this->input->post('id_mutasi'),
             'keterangan'=>$this->input->post('keterangan'),            
 			'memesan'=>$this->input->post('memesan'),			        
 			'belanja'=>$this->input->post('belanja'),
-            'statusorder'=>$this->input->post('statusorder'),
+            'statuspenyaluran'=>$this->input->post('statuspenyaluran'),
             'username'=>$this->input->post('username')
 					);
 					$data['keterangan'] = "Menunggu Konfirmasi";
-					$data['statusorder'] = "Belum Diterima";
+					$data['statuspenyaluran'] = "Sedang Diproses";
 					$data['username'] = $this->session->userdata('username');
 					
 					$this->model_suratpenyaluran->menambahdatapenyaluran($data);
 					redirect('penyaluran','refresh');
 	}
 
-	function update($id_penyaluran = NULL)
+	function update($id_mutasi = NULL)
     {
-        $data['ambil']=$this->model_suratpenyaluran->GetId_suratpenyaluran($id_penyaluran);
+        $data['ambil']=$this->model_suratpenyaluran->GetId_suratpenyaluran($id_mutasi);
         $this->load->view('suratpenyaluran/update',$data);
 	}
 	
@@ -51,36 +51,36 @@ class Suratpenyaluran extends CI_Controller {
 			'tanggal_bapenyaluranbarang'=>$this->input->post('tanggal_bapenyaluranbarang'),
 
         );
-        $id_penyaluran = $this->input->post('id_penyaluran');
-		$this->db->where('id_penyaluran', $id_penyaluran);
-        $this->db->update('tbl_penyaluran',$data);
+        $id_mutasi = $this->input->post('id_mutasi');
+		$this->db->where('id_mutasi', $id_mutasi);
+        $this->db->update('tbl_mutasi',$data);
         redirect('suratpenyaluran');
 	}
 
-    function surat1($id_penyaluran)
+    function surat1($id_mutasi)
 	{
         
-        $data['penyaluran']= $this->model_suratpenyaluran->penyaluran($id_penyaluran);
+        $data['penyaluran']= $this->model_suratpenyaluran->penyaluran($id_mutasi);
 
         $detailpenyaluran = $this->model_suratpenyaluran->detailpenyaluran();
         if ($detailpenyaluran)
         {
-            $data['detailpenyaluran'] = $this->model_suratpenyaluran->detailpenyaluransurat($id_penyaluran);
+            $data['detailpenyaluran'] = $this->model_suratpenyaluran->detailpenyaluransurat($id_mutasi);
         }
 
         $this->load->view('suratpenyaluran/surat1',$data);
         
 	}
 
-    function surat2($id_penyaluran)
+    function surat2($id_mutasi)
 	{
         
-        $data['penyaluran']= $this->model_suratpenyaluran->penyaluran($id_penyaluran);
+        $data['penyaluran']= $this->model_suratpenyaluran->penyaluran($id_mutasi);
 
         $detailpenyaluran = $this->model_suratpenyaluran->detailpenyaluran();
         if ($detailpenyaluran)
         {
-            $data['detailpenyaluran'] = $this->model_suratpenyaluran->detailpenyaluransurat($id_penyaluran);
+            $data['detailpenyaluran'] = $this->model_suratpenyaluran->detailpenyaluransurat($id_mutasi);
         }
 
         $this->load->view('suratpenyaluran/surat2',$data);

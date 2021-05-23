@@ -36,7 +36,7 @@ class Pengadaan extends CI_Controller {
 					);
 					$data['jenis_mutasi'] = "Pengadaan";
 					$data['keterangan'] = "Menunggu Konfirmasi";
-					$data['statusorder'] = "Belum Diterima";
+					$data['statusorder'] = "Sedang Diproses";
 					$data['username'] = $this->session->userdata('username');
 					$data['id_opd'] = $this->session->userdata('id_opd');
 					

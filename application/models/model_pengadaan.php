@@ -39,7 +39,7 @@ class Model_pengadaan extends CI_Model {
 			$this->db->order_by('id_mutasi', 'ASC');
       $this->db->where('jenis_mutasi', 'Pengadaan');
 			$this->db->where('keterangan', "Menunggu Konfirmasi");
-      $this->db->where('statusorder', "Belum Diterima");
+      $this->db->where('statusorder', "Sedang Diproses");
         return $this->db->from('tbl_mutasi')
           ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_mutasi.id_rekanan')
           ->get()
@@ -73,7 +73,7 @@ class Model_pengadaan extends CI_Model {
 			$this->db->order_by('statusorder', 'ASC');
       $this->db->where('jenis_mutasi', 'Pengadaan');
 			$this->db->where('keterangan', "Disetujui");
-			$this->db->where('statusorder', "Belum Diterima");
+			$this->db->where('statusorder', "Sedang Diproses");
         return $this->db->from('tbl_mutasi')
           ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_mutasi.id_rekanan')
           ->get()
@@ -85,7 +85,7 @@ class Model_pengadaan extends CI_Model {
 			$this->db->order_by('statusorder', 'ASC');
       $this->db->where('jenis_mutasi', 'Pengadaan');
 			$this->db->where('keterangan', "Disetujui");
-			$this->db->where('statusorder', "Sudah Diterima");
+			$this->db->where('statusorder', "Selesai");
         return $this->db->from('tbl_mutasi')
           ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_mutasi.id_rekanan')
           ->get()

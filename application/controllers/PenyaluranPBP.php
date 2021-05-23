@@ -17,33 +17,35 @@ class PenyaluranPBP extends CI_Controller {
         $this->load->view('penyaluranPBP/penyaluranPBP', $data);
 	}
 
-    function updateketerangan($id_penyaluran)
+    function updateketerangan($id_mutasi)
     {
         $data = array(
             'keterangan'=>$this->input->post('keterangan')
         );
         $data['keterangan'] = "Disetujui";
-		$id = $this->input->post('id_penyaluran');
-		$this->db->where('id_penyaluran', $id_penyaluran);
-        $this->db->update('tbl_penyaluran',$data);
+		$id = $this->input->post('id_mutasi');
+		$this->db->where('id_mutasi', $id_mutasi);
+        $this->db->update('tbl_mutasi',$data);
         redirect('penyaluranPBP');
     }
 
-    function updatestatusorder($id_penyaluran)
+    function updatestatusorder($id_mutasi)
     {
         $data = array(
-            'statusorder'=>$this->input->post('statusorder')
+            'statuspenyaluran'=>$this->input->post('statuspenyaluran'),
+            'tanggalpenyaluran'=>$this->input->post('tanggalpenyaluran')
         );
-        $data['statusorder'] = "Sudah Disalurkan";       
-		$id = $this->input->post('id_penyaluran');
-		$this->db->where('id_penyaluran', $id_penyaluran);
-        $this->db->update('tbl_penyaluran',$data);
+        $data['statuspenyaluran'] = "Sudah Disalurkan";    
+        $data['tanggalpenyaluran'] = date("Y-m-d");   
+		$id = $this->input->post('id_mutasi');
+		$this->db->where('id_mutasi', $id_mutasi);
+        $this->db->update('tbl_mutasi',$data);
         redirect('penyaluranPBP');
     }
 
-    function lihatlistpenyaluran($id_penyaluran)
+    function lihatlistpenyaluran($id_mutasi)
 	{
-        $data['hasil']=$this->model_penyaluranPBP->Lihatlistpenyaluran($id_penyaluran);
+        $data['hasil']=$this->model_penyaluranPBP->Lihatlistpenyaluran($id_mutasi);
         $this->load->view('penyaluranPBP/lihatlistorder',$data);
 	}
 

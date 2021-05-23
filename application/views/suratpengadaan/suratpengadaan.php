@@ -50,7 +50,7 @@ $this->load->view('operator/barangpersediaan/menu');
                   <td><?= $data->memesan ?></td>
                   <td><?= $data->keterangan ?></td>
                   <td> 
-                    <a href="suratpengadaan/update/<?php echo $data->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Surat<i class="fa fa-tag"></i></a>
+                    <a href="suratpengadaan/update/<?php echo $data->id_mutasi; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Surat<i class="fa fa-tag"></i></a>
                   </td> 
                 </tr>
                     <?php

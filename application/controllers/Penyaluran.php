@@ -25,14 +25,12 @@ class Penyaluran extends CI_Controller {
     {       
             $data = array(
 			'jenis_mutasi'=>$this->input->post('jenis_mutasi'),
-            'tanggal_pesan'=>$this->input->post('tanggal_pesan'),
-            'keterangan'=>$this->input->post('keterangan'),       
-            'statusorder'=>$this->input->post('statusorder'),
+            'tanggal_pesan'=>$this->input->post('tanggal_pesan'), 
+            'statuspenyaluran'=>$this->input->post('statuspenyaluran'),
             'username'=>$this->input->post('username')
 					);
 					$data['jenis_mutasi'] = "Penyaluran";
-					$data['keterangan'] = "Menunggu Konfirmasi";
-					$data['statusorder'] = "Belum Diterima";
+					$data['statuspenyaluran'] = "Belum Diproses";
 					$data['username'] = $this->session->userdata('username');
 					
 					$this->model_penyaluran->menambahdatapenyaluran($data);
@@ -40,9 +38,9 @@ class Penyaluran extends CI_Controller {
 	}
 	
 
-	public function action_deletedatapenyaluran($id_penyaluran = '')
+	public function action_deletedatapenyaluran($id_mutasi = '')
 	{
-			$this->model_penyaluran->deletedatapenyaluran($id_penyaluran);
+			$this->model_penyaluran->deletedatapenyaluran($id_mutasi);
 			redirect('penyaluran','refresh');
 	}
 

@@ -11,7 +11,7 @@ $this->load->view('operator/barangpersediaan/menu');
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-          <a href="<?php echo base_url('operator/barangpersediaan')?>">Halaman Utama</a>
+          <a href="<?php echo base_url('operator/barangpersediaan')?>">Barang Persediaan</a>
         </li>
   
         <li class="breadcrumb-item active">Data Surat Penyaluran Barang</li>
@@ -48,7 +48,7 @@ $this->load->view('operator/barangpersediaan/menu');
                   <td><?= $data->keterangan ?></td>
                   <td><?= $data->statusorder ?></td>
                   <td> 
-                    <a href="suratpenyaluran/update/<?php echo $data->id_penyaluran; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Surat<i class="fa fa-tag"></i></a>
+                    <a href="suratpenyaluran/update/<?php echo $data->id_mutasi; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Surat<i class="fa fa-tag"></i></a>
                   </td> 
                 </tr>
                     <?php

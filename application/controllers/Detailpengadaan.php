@@ -30,7 +30,7 @@ class Detailpengadaan extends CI_Controller {
 			'id_detailmutasi'=>$this->input->post('id_detailmutasi'),
 			'id_mutasi'=>$this->input->post('id_mutasi'),
             'id_ssh'=>$this->input->post('id_ssh'),
-            'total_barang_in_in'=>$this->input->post('total_barang_in_in'),
+            'total_barang_in'=>$this->input->post('total_barang_in'),
             'username'=>$this->input->post('username')
         );
         $data['id_mutasi'] = $hasilparsing;
@@ -38,9 +38,11 @@ class Detailpengadaan extends CI_Controller {
         $this->db->insert('tbl_detailmutasi',$data);
     
         $data2 =array(
-            'keterangan'=>$this->input->post('keterangan')
+            'keterangan'=>$this->input->post('keterangan'),
+            'statusorder'=>$this->input->post('statusorder')
         );
         $data2['keterangan'] = "Menunggu Konfirmasi";
+        $data2['statusorder'] = "Sedang Diproses";
         $this->db->where('id_mutasi', $hasilparsing);
         $this->db->update('tbl_mutasi',$data2);
 
@@ -71,9 +73,11 @@ class Detailpengadaan extends CI_Controller {
         $this->db->update('tbl_detailmutasi',$data);
 
         $data2 =array(
-            'keterangan'=>$this->input->post('keterangan')
+            'keterangan'=>$this->input->post('keterangan'),
+            'statusorder'=>$this->input->post('statusorder')
         );
         $data2['keterangan'] = "Menunggu Konfirmasi";
+        $data2['statusorder'] = "Sedang Diproses";
         $this->db->where('id_mutasi', $hasilparsing);
         $this->db->update('tbl_mutasi',$data2);
 

@@ -54,11 +54,11 @@ $this->load->view('pengurusbarangpengguna/barangpersediaan/menu');
                   <td><?= $data->statusorder ?></td>
                   <td><?= $data->tanggalterimabarang ?></td>
                   <td> 
-                    <a href="PengadaanPBP/lihatlistpengadaan/<?php echo $data->id_pengadaan; ?>" class="btn btn-success" style="margin-bottom: 1px;">Lihat<i class="fa fa-tag"></i></a>
+                    <a href="PengadaanPBP/lihatlistpengadaan/<?php echo $data->id_mutasi; ?>" class="btn btn-success" style="margin-bottom: 1px;">Lihat<i class="fa fa-tag"></i></a>
                       </td> 
                   <td> 
-                    <a href="PengadaanPBP/updateketerangan/<?php echo $data->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Disetujui<i class="fa fa-tag"></i></a>
-                    <a href="PengadaanPBP/updatestatusorder/<?php echo $data->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Sudah Diterima<i class="fa fa-tag"></i></a>
+                    <a href="PengadaanPBP/updateketerangan/<?php echo $data->id_mutasi; ?>" class="btn btn-warning" onclick="return confirm('Apakah anda yakin?');"style="margin-bottom: 1px;">Konfirmasi Setuju<i class="fa fa-tag"></i></a>
+                    <a href="PengadaanPBP/updatestatusorder/<?php echo $data->id_mutasi; ?>" class="btn btn-danger" onclick="return confirm('Apakah anda sudah memeriksa pemesanan dan ingin konfirmasi selesai?');" style="margin-bottom: 1px;">Konfirmasi Selesai<i class="fa fa-tag"></i></a>
                   </td> 
                 </tr>
                     <?php

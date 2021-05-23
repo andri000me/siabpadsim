@@ -11,16 +11,16 @@ $this->load->view('pengurusbarangpengguna/barangpersediaan/menu');
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-          <a href="<?php echo base_url('pengadaanPBP')?>">Kembali</a>
+          <a href="<?php echo base_url('pengadaanPBP')?>">Pengadaan</a>
         </li>
   
-        <li class="breadcrumb-item active">Order Barang</li>
+        <li class="breadcrumb-item active">Order Barang Persediaan</li>
       </ol>
       
   
  <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Daftar Tabel Order Rekanan</div>
+          <i class="fa fa-table"></i> Daftar Tabel Order Barang Persediaan</div>
           
         <div class="card-body">
           <div class="table-responsive">
@@ -41,15 +41,15 @@ $this->load->view('pengurusbarangpengguna/barangpersediaan/menu');
                     $total=0;
                     foreach ($hasil as $item)
                     {
-                        $total += $item->total_barang*$item->Hargasatuan_ssh;
+                        $total += $item->total_barang_in*$item->Hargasatuan_ssh;
                     ?>
                     <tr>
                         <td><?php echo $no;?></td>
                         <td><?php echo $item->Namabarang_ssh;?></td>
-                        <td align="center"><?php echo $item->total_barang;?></td>
+                        <td align="center"><?php echo $item->total_barang_in;?></td>
                         <td><?php echo $item->Satuan_ssh;?></td>
                         <td align="right"><?= 'Rp'.number_format($item->Hargasatuan_ssh,0,'.','.');?></td>
-                        <td align="right"><?= 'Rp'.number_format(($item->total_barang)*($item->Hargasatuan_ssh),0,'.','.');?></td> </tr>
+                        <td align="right"><?= 'Rp'.number_format(($item->total_barang_in)*($item->Hargasatuan_ssh),0,'.','.');?></td> </tr>
                     <?php
                             $no++;
                     }

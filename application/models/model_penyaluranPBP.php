@@ -6,9 +6,10 @@ class Model_penyaluranPBP extends CI_Model {
     {
       $id_opd=$this->session->userdata('id_opd');
       $this->db->where('tbl_akun.id_opd', $id_opd);
+      $this->db->where('tbl_mutasi.jenis_mutasi', 'Penyaluran');
       $this->db->order_by('keterangan', 'ASC');
-        return $this->db->from('tbl_penyaluran')
-          ->join('tbl_akun','tbl_akun.username=tbl_penyaluran.username')
+        return $this->db->from('tbl_mutasi')
+          ->join('tbl_akun','tbl_akun.username=tbl_mutasi.username')
           ->get()
           ->result();
     }
@@ -17,25 +18,26 @@ class Model_penyaluranPBP extends CI_Model {
     {
       $id_opd=$this->session->userdata('id_opd');
       $this->db->where('tbl_akun.id_opd', $id_opd);
-      $this->db->order_by('id_penyaluran', 'ASC');
-        return $this->db->from('tbl_penyaluran')
-          ->join('tbl_akun','tbl_akun.username=tbl_penyaluran.username')
+      $this->db->where('tbl_mutasi.jenis_mutasi', 'Penyaluran');
+      $this->db->order_by('id_mutasi', 'ASC');
+        return $this->db->from('tbl_mutasi')
+          ->join('tbl_akun','tbl_akun.username=tbl_mutasi.username')
           ->get()
           ->result();
     }
 
     
-    function GetId_penyaluranPBP($id_penyaluran='')
+    function Getid_mutasiPBP($id_mutasi='')
     {
-      return $this->db->get_where('tbl_penyaluran', array('id_penyaluran' => $id_penyaluran))->row();
+      return $this->db->get_where('tbl_mutasi', array('id_mutasi' => $id_mutasi))->row();
     }
 
-    function Lihatlistpenyaluran($id_penyaluran='') 
+    function Lihatlistpenyaluran($id_mutasi='') 
     {
-        $this->db->order_by('id_detailpenyaluran', 'ASC');
-        $this->db->where('id_penyaluran', $id_penyaluran);
-        return $this->db->from('tbl_detailpenyaluran')
-          ->join('tbl_ssh','tbl_ssh.id_ssh=tbl_detailpenyaluran.id_ssh')
+        $this->db->order_by('id_detailmutasi', 'ASC');
+        $this->db->where('id_mutasi', $id_mutasi);
+        return $this->db->from('tbl_detailmutasi')
+          ->join('tbl_ssh','tbl_ssh.id_ssh=tbl_detailmutasi.id_ssh')
           ->get()
           ->result();
     }

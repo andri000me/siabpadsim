@@ -6,9 +6,10 @@ class Model_suratpenyaluran extends CI_Model {
     {
       $id_opd=$this->session->userdata('id_opd');
       $this->db->where('tbl_akun.id_opd', $id_opd);
-      $this->db->order_by('id_penyaluran', 'ASC');
-        return $this->db->from('tbl_penyaluran')
-          ->join('tbl_akun','tbl_akun.username=tbl_penyaluran.username')
+      $this->db->where('tbl_mutasi.jenis_mutasi', 'Penyaluran');
+      $this->db->order_by('id_mutasi', 'ASC');
+        return $this->db->from('tbl_mutasi')
+          ->join('tbl_akun','tbl_akun.username=tbl_mutasi.username')
           ->get()
           ->result();
     }
@@ -17,36 +18,37 @@ class Model_suratpenyaluran extends CI_Model {
     {
       $id_opd=$this->session->userdata('id_opd');
       $this->db->where('tbl_akun.id_opd', $id_opd);
-      $this->db->order_by('id_penyaluran', 'ASC');
-        return $this->db->from('tbl_penyaluran')
-          ->join('tbl_akun','tbl_akun.username=tbl_penyaluran.username')
+      $this->db->where('tbl_mutasi.jenis_mutasi', 'Penyaluran');
+      $this->db->order_by('id_mutasi', 'ASC');
+        return $this->db->from('tbl_mutasi')
+          ->join('tbl_akun','tbl_akun.username=tbl_mutasi.username')
           ->get()
           ->result();
     }
 
     
-    function GetId_suratpenyaluran($id_penyaluran='')
+    function GetId_suratpenyaluran($id_mutasi='')
     {
-      return $this->db->get_where('tbl_penyaluran', array('id_penyaluran' => $id_penyaluran))->row();
+      return $this->db->get_where('tbl_mutasi', array('id_mutasi' => $id_mutasi))->row();
     }
 
     function detailpenyaluran() 
     {
-      $this->db->order_by('id_detailpenyaluran', 'ASC');
-      return $this->db->from('tbl_detailpenyaluran')
+      $this->db->order_by('id_detailmutasi', 'ASC');
+      return $this->db->from('tbl_detailmutasi')
         ->get()
         ->result();
     }
 
-    function penyaluran($id_penyaluran='') 
+    function penyaluran($id_mutasi='') 
     {
       $this->db->select('*, tbl_akun.username as nip_pptk');
-      $this->db->order_by('id_penyaluran', 'ASC');
-        $this->db->where('id_penyaluran', $id_penyaluran);
-        return $this->db->from('tbl_penyaluran')
-          //->join('tbl_paketpekerjaan','tbl_paketpekerjaan.id_paketpekerjaan=tbl_penyaluran.id_paketpekerjaan')
-          //->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_penyaluran.id_rekanan')
-          ->join('tbl_akun','tbl_akun.username=tbl_penyaluran.username')
+      $this->db->order_by('id_mutasi', 'ASC');
+        $this->db->where('id_mutasi', $id_mutasi);
+        return $this->db->from('tbl_mutasi')
+          //->join('tbl_paketpekerjaan','tbl_paketpekerjaan.id_paketpekerjaan=tbl_mutasi.id_paketpekerjaan')
+          //->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_mutasi.id_rekanan')
+          ->join('tbl_akun','tbl_akun.username=tbl_mutasi.username')
           ->join('tbl_opd','tbl_opd.kode_opd=tbl_akun.id_opd')
           
           ->get()
@@ -54,13 +56,13 @@ class Model_suratpenyaluran extends CI_Model {
       
     }
 
-    function detailpenyaluransurat($id_penyaluran='') 
+    function detailpenyaluransurat($id_mutasi='') 
     {
-      $this->db->order_by('id_detailpenyaluran', 'ASC');
-      $this->db->where('id_penyaluran', $id_penyaluran);
-      return $this->db->from('tbl_detailpenyaluran')
-      ->join('tbl_ssh','tbl_ssh.id_ssh=tbl_detailpenyaluran.id_ssh')
-      ->join('tbl_akun','tbl_akun.username=tbl_detailpenyaluran.username')
+      $this->db->order_by('id_detailmutasi', 'ASC');
+      $this->db->where('id_mutasi', $id_mutasi);
+      return $this->db->from('tbl_detailmutasi')
+      ->join('tbl_ssh','tbl_ssh.id_ssh=tbl_detailmutasi.id_ssh')
+      ->join('tbl_akun','tbl_akun.username=tbl_detailmutasi.username')
         ->get()
         ->result();
     }
