@@ -17,16 +17,10 @@ class Laporanpenerimaanbarangpersediaan extends CI_Controller {
 		$data['hasil']=$this->model_laporanpenerimaanbarangpersediaan->Tampillaporanpenerimaanbarangpersediaan();
 			$this->load->view('laporanpenerimaanbarangpersediaan/laporanpenerimaanbarangpersediaan',$data);
 	}
-
-	function lihat($tahun_pesan)
-    {
-        $data['hasil']=$this->model_laporanpenerimaanbarangpersediaan->Gettahun_pesan($tahun_pesan);
-        $this->load->view('laporanpenerimaanbarangpersediaan/lihat',$data);
-	}
 	
-    function print($tahun_pesan)
+    function print()
 	{   
-        $data['hasil']=$this->model_laporanpenerimaanbarangpersediaan->Gettahun_pesan($tahun_pesan);
+        $data['hasil']=$this->model_laporanpenerimaanbarangpersediaan->Gettahun_pesan();
         $this->load->view('laporanpenerimaanbarangpersediaan/print',$data);
 	}
 

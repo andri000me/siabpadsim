@@ -35,8 +35,8 @@ table{
 <?php foreach ($hasil as $item){}?>
 
 <table>
-<tr><p><td>SKPD</td>	<td>:</td> <td><?= $item->nama_opd;?></td></p></tr>
-<tr><p><td>T.A</td>	    <td>:</td> <td><?= $item->tahun_pesan;?></td></p></tr>
+<tr><p><td>SKPD</td>	<td>:</td> <td></td></p></tr>
+<tr><p><td>T.A</td>	    <td>:</td> <td></td></p></tr>
 </table>
 
 <table border="1" align="center">
@@ -86,8 +86,8 @@ table{
                     $total = 0;
                     foreach ($hasil as $item)
                     {
-                        $totalbarang += $item->total_barang;
-                        $total += $item->total_barang*$item->Hargasatuan_ssh;
+                        $totalbarang += $item->total_barang_in;
+                        $total += $item->total_barang_in*$item->Hargasatuan_ssh;
                     ?>
                     <tr>
                         <td align="center"><?= $no;?></td>
@@ -98,10 +98,10 @@ table{
                         <td><?= $item->no_suratperintahpengiriman;?></td>
                         <td><?= $item->tanggal_suratperintahpengiriman;?></td>
                         <td><?= $item->Namabarang_ssh;?></td>                        
-                        <td align="center"><?= $item->total_barang;?></td>
+                        <td align="center"><?= $item->total_barang_in;?></td>
                         <td><?= $item->Satuan_ssh;?></td>
                         <td align="right"><?= 'Rp'.number_format($item->Hargasatuan_ssh,0,'.','.'); ?></td>
-                        <td align="right"><?= 'Rp'.number_format($item->total_barang*$item->Hargasatuan_ssh,0,'.','.'); ?></td>
+                        <td align="right"><?= 'Rp'.number_format($item->total_barang_in*$item->Hargasatuan_ssh,0,'.','.'); ?></td>
                         <td><?= $item->no_beritaacarapb;?></td>
                         <td><?= $item->tanggal_beritaacarapb;?></td>
                         <td></td>
@@ -143,13 +143,13 @@ table{
 </tr>
 <tr height="75px"></tr>
 <tr>
-    <td><?= $item->nama_kepala;?></td>
+    <td></td>
     <td>NAMA</td>
     <td>NAMA</td>
 </tr>
 
 <tr>
-    <td>NIP. <?= $item->nip_kepala;?></td>
+    <td>NIP. </td>
     <td>NIP. </td>
     <td>NIP. </td>
 </tr>
