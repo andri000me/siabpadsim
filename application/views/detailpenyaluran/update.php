@@ -1,6 +1,6 @@
 <?php 
 $this->load->view('include/header'); 
-$this->load->view('sekretaris/barangpersediaan/menu'); 
+$this->load->view('pptk/barangpersediaan/menu'); 
 ?>
 
 </head>
@@ -8,7 +8,7 @@ $this->load->view('sekretaris/barangpersediaan/menu');
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-          <a href="<?php echo config_item('base_url'); ?>">Halaman Utama</a>
+          <a href="<?php echo base_url('penyaluran')?>">Penyaluran</a>
         </li>
   
         <li class="breadcrumb-item active">Update Data Penyaluran</li>
@@ -23,8 +23,8 @@ $this->load->view('sekretaris/barangpersediaan/menu');
           <div class="table-responsive">
              <div class="container">
 
-        <form action="<?php echo base_url()?>detailpenyaluran/simpan_update/<?php echo $hasilparsing; ?>/<?php echo $ambil->id_detailpenyaluran; ?>" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="id_detailpenyaluran"  value="<?php echo $ambil->id_detailpenyaluran; ?>" />
+        <form action="<?php echo base_url()?>detailpenyaluran/simpan_update/<?php echo $hasilparsing; ?>/<?php echo $ambil->id_detailmutasi; ?>" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id_detailmutasi"  value="<?php echo $ambil->id_detailmutasi; ?>" />
        
               
             
@@ -43,8 +43,8 @@ $this->load->view('sekretaris/barangpersediaan/menu');
                        </select>
                         </div>
                   <div class="col-md-6">
-                    <label for="total_barang">Total Barang</label>
-                    <input value="<?php echo $ambil->total_barang; ?>" class="form-control" id="total_barang" type="text" aria-describedby="nameHelp" name="total_barang" required/>
+                    <label for="total_barang_out">Total Barang</label>
+                    <input value="<?php echo $ambil->total_barang_out; ?>" class="form-control" id="total_barang_out" type="text" aria-describedby="nameHelp" name="total_barang_out" required/>
                   </div>
                 </div>
               </div>

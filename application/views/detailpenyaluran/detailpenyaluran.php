@@ -11,7 +11,7 @@ $this->load->view('pptk/barangpersediaan/menu');
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-        <a href="<?php echo base_url('pptk/barangpersediaan')?>">Halaman Utama</a>
+          <a href="<?php echo base_url('penyaluran')?>">Penyaluran</a>
         </li>
   
         <li class="breadcrumb-item active">Detail Penyaluran Barang</li>
@@ -41,16 +41,16 @@ $this->load->view('pptk/barangpersediaan/menu');
                     $total=0;
                     foreach ($hasil as $item)
                     {
-                      $total += $item->total_barang*$item->Hargasatuan_ssh;
+                      $total += $item->total_barang_out*$item->Hargasatuan_ssh;
                     ?>
                     <tr>
                         <td><?php echo $no;?></td>
                         <td><?php echo $item->Namabarang_ssh;?></td>
-                        <td align="center"><?php echo $item->total_barang;?></td>   
+                        <td align="center"><?php echo $item->total_barang_out;?></td>   
                         <td><?php echo $item->Satuan_ssh;?></td>                    
                         <td align="right"><?= 'Rp'.number_format($item->Hargasatuan_ssh,0,'.','.');?></td>
-                        <td align="right"><?= 'Rp'.number_format(($item->total_barang)*($item->Hargasatuan_ssh),0,'.','.');?></td> <td align="center"> <a href="<?php echo base_url()?>detailpenyaluran/update/<?php echo $item->id_detailpenyaluran;?>/<?php echo $hasilparsing?>" class="btn btn-warning" role="button">Update</a></td>
-                        <td align="center"> <a href="<?php echo base_url()?>detailpenyaluran/hapus/<?php echo $item->id_detailpenyaluran;?>/<?php echo $hasilparsing?>" onclick="return confirm('Apakah anda yakin?');"class="btn btn-danger" role="button">Delete</a></td>
+                        <td align="right"><?= 'Rp'.number_format(($item->total_barang_out)*($item->Hargasatuan_ssh),0,'.','.');?></td> <td align="center"> <a href="<?php echo base_url()?>detailpenyaluran/update/<?php echo $item->id_detailmutasi;?>/<?php echo $hasilparsing?>" class="btn btn-warning" role="button">Update</a></td>
+                        <td align="center"> <a href="<?php echo base_url()?>detailpenyaluran/hapus/<?php echo $item->id_detailmutasi;?>/<?php echo $hasilparsing?>" onclick="return confirm('Apakah anda yakin?');"class="btn btn-danger" role="button">Delete</a></td>
                     </tr>
                     <?php
                             $no++;

@@ -51,8 +51,8 @@ $this->load->view('pptk/barangpersediaan/menu');
                   <td><?= $data->memesan ?></td>
                   <td><?= $data->keterangan ?></td>
                   <td> 
-                    <a href="<?php echo base_url()?>detailpengadaan/index/<?php echo $data->id_pengadaan; ?>" class="btn btn-warning" style="margin-bottom: 1px;">List Order<i class="fa fa-tag"></i></a>
-                    <a href="<?php echo base_url()?>pengadaan/action_deletedatapengadaan/<?php echo $data->id_pengadaan; ?>" onclick="return confirm('Apakah anda yakin?');" class="btn btn-danger">Hapus<i class="fa fa-trash"></i></a>
+                    <a href="<?php echo base_url()?>detailpengadaan/index/<?php echo $data->id_mutasi; ?>" class="btn btn-warning" style="margin-bottom: 1px;">List Order<i class="fa fa-tag"></i></a>
+                    <a href="<?php echo base_url()?>pengadaan/action_deletedatapengadaan/<?php echo $data->id_mutasi; ?>" onclick="return confirm('Apakah anda yakin?');" class="btn btn-danger">Hapus<i class="fa fa-trash"></i></a>
                   </td> 
                 </tr>
                     <?php

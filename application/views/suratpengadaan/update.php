@@ -10,17 +10,17 @@ $this->load->view('operator/barangpersediaan/menu');
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-          <a href="<?php echo base_url('operator/barangpersediaan')?>">Halaman Utama</a>
+          <a href="<?php echo base_url('suratpengadaan')?>">Surat Pengadaan</a>
         </li>
   
-        <li class="breadcrumb-item active">Data Surat Pengadaan</li>
+        <li class="breadcrumb-item active">No Surat Pengadaan</li>
       </ol>
 
       
 <!-- Example DataTables Card-->
 <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-plus"></i> Data Surat Pengadaan</div>
+          <i class="fa fa-plus"></i> No Surat Pengadaan</div>
         <div class="card-body">
           <div class="table-responsive">
              <div class="container">
@@ -36,7 +36,7 @@ $this->load->view('operator/barangpersediaan/menu');
                   </div>
 
                   <div class="col-md-6">
-                    <label for="no_suratpermohonanpptk">SURAT PERMOHONAN dari PPTK kepada PA</label>
+                    <label for="no_suratpermohonanpptk">Surat Permohonan dari PPTK kepada PA</label>
                     <input value="<?php echo $ambil->no_suratpermohonanpptk; ?>"class="form-control" id="no_suratpermohonanpptk" type="text" aria-describedby="nameHelp" name="no_suratpermohonanpptk" />
                   </div>  
 
@@ -54,7 +54,7 @@ $this->load->view('operator/barangpersediaan/menu');
                   </div>
 
                   <div class="col-md-6">
-                    <label for="no_suratpermohonanpenyedia">Surat permohonan dari SKPD yang bersangkutan kepada Penyedia</label>
+                    <label for="no_suratpermohonanpenyedia">Surat Permohonan dari SKPD kepada Penyedia</label>
                     <input value="<?php echo $ambil->no_suratpermohonanpenyedia; ?>"class="form-control" id="no_suratpermohonanpenyedia" type="text" aria-describedby="nameHelp" name="no_suratpermohonanpenyedia" />
                   </div>  
 
@@ -72,7 +72,7 @@ $this->load->view('operator/barangpersediaan/menu');
                   </div>
 
                   <div class="col-md-6">
-                    <label for="no_suratbalasan">Surat balasan dari Penyedia</label>
+                    <label for="no_suratbalasan">Surat Balasan dari Penyedia</label>
                     <input value="<?php echo $ambil->no_suratbalasan; ?>"class="form-control" id="no_suratbalasan" type="text" aria-describedby="nameHelp" name="no_suratbalasan" />
                   </div>  
 
@@ -108,7 +108,7 @@ $this->load->view('operator/barangpersediaan/menu');
                   </div>
 
                   <div class="col-md-6">
-                    <label for="no_bapenyedia">Berita Acara Penerimaan Dan Pemeriksaan Dari Penyedia Ke Ppk</label>
+                    <label for="no_bapenyedia">Berita Acara Penerimaan Dan Pemeriksaan Dari Penyedia Ke PPK</label>
                     <input value="<?php echo $ambil->no_bapenyedia; ?>"class="form-control" id="no_bapenyedia" type="text" aria-describedby="nameHelp" name="no_bapenyedia" />
                   </div>  
 

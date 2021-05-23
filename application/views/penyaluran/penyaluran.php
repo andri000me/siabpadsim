@@ -11,7 +11,7 @@ $this->load->view('pptk/barangpersediaan/menu');
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-          <a href="<?php echo base_url('pptk/barangpersediaan')?>">Halaman Utama</a>
+          <a href="<?php echo base_url('pptk/barangpersediaan')?>">Barang Persediaan</a>
         </li>
   
         <li class="breadcrumb-item active">Daftar Penyaluran Barang</li>
@@ -45,12 +45,12 @@ $this->load->view('pptk/barangpersediaan/menu');
                   foreach ($content as $data) : ?>
                   <td><?= $i ?></td>
                   <td><?= $data->tanggal_pesan ?></td>
-                  <td><?= $data->username ?></td>
+                  <td><?= $data->nama ?></td>
                   <td><?= $data->keterangan ?></td>
                   <td><?= $data->statusorder ?></td>
                   <td> 
-                    <a href="<?php echo base_url()?>detailpenyaluran/index/<?php echo $data->id_penyaluran; ?>" class="btn btn-warning" style="margin-bottom: 1px;">List Order<i class="fa fa-tag"></i></a>
-                    <a href="<?php echo base_url()?>penyaluran/action_deletedatapenyaluran/<?php echo $data->id_penyaluran; ?>" onclick="return confirm('Apakah anda yakin?');" class="btn btn-danger">Hapus<i class="fa fa-trash"></i></a>
+                    <a href="<?php echo base_url()?>detailpenyaluran/index/<?php echo $data->id_mutasi; ?>" class="btn btn-warning" style="margin-bottom: 1px;">List Order<i class="fa fa-tag"></i></a>
+                    <a href="<?php echo base_url()?>penyaluran/action_deletedatapenyaluran/<?php echo $data->id_mutasi; ?>" onclick="return confirm('Apakah anda yakin?');" class="btn btn-danger">Hapus<i class="fa fa-trash"></i></a>
                   </td> 
                 </tr>
                     <?php

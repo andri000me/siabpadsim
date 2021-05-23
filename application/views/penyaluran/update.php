@@ -26,7 +26,7 @@ $this->load->view('pptk/barangpersediaan/menu');
              <div class="container">
 
         <form action="<?php echo base_url('order/simpan_update')?>" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="id_penyaluran"  value="<?php echo $ambil->id_penyaluran; ?>" />
+        <input type="hidden" name="id_mutasi"  value="<?php echo $ambil->id_mutasi; ?>" />
         <div class="form-group">
               <div class="form-row">
               <div class="col-md-6">

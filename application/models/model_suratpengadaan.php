@@ -1,29 +1,31 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Model_suratpengadaan extends CI_Model {
+  public function __construct()
+	{
+		parent::__construct();
+    $this->load->library('session');
+	}
 
 	function Tampilpengadaan() 
     {
       $id_opd=$this->session->userdata('id_opd');
-      $this->db->where('tbl_akun.id_opd', $id_opd);
+      $this->db->where('tbl_pengadaan.id_opd', $id_opd);
       $this->db->order_by('id_pengadaan', 'ASC');
         return $this->db->from('tbl_pengadaan')
           ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_pengadaan.id_rekanan')
-          ->join('tbl_akun','tbl_akun.username=tbl_pengadaan.username')
-          ->get()
-          ->result();
+          ->get();
     }
 
     function Getpengadaan() 
     {
       $id_opd=$this->session->userdata('id_opd');
-      $this->db->where('tbl_akun.id_opd', $id_opd);
+      $this->db->where('tbl_pengadaan.id_opd', $id_opd);
       $this->db->order_by('id_pengadaan', 'ASC');
         return $this->db->from('tbl_pengadaan')
           ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_pengadaan.id_rekanan')
-          ->join('tbl_akun','tbl_akun.username=tbl_pengadaan.username')
-          ->get()
-          ->result();
+          ->get();
     }
 
     

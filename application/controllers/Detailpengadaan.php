@@ -11,10 +11,10 @@ class Detailpengadaan extends CI_Controller {
 
     }
 
-	function index($id_pengadaan)
+	function index($id_mutasi)
 	{
             $data['hasilparsing'] = $this->uri->segment(3);
-		    $data['hasil']=$this->model_detailpengadaan->Tampildetailpengadaan($id_pengadaan);
+		    $data['hasil']=$this->model_detailpengadaan->Tampildetailpengadaan($id_mutasi);
 			$this->load->view('detailpengadaan/detailpengadaan',$data);
 	}
 	
@@ -27,69 +27,69 @@ class Detailpengadaan extends CI_Controller {
 	function simpan_detailpengadaan($hasilparsing)
     {
        $data = array(
-			'id_detailpengadaan'=>$this->input->post('id_detailpengadaan'),
-			'id_pengadaan'=>$this->input->post('id_pengadaan'),
+			'id_detailmutasi'=>$this->input->post('id_detailmutasi'),
+			'id_mutasi'=>$this->input->post('id_mutasi'),
             'id_ssh'=>$this->input->post('id_ssh'),
-            'total_barang'=>$this->input->post('total_barang'),
+            'total_barang_in_in'=>$this->input->post('total_barang_in_in'),
             'username'=>$this->input->post('username')
         );
-        $data['id_pengadaan'] = $hasilparsing;
+        $data['id_mutasi'] = $hasilparsing;
         $data['username'] = $this->session->userdata('username');
-        $this->db->insert('tbl_detailpengadaan',$data);
+        $this->db->insert('tbl_detailmutasi',$data);
     
         $data2 =array(
             'keterangan'=>$this->input->post('keterangan')
         );
         $data2['keterangan'] = "Menunggu Konfirmasi";
-        $this->db->where('id_pengadaan', $hasilparsing);
-        $this->db->update('tbl_pengadaan',$data2);
+        $this->db->where('id_mutasi', $hasilparsing);
+        $this->db->update('tbl_mutasi',$data2);
 
 
         redirect('detailpengadaan/index/'.$hasilparsing);
 	}
 
-	function update($id_detailpengadaan)
+	function update($id_detailmutasi)
     {
         $data['hasilparsing'] = $this->uri->segment(4);
-        $data['ambil']=$this->model_detailpengadaan->Getid_detailpengadaan($id_detailpengadaan);
+        $data['ambil']=$this->model_detailpengadaan->Getid_detailpengadaan($id_detailmutasi);
         $this->load->view('detailpengadaan/update',$data);
 	}
 	
     function simpan_update($hasilparsing)
     {
         $data = array(
-			'id_detailpengadaan'=>$this->input->post('id_detailpengadaan'),
-			'id_pengadaan'=>$this->input->post('id_pengadaan'),
+			'id_detailmutasi'=>$this->input->post('id_detailmutasi'),
+			'id_mutasi'=>$this->input->post('id_mutasi'),
             'id_ssh'=>$this->input->post('id_ssh'),
-            'total_barang'=>$this->input->post('total_barang'),
+            'total_barang_in'=>$this->input->post('total_barang_in'),
             'username'=>$this->input->post('username')
         );
-        $data['id_pengadaan'] = $hasilparsing;    
+        $data['id_mutasi'] = $hasilparsing;    
         $data['username'] = $this->session->userdata('username');
-		$id_detailpengadaan = $this->input->post('id_detailpengadaan');
-		$this->db->where('id_detailpengadaan', $id_detailpengadaan);
-        $this->db->update('tbl_detailpengadaan',$data);
+		$id_detailmutasi = $this->input->post('id_detailmutasi');
+		$this->db->where('id_detailmutasi', $id_detailmutasi);
+        $this->db->update('tbl_detailmutasi',$data);
 
         $data2 =array(
             'keterangan'=>$this->input->post('keterangan')
         );
         $data2['keterangan'] = "Menunggu Konfirmasi";
-        $this->db->where('id_pengadaan', $hasilparsing);
-        $this->db->update('tbl_pengadaan',$data2);
+        $this->db->where('id_mutasi', $hasilparsing);
+        $this->db->update('tbl_mutasi',$data2);
 
         redirect('detailpengadaan/index/'.$hasilparsing);
 	}
 
-	function hapus($id_detailpengadaan,$hasilparsing)
+	function hapus($id_detailmutasi,$hasilparsing)
     {
         $data2 =array(
             'keterangan'=>$this->input->post('keterangan')
         );
         $data2['keterangan'] = "Menunggu Konfirmasi";
-        $this->db->where('id_pengadaan', $hasilparsing);
-        $this->db->update('tbl_pengadaan',$data2);
+        $this->db->where('id_mutasi', $hasilparsing);
+        $this->db->update('tbl_detailmutasi',$data2);
         
-        $this->model_detailpengadaan->Hapusdetailpengadaan($id_detailpengadaan);
+        $this->model_detailpengadaan->Hapusdetailpengadaan($id_detailmutasi);
         redirect('detailpengadaan/index/'.$hasilparsing);
     }
 

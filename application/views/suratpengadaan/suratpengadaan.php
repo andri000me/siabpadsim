@@ -11,7 +11,7 @@ $this->load->view('operator/barangpersediaan/menu');
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-          <a href="<?php echo base_url('operator/barangpersediaan')?>">Halaman Utama</a>
+          <a href="<?php echo base_url('operator/barangpersediaan')?>">Barang Persediaan</a>
         </li>
   
         <li class="breadcrumb-item active">Data Surat Pengadaan Barang</li>
@@ -42,7 +42,7 @@ $this->load->view('operator/barangpersediaan/menu');
                 <tr>
                 <?php 
                   $i = 1;
-                  foreach ($content as $data) : ?>
+                  foreach ($content->result() as $data) : ?>
                   <td><?= $i ?></td>
                   <td><?= $data->tanggal_pesan ?></td>
                   <td><?= $data->nama_rekanan ?></td>

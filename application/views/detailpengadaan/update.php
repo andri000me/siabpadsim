@@ -10,7 +10,7 @@ $this->load->view('pptk/barangpersediaan/menu');
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-          <a href="<?php echo config_item('base_url'); ?>">Halaman Utama</a>
+          <a href="<?php echo base_url('pengadaan')?>">Pengadaan</a>
         </li>
   
         <li class="breadcrumb-item active">Update Data Order Barang</li>
@@ -25,8 +25,8 @@ $this->load->view('pptk/barangpersediaan/menu');
           <div class="table-responsive">
              <div class="container">
 
-        <form action="<?php echo base_url()?>detailpengadaan/simpan_update/<?php echo $hasilparsing; ?>/<?php echo $ambil->id_detailpengadaan; ?>" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="id_detailpengadaan"  value="<?php echo $ambil->id_detailpengadaan; ?>" />
+        <form action="<?php echo base_url()?>detailpengadaan/simpan_update/<?php echo $hasilparsing; ?>/<?php echo $ambil->id_detailmutasi; ?>" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id_detailmutasi"  value="<?php echo $ambil->id_detailmutasi; ?>" />
        
               
             
@@ -36,7 +36,14 @@ $this->load->view('pptk/barangpersediaan/menu');
                     <label for="id_ssh">Nama Barang</label>
                     <select class="form-control form-control-sm" id="id_ssh" name="id_ssh" required />
                     
-                    <option value="<?php echo $ambil->id_ssh; ?>"><?php echo $ambil->id_ssh; ?></option>
+                    <option value="<?php echo $ambil->id_ssh; ?>">
+                    <?php 
+                    $id_ssh = $this->db->query("SELECT * FROM tbl_ssh where id_ssh=$ambil->id_ssh order by Namabarang_ssh");
+                    foreach ($id_ssh->result() as $id_ssh) :
+                    echo $id_ssh->Namabarang_ssh; 
+                    endforeach;
+                    ?>
+                    </option>
                         <?php $id_ssh = $this->db->query("SELECT * FROM tbl_ssh order by Namabarang_ssh");
                 
                         foreach ($id_ssh->result() as $id_ssh) : ?>
@@ -45,8 +52,8 @@ $this->load->view('pptk/barangpersediaan/menu');
                        </select>
                         </div>
                   <div class="col-md-6">
-                    <label for="total_barang">Total Barang</label>
-                    <input value="<?php echo $ambil->total_barang; ?>" class="form-control" id="total_barang" type="text" aria-describedby="nameHelp" name="total_barang" required/>
+                    <label for="total_barang_in">Total Barang</label>
+                    <input value="<?php echo $ambil->total_barang_in; ?>" class="form-control" id="total_barang_in" type="text" aria-describedby="nameHelp" name="total_barang_in" required/>
                   </div>
                 </div>
               </div>

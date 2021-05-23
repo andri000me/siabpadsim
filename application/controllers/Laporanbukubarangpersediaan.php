@@ -15,7 +15,7 @@ class Laporanbukubarangpersediaan extends CI_Controller {
 	function index()
 	{
 		$data['hasil']=$this->model_laporanbukubarangpersediaan->Tampillaporanbukubarangpersediaan();
-			$this->load->view('laporanbukubarangpersediaan/laporanbukubarangpersediaan',$data);
+		$this->load->view('laporanbukubarangpersediaan/laporanbukubarangpersediaan',$data);
 	}
 
 	function lihat($tahun_order)
@@ -27,6 +27,7 @@ class Laporanbukubarangpersediaan extends CI_Controller {
     function print($tahun_order)
 	{
         $data['hasil'] = $this->model_laporanbukubarangpersediaan->GetPenerimaanPengeluaran($tahun_order);
+        $data['hasilsisa'] = $this->model_laporanbukubarangpersediaan->GetSisa($tahun_order);
         $this->load->view('laporanbukubarangpersediaan/print',$data);
 	}
 

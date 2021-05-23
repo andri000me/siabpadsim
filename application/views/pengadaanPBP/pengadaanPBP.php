@@ -10,7 +10,7 @@ $this->load->view('pengurusbarangpengguna/barangpersediaan/menu');
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-          <a href="<?php echo base_url('pengurusbarangpengguna/barangpersediaan')?>">Halaman Utama</a>
+          <a href="<?php echo base_url('pengurusbarangpengguna/barangpersediaan')?>">Barang Persediaan</a>
         </li>
   
         <li class="breadcrumb-item active">Data Pengadaan Barang</li>
@@ -34,7 +34,7 @@ $this->load->view('pengurusbarangpengguna/barangpersediaan/menu');
                   <th>Belanja</th>
                   <th>Memesan</th>
                   <th>Keterangan</th>                  
-                  <th>Status Order</th>               
+                  <th>Status</th>               
                   <th>Tanggal Terima</th>                               
                   <th>Detail Order</th>
                   <th>Opsi</th>

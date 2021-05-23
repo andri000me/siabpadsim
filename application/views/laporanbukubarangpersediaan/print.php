@@ -36,8 +36,8 @@ table{
 <?php foreach ($hasil as $item){}?>
 
 <table>
-<tr><p><td>SKPD</td>	<td>:</td> <td><?= $item->nama_opd;?></td></p></tr>
-<tr><p><td>T.A</td>	    <td>:</td> <td><?= $item->tahun_order;?></td></p></tr>
+<tr><p><td>SKPD</td>	<td>:</td> <td></td></p></tr>
+<tr><p><td>T.A</td>	    <td>:</td> <td></td></p></tr>
 </table>
 
 <table border="1" align="center">
@@ -79,26 +79,51 @@ table{
                 </thead>
                 <?php
                     $no = 1 ;
-                    $totalbarang = 0;
+                    $total_semua_barang_in = 0;
+                    $total_semua_barang_out = 0;
+                    $total_harga_in = 0;
+                    $total_harga_out = 0;
+                    $harga_satuan_barang_in = 0;
+                    $harga_satuan_barang_out = 0;
                     $total = 0;
                     foreach ($hasil as $item)
                     {
-                        $totalbarang += $item->total_barang;
-                        $total += $item->total_barang*$item->Hargasatuan_ssh;
+                        $total_semua_barang_in += $item->total_barang_in;
+                        $total_semua_barang_out += $item->total_barang_out;
+
+                        if ($item->total_barang_in>0) {
+                            $harga_satuan_barang_in = $item->Hargasatuan_ssh;
+                        }else{
+                            $harga_satuan_barang_in = 0;
+                        }
+
+                        if ($item->total_barang_out>0) {
+                            $harga_satuan_barang_out = $item->Hargasatuan_ssh;
+                        }else{
+                            $harga_satuan_barang_out = 0;
+                        }
+                        
+                        $total_harga_in = $item->total_barang_in*$harga_satuan_barang_in;
+                        $total_harga_out = $item->total_barang_out*$harga_satuan_barang_out;
+
+
+                           
+
+
                     ?>
                     <tr>
                         <td align="center"><?= $no;?></td>
-                        <td><?= $item->tanggal_input_masuk;?></td>
+                        <td><?= $item->tanggal_input;?></td>
                         <td><?= $item->Namabarang_ssh;?></td>
-                        <td align="center"><?= $item->total_barang_masuk;?></td>
-                        <td align="right"><?= $item->Hargasatuan_ssh;?></td>
-                        <td align="right"><?= $item->Hargasatuan_ssh*$item->total_barang_masuk;?></td>                        
-                        <td align="center"><?= $item->total_barang;?></td>
-                        <td align="right"> <?= $item->Hargasatuan_ssh;?></td>
-                        <td align="right"><?= $item->Hargasatuan_ssh*$item->total_barang;?></td>
-                        <td align="center"><?= $item->total_barang_masuk-$item->total_barang;?></td>
-                        <td align="right"><?= $item->Hargasatuan_ssh;?></td>
-                        <td align="right"><?= $item->Hargasatuan_ssh*($item->total_barang_masuk-$item->total_barang);?></td>
+                        <td align="center"><?= $item->total_barang_in;?></td>
+                        <td align="right"><?= $harga_satuan_barang_in;?></td>
+                        <td align="right"><?= $total_harga_in;?></td>                
+                        <td align="center"><?= $item->total_barang_out;?></td>
+                        <td align="right"><?= $harga_satuan_barang_out;?></td>
+                        <td align="right"><?= $total_harga_out;?></td>
+                        <td align="center"></td>
+                        <td align="right"></td>
+                        <td align="right"></td>
                         <td></td>
                
                        

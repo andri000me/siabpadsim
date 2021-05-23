@@ -4,9 +4,10 @@ class Model_pengadaan extends CI_Model {
 
 	function Tampilpengadaan() 
     {
-        $this->db->order_by('id_pengadaan', 'ASC');
-        return $this->db->from('tbl_pengadaan')
-          ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_pengadaan.id_rekanan')
+        $this->db->order_by('id_mutasi', 'ASC');
+        $this->db->where('jenis_mutasi', 'Pengadaan');
+        return $this->db->from('tbl_mutasi')
+          ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_mutasi.id_rekanan')
           ->get()
           ->result();
     }
@@ -14,51 +15,55 @@ class Model_pengadaan extends CI_Model {
     function Getpengadaan() 
     {
         $username=$this->session->userdata('username');
-        $this->db->order_by('id_pengadaan', 'ASC');
-        return $this->db->from('tbl_pengadaan')
-          ->where('tbl_pengadaan.username', $username)
-          ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_pengadaan.id_rekanan')
+        $this->db->where('jenis_mutasi', 'Pengadaan');
+        $this->db->order_by('id_mutasi', 'ASC');
+        return $this->db->from('tbl_mutasi')
+          ->where('tbl_mutasi.username', $username)
+          ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_mutasi.id_rekanan')
           ->get()
           ->result();
     }
 
     
-    function Getid($id_pengadaan='')
+    function Getid($id_mutasi='')
     {
-      return $this->db->get_where('tbl_pengadaan', array('id_pengadaan' => $id_pengadaan))->row();
+      return $this->db->get_where('tbl_mutasi', array('id_mutasi' => $id_mutasi))->row();
     }
-    function deletedatapengadaan($id_pengadaan)
+    function deletedatapengadaan($id_mutasi)
     {
-        $this->db->delete('tbl_pengadaan',array('id_pengadaan' => $id_pengadaan));
+        $this->db->delete('tbl_mutasi',array('id_mutasi' => $id_mutasi));
     }
 
     public function TampilorderbyMenungguKonfirmasi()
 		{
-			$this->db->order_by('id_pengadaan', 'ASC');
+			$this->db->order_by('id_mutasi', 'ASC');
+      $this->db->where('jenis_mutasi', 'Pengadaan');
 			$this->db->where('keterangan', "Menunggu Konfirmasi");
       $this->db->where('statusorder', "Belum Diterima");
-        return $this->db->from('tbl_pengadaan')
-          ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_pengadaan.id_rekanan')
+        return $this->db->from('tbl_mutasi')
+          ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_mutasi.id_rekanan')
           ->get()
           ->result();
 		}
 
     public function TampilorderbyDisetujui()
 		{
-			$this->db->order_by('id_pengadaan', 'ASC');
+			$this->db->order_by('id_mutasi', 'ASC');
+      $this->db->where('jenis_mutasi', 'Pengadaan');
 			$this->db->where('keterangan', "Disetujui");
-        return $this->db->from('tbl_pengadaan')
-          ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_pengadaan.id_rekanan')
+        return $this->db->from('tbl_mutasi')
+          ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_mutasi.id_rekanan')
           ->get()
           ->result();
 		}
 
     public function TampilorderbyDitolak()
 		{
-			$this->db->order_by('id_pengadaanid', 'ASC');
+			$this->db->order_by('id_mutasiid', 'ASC');
+      $this->db->where('jenis_mutasi', 'Pengadaan');
 			$this->db->where('keterangan', "Ditolak");
-        return $this->db->from('tbl_pengadaan')
-          ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_pengadaan.id_rekanan')
+        return $this->db->from('tbl_mutasi')
+          ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_mutasi.id_rekanan')
           ->get()
           ->result();
 		}
@@ -66,10 +71,11 @@ class Model_pengadaan extends CI_Model {
     public function Tampilkonfirmasipengadaanbarang()
 		{
 			$this->db->order_by('statusorder', 'ASC');
+      $this->db->where('jenis_mutasi', 'Pengadaan');
 			$this->db->where('keterangan', "Disetujui");
 			$this->db->where('statusorder', "Belum Diterima");
-        return $this->db->from('tbl_pengadaan')
-          ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_pengadaan.id_rekanan')
+        return $this->db->from('tbl_mutasi')
+          ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_mutasi.id_rekanan')
           ->get()
           ->result();
 		}
@@ -77,17 +83,18 @@ class Model_pengadaan extends CI_Model {
     public function Tampilpengadaanbarangselesai()
 		{
 			$this->db->order_by('statusorder', 'ASC');
+      $this->db->where('jenis_mutasi', 'Pengadaan');
 			$this->db->where('keterangan', "Disetujui");
 			$this->db->where('statusorder', "Sudah Diterima");
-        return $this->db->from('tbl_pengadaan')
-          ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_pengadaan.id_rekanan')
+        return $this->db->from('tbl_mutasi')
+          ->join('tbl_rekanan','tbl_rekanan.id_rekanan=tbl_mutasi.id_rekanan')
           ->get()
           ->result();
 		}
 
     public function menambahdatapengadaan($data)
 	{
-		$this->db->insert('tbl_pengadaan', $data);
+		$this->db->insert('tbl_mutasi', $data);
 	}
 }
 

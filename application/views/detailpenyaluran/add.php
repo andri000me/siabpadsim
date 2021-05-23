@@ -9,7 +9,7 @@ $this->load->view('pptk/barangpersediaan/menu');
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-          <a href="<?php echo config_item('base_url'); ?>">Halaman Utama</a>
+          <a href="<?php echo base_url('penyaluran')?>">Penyaluran</a>
         </li>
   
         <li class="breadcrumb-item active">Tambah Data Penyaluran</li>
@@ -37,8 +37,8 @@ $this->load->view('pptk/barangpersediaan/menu');
                        </select>
                         </div>
                   <div class="col-md-6">
-                    <label for="total_barang">Total Barang</label>
-                    <input class="form-control" id="total_barang" type="text" aria-describedby="nameHelp" name="total_barang" required/>
+                    <label for="total_barang_out">Total Barang</label>
+                    <input class="form-control" id="total_barang_out" type="text" aria-describedby="nameHelp" name="total_barang_out" required/>
                   </div>
                 </div>
               </div>

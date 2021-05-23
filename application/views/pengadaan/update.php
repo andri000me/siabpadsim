@@ -26,7 +26,7 @@ $this->load->view('sekretaris/barangpersediaan/menu');
              <div class="container">
 
         <form action="<?php echo base_url('orderrekanan/simpan_update')?>" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="id_orderrekanan"  value="<?php echo $ambil->id_orderrekanan; ?>" />
+        <input type="hidden" name="id_mutasi"  value="<?php echo $ambil->id_mutasi; ?>" />
         <div class="form-group">
               <div class="form-row">
               <div class="col-md-6">

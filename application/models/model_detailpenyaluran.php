@@ -2,25 +2,25 @@
 
 class Model_detailpenyaluran extends CI_Model {
 
-	function Tampildetailpenyaluran($id_penyaluran='') 
+	function Tampildetailpenyaluran($id_mutasi='') 
     {
-        $this->db->order_by('id_detailpenyaluran', 'ASC');
-        $this->db->where('tbl_detailpenyaluran.id_penyaluran', $id_penyaluran);
-        return $this->db->from('tbl_detailpenyaluran')
-          ->join('tbl_ssh','tbl_ssh.id_ssh=tbl_detailpenyaluran.id_ssh')          
-          ->join('tbl_penyaluran','tbl_penyaluran.id_penyaluran=tbl_detailpenyaluran.id_penyaluran')   
+        $this->db->order_by('id_detailmutasi', 'ASC');
+        $this->db->where('tbl_detailmutasi.id_mutasi', $id_mutasi);
+        return $this->db->from('tbl_detailmutasi')
+          ->join('tbl_ssh','tbl_ssh.id_ssh=tbl_detailmutasi.id_ssh')          
+          ->join('tbl_mutasi','tbl_mutasi.id_mutasi=tbl_detailmutasi.id_mutasi')   
           ->get()
           ->result();
     }
 
-    function Getid_detailpenyaluran($id_detailpenyaluran='',$id_penyaluran='')
+    function Getid_detailpenyaluran($id_detailmutasi='',$id_mutasi='')
     {
-      return $this->db->get_where('tbl_detailpenyaluran', array('id_detailpenyaluran' => $id_detailpenyaluran))->row();
+      return $this->db->get_where('tbl_detailmutasi', array('id_detailmutasi' => $id_detailmutasi))->row();
     }
 
-    function Hapusdetailpenyaluran($id_detailpenyaluran)
+    function Hapusdetailpenyaluran($id_detailmutasi)
     {
-        $this->db->delete('tbl_detailpenyaluran',array('id_detailpenyaluran' => $id_detailpenyaluran));
+        $this->db->delete('tbl_detailmutasi',array('id_detailmutasi' => $id_detailmutasi));
     }
 }
 
