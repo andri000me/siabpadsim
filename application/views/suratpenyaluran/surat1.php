@@ -67,15 +67,15 @@ table{
                     $total = 0;
                     foreach ($detailpenyaluran as $item)
                     {
-                        $total += $item->total_barang*$item->Hargasatuan_ssh;
+                        $total += $item->total_barang_out*$item->Hargasatuan_ssh;
                     ?>
                     <tr>
                         <td align="center"><?= $no;?></td>
                         <td><?= $item->Namabarang_ssh;?></td>
-                        <td align="center"><?= $item->total_barang;?></td>
+                        <td align="center"><?= $item->total_barang_out;?></td>
                         <td align="right"><?= 'Rp'.number_format($item->Hargasatuan_ssh,0,'.','.'); ?></td>
-                        <td align="right"><?= 'Rp'.number_format($item->total_barang*$item->Hargasatuan_ssh,0,'.','.'); ?></td>
-                        <td align="right"><?= $item->Spesifikasi_ssh;?></td>
+                        <td align="right"><?= 'Rp'.number_format($item->total_barang_out*$item->Hargasatuan_ssh,0,'.','.'); ?></td>
+                        <td align="left"><?= $item->Spesifikasi_ssh;?></td>
                     
                     </tr>
                     <?php

@@ -165,16 +165,16 @@ $tahun = $tahun_indonesia[$tahun];
                     $total = 0;
                     foreach ($detailpenyaluran as $item)
                     {
-                        $total += $item->total_barang*$item->Hargasatuan_ssh;
+                        $total += $item->total_barang_out*$item->Hargasatuan_ssh;
                     ?>
                     <tr>
                         <td align="center"><?php echo $penyaluran->tanggal_bapenyaluranbarang; ?></td>
                         <td><?= $item->Namabarang_ssh;?></td>
-                        <td align="center"><?= $item->total_barang;?></td>
+                        <td align="center"><?= $item->total_barang_out;?></td>
                         <td align="right"><?= 'Rp'.number_format($item->Hargasatuan_ssh,0,'.','.'); ?></td>
-                        <td align="right"><?= 'Rp'.number_format($item->total_barang*$item->Hargasatuan_ssh,0,'.','.'); ?></td>
-                        <td align="right"><?= $item->nama;?></td>
-                        <td align="right"><?= $item->Spesifikasi_ssh;?></td>
+                        <td align="right"><?= 'Rp'.number_format($item->total_barang_out*$item->Hargasatuan_ssh,0,'.','.'); ?></td>
+                        <td align="left"><?= $item->nama;?></td>
+                        <td align="left"><?= $item->Spesifikasi_ssh;?></td>
                     
                     </tr>
                     <?php
@@ -196,8 +196,8 @@ $tahun = $tahun_indonesia[$tahun];
     <table  align="right">
 <tr><td>Yang Menyerahkan</td></tr>
 <tr><td>Pengurus Barang</td></tr>
-<tr height="75px"></tr><td>(<?php echo $penyaluran->nama_pbp; ?>)</td></tr>
-<tr><td>NIP. <?php echo $penyaluran->nip_pbp; ?></td></tr></table>
+<tr height="75px"></tr><td>(NAMA)</td></tr>
+<tr><td>NIP. </td></tr></table>
 
     </tr>
     <br>
@@ -206,8 +206,8 @@ $tahun = $tahun_indonesia[$tahun];
 >
 <tr><td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspMengetahui</td></tr>
 <tr><td>PEJABAT PENATAUSAHAAN BARANG</td></tr>
-<tr height="75px"></tr><td>&nbsp &nbsp (<?php echo $penyaluran->nama_ppb; ?>)</td></tr>
-<tr><td>&nbsp &nbspNIP. <?php echo $penyaluran->nip_ppb; ?></td></tr>
+<tr height="75px"></tr><td align="center">&nbsp &nbsp (NAMA)</td></tr>
+<tr><td align="center">&nbsp &nbspNIP. </td></tr>
 </table>
 
     
