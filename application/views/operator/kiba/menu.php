@@ -11,11 +11,9 @@
           <li><a href="#about">About Us</a></li>
           <li class="drop-down"><a href="">Menu</a>
             <ul>
-              <li><a href="<?php echo base_url('operator/aset'); ?>">Aset</a>
+              <li><a href="<?php echo base_url('kiba'); ?>">KIB A</a>
               </li>
-              <li><a href="<?php echo base_url('operator/barangpersediaan')?>">Barang Persediaan</a>
-              </li>
-			        <li><a href="<?= base_url('gantipassword');?>">Ganti Kata Sandi</a>
+              <li><a href="<?php echo base_url('kibb'); ?>">KIB B</a>
               </li>
             </ul>
           </li>
