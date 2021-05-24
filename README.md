@@ -1,2 +1,2 @@
 # siabpadsim
-Sistem Informasi Aset Tetap dan Barang Persediaan Kota Padang Sidempuan
+Sistem Informasi Aset dan Barang Persediaan Kota Padang Sidempuan
