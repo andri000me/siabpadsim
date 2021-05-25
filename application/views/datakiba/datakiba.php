@@ -64,7 +64,7 @@ $this->load->view('operator/kiba/menu');
                   $i = 1;
                   foreach ($content->result() as $data) : ?>
                   <td><?= $i ?></td>
-                  <td><?= $data->id_opd ?></td>
+                  <td><?= $data->nama_opd ?></td>
                   <td><?= $data->no_urut ?></td>
                   <td><?= $data->nama_barang ?></td>
                   <td><?= $data->no_kode_barang ?></td>

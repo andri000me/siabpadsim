@@ -31,7 +31,7 @@ $this->load->view('operator/kibb/menu');
             
                 <tr class="text-center">
                   <th>No</th>
-                  <th>Nama SKPD</th>
+                  <th>Nama OPD</th>
                   <th>No</th>
                   <th>Jenis Barang / Nama Barang</th>
                   <th>Roda 2 (Dua)</th>
@@ -59,7 +59,7 @@ $this->load->view('operator/kibb/menu');
                   $i = 1;
                   foreach ($content->result() as $data) : ?>
                   <td><?= $i ?></td>
-                  <td><?= $data->id_opd ?></td>
+                  <td><?= $data->nama_opd ?></td>
                   <td><?= $data->no_urut ?></td>
                   <td><?= $data->nama_barang ?></td>
                   <td><?= $data->roda_dua ?></td>

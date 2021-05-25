@@ -24,7 +24,7 @@ class Model_caridatakiba extends CI_Model {
 		$keterangan_perolehan = $this->input->post('keterangan_perolehan');
 		$keterangan_penguasaan = $this->input->post('keterangan_penguasaan');
 
-		$this->db->like('id_opd', $id_opd);
+		$this->db->like('tbl_kiba.id_opd', $id_opd);
 		$this->db->like('keterangan_tanah',$keterangan_tanah);
 		$this->db->like('nama_barang',$nama_barang);
 		$this->db->like('no_kode_barang',$no_kode_barang);
@@ -37,6 +37,7 @@ class Model_caridatakiba extends CI_Model {
 		$this->db->like('keterangan_perolehan',$keterangan_perolehan);
 		$this->db->like('keterangan_penguasaan',$keterangan_penguasaan);
         return $this->db->from('tbl_kiba')
+		->join('tbl_opd','tbl_opd.id_opd=tbl_kiba.id_opd')
 			->get();
     }
 

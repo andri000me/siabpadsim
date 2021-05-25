@@ -13,6 +13,7 @@ class Model_datakibb extends CI_Model {
     {
 		
         return $this->db->from('tbl_kibb')
+			->join('tbl_opd','tbl_opd.id_opd=tbl_kibb.id_opd')
 			->get();
     }
 

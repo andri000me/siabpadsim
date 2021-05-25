@@ -33,9 +33,22 @@ $this->load->view('operator/kibb/menu');
         <div class="form-group">
               <div class="form-row">
                   <div class="col-md-6">
-                    <label for="id_opd">Nama SKPD</label>
-                    <input value="<?= $data->id_opd?>" class="form-control" id="id_opd" type="text" aria-describedby="nameHelp" name="id_opd" required/>
-                  </div>
+                  <label for="id_opd">Nama OPD</label>
+                    <select class="form-control form-control-sm" id="id_opd" name="id_opd" required/>
+                        
+                        <option value="<?= $data->id_opd?>"> 
+                        <?php 
+                          $id_opd = $this->db->query("SELECT * FROM tbl_opd where id_opd=$data->id_opd");
+                          foreach ($id_opd->result() as $id_opd) :
+                          echo $id_opd->nama_opd; 
+                          endforeach;
+                        ?>
+                        </option>
+                        <?php $id_opd = $this->db->query("SELECT * FROM tbl_opd where id_opd != $data->id_opd order by id_opd");
+                        foreach ($id_opd->result() as $id_opd) : ?>
+                        <option value="<?= $id_opd->id_opd?>"><?= $id_opd->nama_opd?></option>
+                         <?php endforeach; ?>
+                       </select></div>
                   <div class="col-md-6">
                     <label for="no_urut">No Urut</label>
                     <input value="<?= $data->no_urut?>" class="form-control" id="no_urut" type="text" aria-describedby="nameHelp" name="no_urut" required/>

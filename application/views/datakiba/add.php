@@ -28,8 +28,14 @@ $this->load->view('operator/kiba/menu');
               <div class="form-row">
                   <div class="col-md-6">
                     <label for="id_opd">Nama OPD</label>
-                    <input class="form-control" id="id_opd" type="text" aria-describedby="nameHelp" name="id_opd" required/>
-                  </div>
+                    <select class="form-control form-control-sm" id="id_opd" name="id_opd" required/>
+                        <option></option>
+                        <?php $id_opd = $this->db->query("SELECT * FROM tbl_opd order by id_opd");
+                
+                        foreach ($id_opd->result() as $id_opd) : ?>
+                        <option value="<?= $id_opd->id_opd?>"><?= $id_opd->nama_opd?></option>
+                         <?php endforeach; ?>
+                       </select></div>
                   <div class="col-md-6">
                     <label for="no_urut">No Urut</label>
                     <input class="form-control" id="no_urut" type="text" aria-describedby="nameHelp" name="no_urut" required/>

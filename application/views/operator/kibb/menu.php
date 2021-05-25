@@ -11,12 +11,10 @@
           <li><a href="#about">About Us</a></li>
           <li class="drop-down"><a href="">Menu</a>
             <ul>
-            <ul>
               <li><a href="<?php echo base_url('operator/kiba'); ?>">KIB A</a>
               </li>
               <li><a href="<?php echo base_url('operator/kibb'); ?>">KIB B</a>
               </li>
-            </ul>
             </ul>
           </li>
           <li><a href="<?php echo base_url('logout'); ?>">Log Out</a></li>
