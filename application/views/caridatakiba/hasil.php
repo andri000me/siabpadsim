@@ -11,20 +11,19 @@ $this->load->view('operator/kiba/menu');
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-          <a href="<?php echo base_url('operator/kiba')?>">KIB A</a>
+          <a href="<?php echo base_url('caridatakiba')?>">Cari Data KIB A</a>
         </li>
 
-        <li class="breadcrumb-item active"> Data KIB A</li>
+        <li class="breadcrumb-item active"> Hasil Pencarian</li>
       </ol>
 
       <div class="container">
-      <a href="<?php echo base_url('datakiba/menambahdatadatakiba')?>" class="btn btn-primary" style="margin-bottom: 10px;"><i class="fa fa-plus">Tambah Data</a></i>
-  
+     
   <!-- Example DataTables Card-->
   <div class="card mb-3">
         <div class="card-header">
         <?php echo $this->session->flashdata('msg'); ?>
-          <i class="fa fa-table"></i> Data KIB A</div>
+          <i class="fa fa-table"></i> Hasil Pencarian</div>
         <div class="card-body">
           <div class="table-responsive">
           <table class="table table-bordered" id="example" width="100%" cellspacing="0">
@@ -55,7 +54,6 @@ $this->load->view('operator/kiba/menu');
                   <th>JUMLAH SERTIFIKAT</th>
                   <th>JUMLAH TANAH</th>
                   <th>KETERANGAN PENGUASAAN</th>
-                  <th>Opsi</th>
                 </tr>
               </thead>
             <tbody  class="text-center">
@@ -87,10 +85,7 @@ $this->load->view('operator/kiba/menu');
                   <td><?= $data->jumlah_sertifkat ?></td>
                   <td><?= $data->jumlah_tanah ?></td>
                   <td><?= $data->keterangan_penguasaan ?></td>
-                  <td> 
-                    <a href="<?php echo base_url()?>datakiba/updatedatadatakiba/<?php echo $data->id_kiba; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Edit<i class="fa fa-tag"></i></a>
-                    <a href="<?php echo base_url()?>datakiba/action_deletedatadatakiba/<?php echo $data->id_kiba; ?>" onclick="return confirm('Apakah anda yakin?');" class="btn btn-danger">Hapus<i class="fa fa-trash"></i></a>
-                  </td> 
+                  
                 </tr>
                     <?php
                       $i++;

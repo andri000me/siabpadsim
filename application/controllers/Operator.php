@@ -31,6 +31,11 @@ class Operator extends CI_Controller {
 		$this->load->view('operator/kiba/index');
     }
 
+	public function kibb()
+	{
+		$this->load->view('operator/kibb/index');
+    }
+
     public function sppb()
 	{
 		$this->load->view('sppb/sppb');

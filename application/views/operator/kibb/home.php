@@ -9,11 +9,11 @@
          <div class="row">
          <div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="icofont-computer"></i></div>
-            <h4 class="title"><a href="<?php echo base_url('datakiba'); ?>">Data KIB A</a></h4>
+            <h4 class="title"><a href="<?php echo base_url('datakibb'); ?>">Data KIB B</a></h4>
            </div>
           <div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="icofont-computer"></i></div>
-            <h4 class="title"><a href="<?php echo base_url('caridatakiba'); ?>">Pencarian Data</a></h4>
+            <h4 class="title"><a href="<?php echo base_url('caridatakibb'); ?>">Pencarian Data</a></h4>
            </div>
           
 </div><br><br><br>
