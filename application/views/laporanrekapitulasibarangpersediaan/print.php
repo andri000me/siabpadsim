@@ -177,15 +177,15 @@ table{
 </tr>
 <tr height="75px"></tr>
 <tr>
-    <td>NAMA</td>
-    <td>NAMA</td>
-    <td>NAMA</td>
+    <td>Sulaiman Lubis, S.E</td>
+    <td>Rosti Megawati Harahap</td>
+    <td>Siti Armida Siregar, S.H</td>
 </tr>
 
 <tr>
-    <td>NIP. </td>
-    <td>NIP. </td>
-    <td>NIP. </td>
+    <td>19690501 199303 1 004</td>
+    <td>19730930 199203 2 001</td>
+    <td>19851003 200801 2 001 </td>
 </tr>
 
 </table>

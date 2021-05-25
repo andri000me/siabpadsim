@@ -28,14 +28,21 @@ $this->load->view('pptk/barangpersediaan/menu');
        
               
             
-            <div class="form-group">
+        <div class="form-group">
               <div class="form-row">
               <div class="col-md-6">
                     <label for="id_ssh">Nama Barang</label>
                     <select class="form-control form-control-sm" id="id_ssh" name="id_ssh" required />
                     
-                    <option value="<?php echo $ambil->id_ssh; ?>"><?php echo $ambil->id_ssh; ?></option>
-                        <?php $id_ssh = $this->db->query("SELECT * FROM tbl_ssh");
+                    <option value="<?php echo $ambil->id_ssh; ?>">
+                    <?php 
+                    $id_ssh = $this->db->query("SELECT * FROM tbl_ssh where id_ssh=$ambil->id_ssh order by Namabarang_ssh");
+                    foreach ($id_ssh->result() as $id_ssh) :
+                    echo $id_ssh->Namabarang_ssh; 
+                    endforeach;
+                    ?>
+                    </option>
+                        <?php $id_ssh = $this->db->query("SELECT * FROM tbl_ssh order by Namabarang_ssh");
                 
                         foreach ($id_ssh->result() as $id_ssh) : ?>
                         <option value="<?= $id_ssh->id_ssh?>"><?= $id_ssh->Namabarang_ssh?></option>
