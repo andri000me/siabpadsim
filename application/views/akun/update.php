@@ -31,19 +31,22 @@ $this->load->view('admin/menu');
                   <div class="col-md-6">
                     <label for="id_opd">OPD</label>
                      <select class="form-control form-control-sm" id="id_opd" name="id_opd" value="<?php echo $ambil->id_opd; ?>"required />
-                     <option value="<?php echo $ambil->id_opd; ?>"><?php echo $ambil->id_opd; ?></option>
-                        <?php $id_opd = $this->db->query("SELECT * FROM tbl_opd");
+                     <option value="<?php echo $ambil->id_opd; ?>">
+                    <?php 
+                    $id_opd = $this->db->query("SELECT * FROM tbl_opd where id_opd=$ambil->id_opd order by nama_opd"); 
+                    foreach ($id_opd->result() as $id_opd) :
+                    echo $id_opd->nama_opd; 
+                    endforeach;
+                    ?>
+                    </option>
+
+                    <?php $id_opd = $this->db->query("SELECT * FROM tbl_opd");
                 
-                        foreach ($id_opd->result() as $id_opd) : ?>
-                        <option value="<?= $id_opd->id_opd?>"><?= $id_opd->nama_opd?></option>
-                         <?php endforeach; ?>
-                       </select>
-                     </div>
-                           
-                  <div class="col-md-6">
-                    <label for="username">Nomor Induk Pegawai</label>
-                    <input value="<?php echo $ambil->username; ?>" class="form-control" id="username" type="text" aria-describedby="nameHelp" name="username" required/>
-                  </div>
+                foreach ($id_opd->result() as $id_opd) : ?>
+                <option value="<?= $id_opd->id_opd?>"><?= $id_opd->nama_opd?></option>
+                 <?php endforeach; ?>
+               </select>
+                </div>
                 </div>
               </div>
 
