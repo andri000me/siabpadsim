@@ -11,7 +11,7 @@
           <li><a href="#about">About Us</a></li>
           <li class="drop-down"><a href="">Menu</a>
             <ul>
-              <li><a href="#">Aset Tetap</a>
+              <li><a href="#">Aset</a>
               </li>
               <li><a href="<?php echo base_url('pengurusbarangpengguna/barangpersediaan/index')?>">Barang Persediaan</a>
               </li>

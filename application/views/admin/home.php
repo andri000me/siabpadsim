@@ -2,7 +2,7 @@
     <section id="services" class="services">
       <div class="container">
 		<div class="section-title">
-          <h4>Sistem Informasi Aset Tetap & Barang Persediaan</h4>		  
+          <h4>Sistem Informasi Aset & Barang Persediaan</h4>		  
           <h3>Kota Padang Sidempuan</h3>
 		  <br><br>
         </div>

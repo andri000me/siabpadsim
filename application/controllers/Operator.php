@@ -21,6 +21,16 @@ class Operator extends CI_Controller {
 		$this->load->view('operator/barangpersediaan/index');
     }
 
+	public function aset()
+	{
+		$this->load->view('operator/aset/index');
+    }
+
+	public function kiba()
+	{
+		$this->load->view('operator/kiba/index');
+    }
+
     public function sppb()
 	{
 		$this->load->view('sppb/sppb');
