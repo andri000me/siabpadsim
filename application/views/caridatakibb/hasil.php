@@ -51,6 +51,8 @@ $this->load->view('operator/kibb/menu');
                   <th>HARGA  (Rp)</th>
                   <th>Pejabat Pengguna</th>
                   <th>Ket</th>
+                  <th>Nomor STNK</th>
+                  <th>STNK Berlaku Sampai</th>
                 </tr>
               </thead>
             <tbody  class="text-center">
@@ -79,6 +81,8 @@ $this->load->view('operator/kibb/menu');
                   <td><?= $data->harga ?></td>
                   <td><?= $data->pejabat_pengguna ?></td>
                   <td><?= $data->keterangan ?></td>
+                  <td><?= $data->no_stnk ?></td>
+                  <td><?= $data->berlaku_sampai ?></td>
                   
                 </tr>
                     <?php

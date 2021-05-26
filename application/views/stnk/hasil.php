@@ -11,27 +11,26 @@ $this->load->view('operator/kibb/menu');
       <div class="container">
       <ol class="breadcrumb" >
         <li class="breadcrumb-item">
-          <a href="<?php echo base_url('operator/kibb')?>">KIB B</a>
+          <a href="<?php echo base_url('stnk')?>">Cari Data STNK</a>
         </li>
 
-        <li class="breadcrumb-item active"> Data KIB B</li>
+        <li class="breadcrumb-item active"> Hasil Pencarian</li>
       </ol>
 
       <div class="container">
-      <a href="<?php echo base_url('datakibb/menambahdatadatakibb')?>" class="btn btn-primary" style="margin-bottom: 10px;"><i class="fa fa-plus">Tambah Data</a></i>
-  
+     
   <!-- Example DataTables Card-->
   <div class="card mb-3">
         <div class="card-header">
         <?php echo $this->session->flashdata('msg'); ?>
-          <i class="fa fa-table"></i> Data KIB B</div>
+          <i class="fa fa-table"></i> Hasil Pencarian</div>
         <div class="card-body">
           <div class="table-responsive">
           <table class="table table-bordered" id="example" width="100%" cellspacing="0">
               <thead>
             
                 <tr class="text-center">
-                <th>No</th>
+                  <th>No</th>
                   <th>Nama OPD</th>
                   <th>No</th>
                   <th>Jenis Barang / Nama Barang</th>
@@ -52,9 +51,8 @@ $this->load->view('operator/kibb/menu');
                   <th>HARGA  (Rp)</th>
                   <th>Pejabat Pengguna</th>
                   <th>Ket</th>
-                  <th>No STNK</th>
+                  <th>Nomor STNK</th>
                   <th>STNK Berlaku Sampai</th>
-                  <th>Opsi</th>
                 </tr>
               </thead>
             <tbody  class="text-center">
@@ -85,10 +83,7 @@ $this->load->view('operator/kibb/menu');
                   <td><?= $data->keterangan ?></td>
                   <td><?= $data->no_stnk ?></td>
                   <td><?= $data->berlaku_sampai ?></td>
-                  <td> 
-                    <a href="<?php echo base_url()?>datakibb/updatedatadatakibb/<?php echo $data->id_kibb; ?>" class="btn btn-warning" style="margin-bottom: 1px;">Edit<i class="fa fa-tag"></i></a>
-                    <a href="<?php echo base_url()?>datakibb/action_deletedatadatakibb/<?php echo $data->id_kibb; ?>" onclick="return confirm('Apakah anda yakin?');" class="btn btn-danger">Hapus<i class="fa fa-trash"></i></a>
-                  </td> 
+                  
                 </tr>
                     <?php
                       $i++;

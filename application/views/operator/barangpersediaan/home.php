@@ -46,6 +46,19 @@
 <h4 class="title"><a href="<?= base_url('laporanrekapitulasibarangpersediaan'); ?>">Laporan Rekapitulasi</a></h4>
 </div>
 </div>
+
+</div><br><br><br>
+<div class="row">
+
+<div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon"><i class="icofont-chart-bar-graph"></i></div>
+            <h4 class="title"><a href="<?= base_url('laporanbukubarangpersediaan'); ?>">Laporan Buku</a></h4>
+            </div>
+<div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+<div class="icon"><i class="icofont-chart-bar-graph"></i></div>
+<h4 class="title"><a href="<?= base_url('laporanrekapitulasibarangpersediaan'); ?>">Laporan Rekapitulasi</a></h4>
+</div>
+</div>
       
     </section><!-- End Services Section -->
 

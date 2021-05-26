@@ -7,16 +7,54 @@
 		  <br><br>
         </div>
          <div class="row">
-         <div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up">
+         <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="icofont-computer"></i></div>
             <h4 class="title"><a href="<?php echo base_url('datakibb'); ?>">Data KIB B</a></h4>
            </div>
-          <div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up">
+           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+            <div class="icon"><i class="icofont-computer"></i></div>
+            <h4 class="title"><a href="<?php echo base_url('stnk'); ?>">STNK</a></h4>
+           </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="icofont-computer"></i></div>
             <h4 class="title"><a href="<?php echo base_url('caridatakibb'); ?>">Pencarian Data</a></h4>
            </div>
           
 </div><br><br><br>
+
+
+
+<div class="row">
+           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+            <div class="icon"><i class="icofont-computer"></i></div>
+            <h4 class="title"><a href="<?php echo base_url('laporankibb/rekap'); ?>">Laporan Rekap</a></h4>
+           </div>
+         <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+           </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+            <div class="icon"><i class="icofont-computer"></i></div>
+            <h4 class="title"><a href="<?php echo base_url('laporankibb/rekapjeniskendaraan'); ?>">Laporan Rekap Jenis Kendaraan</a></h4>
+           </div>
+          
+</div><br><br><br>
+
+<div class="row">
+           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+            <div class="icon"><i class="icofont-computer"></i></div>
+            <h4 class="title"><a href="<?php echo base_url('laporankibb/opd'); ?>">Laporan OPD</a></h4>
+           </div>
+           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+            <div class="icon"><i class="icofont-computer"></i></div>
+            <h4 class="title"><a href="<?php echo base_url('laporankibb/global'); ?>">Laporan Global</a></h4>
+           </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+            <div class="icon"><i class="icofont-computer"></i></div>
+            <h4 class="title"><a href="<?php echo base_url('laporankibb/penambahan'); ?>">Laporan Penambahan</a></h4>
+           </div>
+          
+</div><br><br><br>
+
+
       
     </section><!-- End Services Section -->
 

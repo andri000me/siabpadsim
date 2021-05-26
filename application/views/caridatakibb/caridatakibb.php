@@ -101,6 +101,17 @@ $this->load->view('operator/kibb/menu');
                   
               </div>
 
+              <div class="form-group">
+              <div class="form-row">
+                  <div class="col-md-6">
+                    <label for="nomor_stnk">Nomor STNK</label>
+                    <input class="form-control" id="nomor_stnk" type="text" aria-describedby="nameHelp" name="nomor_stnk" />
+                  </div>
+                  
+                </div>
+                  
+              </div>
+
 
             
 

@@ -21,9 +21,11 @@ class Model_caridatakibb extends CI_Model {
 		$nomor_bpkb = $this->input->post('nomor_bpkb');
 		$pejabat_pengguna = $this->input->post('pejabat_pengguna');
 		$keterangan = $this->input->post('keterangan');
+		$no_stnk = $this->input->post('no_stnk');
 
 		$this->db->like('tbl_kibb.id_opd', $id_opd);
 		$this->db->like('nama_barang',$nama_barang);
+		$this->db->like('tahun_pembelian',$tahun_pembelian);
 		$this->db->like('nomor_pabrik',$nomor_pabrik);
 		$this->db->like('nomor_rangka',$nomor_rangka);
 		$this->db->like('nomor_mesin',$nomor_mesin);
@@ -31,6 +33,7 @@ class Model_caridatakibb extends CI_Model {
 		$this->db->like('nomor_bpkb',$nomor_bpkb);
 		$this->db->like('pejabat_pengguna',$pejabat_pengguna);
 		$this->db->like('keterangan',$keterangan);
+		$this->db->like('no_stnk',$no_stnk);
         return $this->db->from('tbl_kibb')
 		->join('tbl_opd','tbl_opd.id_opd=tbl_kibb.id_opd')
 			->get();
