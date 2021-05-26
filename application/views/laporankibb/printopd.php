@@ -35,7 +35,7 @@ table{
 <body>
 <br>
 
-<?php foreach ($hasil_mutasi as $item){}?>
+<?php foreach ($hasil as $item){}?>
 
 <table border="1" align="center">
                     <tr>
