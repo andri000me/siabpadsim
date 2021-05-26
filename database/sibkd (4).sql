@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2021 at 06:05 PM
+-- Generation Time: May 26, 2021 at 09:50 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.30
 
@@ -76,8 +76,6 @@ CREATE TABLE `tbl_detailmutasi` (
 --
 
 INSERT INTO `tbl_detailmutasi` (`id_detailmutasi`, `id_mutasi`, `id_ssh`, `total_barang_in`, `total_barang_out`, `username`, `tanggal_input`, `tahun_order`, `statusorder`) VALUES
-(67, 35, 13, 4, NULL, 'pptk', '2021-05-23 20:56:45', 2021, 'Belum Diterima'),
-(68, 35, 12, 2, NULL, 'pptk', '2021-05-23 20:56:58', 2021, 'Belum Diterima'),
 (69, 36, 14, 5, NULL, 'pptk', '2021-05-23 21:18:43', 2021, 'Belum Diterima'),
 (70, 36, 12, 5, NULL, 'pptk', '2021-05-23 21:18:48', 2021, 'Belum Diterima'),
 (71, 36, 15, 1, NULL, 'pptk', '2021-05-23 21:23:36', 2021, 'Belum Diterima'),
@@ -120,6 +118,87 @@ CREATE TABLE `tbl_detailpenyaluran` (
   `tahun_penyaluran` year(4) NOT NULL DEFAULT current_timestamp(),
   `statusorder` enum('Belum Diterima','Sudah Diterima','Sudah Disalurkan','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_kiba`
+--
+
+CREATE TABLE `tbl_kiba` (
+  `id_kiba` int(128) NOT NULL,
+  `id_opd` int(128) NOT NULL,
+  `no_urut` int(128) NOT NULL,
+  `nama_barang` varchar(128) NOT NULL,
+  `no_kode_barang` varchar(128) NOT NULL,
+  `no_register` varchar(128) NOT NULL,
+  `keterangan_tanah` varchar(128) NOT NULL,
+  `luas_catat_kib` double NOT NULL,
+  `koreksi_bertambah` double NOT NULL,
+  `koreksi_berkurang` double NOT NULL,
+  `luas_sertifikat` double NOT NULL,
+  `tahun_pengadaan` year(4) NOT NULL,
+  `alamat` varchar(128) NOT NULL,
+  `hak_status_tanah` varchar(128) NOT NULL,
+  `tanggal_sertifikat` date NOT NULL,
+  `nomor_sertifikat` varchar(128) NOT NULL,
+  `penggunaan` varchar(128) NOT NULL,
+  `asal_usul` varchar(128) NOT NULL,
+  `harga` double NOT NULL,
+  `keterangan_perolehan` varchar(128) NOT NULL,
+  `keterangan` int(128) NOT NULL,
+  `jumlah_sertifkat` int(128) NOT NULL,
+  `jumlah_tanah` int(128) NOT NULL,
+  `keterangan_penguasaan` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_kiba`
+--
+
+INSERT INTO `tbl_kiba` (`id_kiba`, `id_opd`, `no_urut`, `nama_barang`, `no_kode_barang`, `no_register`, `keterangan_tanah`, `luas_catat_kib`, `koreksi_bertambah`, `koreksi_berkurang`, `luas_sertifikat`, `tahun_pengadaan`, `alamat`, `hak_status_tanah`, `tanggal_sertifikat`, `nomor_sertifikat`, `penggunaan`, `asal_usul`, `harga`, `keterangan_perolehan`, `keterangan`, `jumlah_sertifkat`, `jumlah_tanah`, `keterangan_penguasaan`) VALUES
+(1, 1, 3, '3', '3', '3', '3', 3, 3, 3, 3, 2029, '3', '3', '0003-03-04', '3', '3', '3', 3, '3', 3, 3, 3, '3'),
+(4, 35, 5, '5', '5', '5', '5', 5, 5, 5, 5, 2013, '5', '5', '2021-06-03', '5', '5', '5', 5, '5', 5, 5, 5, '5'),
+(5, 35, 9, '9', '9', '9', '9', 9, 9, 9, 9, 2009, '9', '9', '0008-09-07', '9', '9', '9', 9, '9', 9, 9, 9, '9');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_kibb`
+--
+
+CREATE TABLE `tbl_kibb` (
+  `id_kibb` int(128) NOT NULL,
+  `id_opd` int(128) NOT NULL,
+  `no_urut` int(128) NOT NULL,
+  `nama_barang` varchar(128) NOT NULL,
+  `roda_dua` int(128) NOT NULL,
+  `roda_tiga` int(128) NOT NULL,
+  `roda_empat` int(128) NOT NULL,
+  `roda_enam` int(128) NOT NULL,
+  `merk` varchar(128) NOT NULL,
+  `type` varchar(128) NOT NULL,
+  `bahan` varchar(128) NOT NULL,
+  `tahun_pembelian` year(4) NOT NULL,
+  `nomor_pabrik` varchar(128) NOT NULL,
+  `nomor_rangka` varchar(128) NOT NULL,
+  `nomor_mesin` varchar(128) NOT NULL,
+  `nomor_polisi` varchar(128) NOT NULL,
+  `nomor_bpkb` varchar(128) NOT NULL,
+  `sumber_perolehan` varchar(128) NOT NULL,
+  `harga` double NOT NULL,
+  `pejabat_pengguna` varchar(128) NOT NULL,
+  `keterangan` varchar(128) NOT NULL,
+  `no_stnk` varchar(128) NOT NULL,
+  `berlaku_sampai` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_kibb`
+--
+
+INSERT INTO `tbl_kibb` (`id_kibb`, `id_opd`, `no_urut`, `nama_barang`, `roda_dua`, `roda_tiga`, `roda_empat`, `roda_enam`, `merk`, `type`, `bahan`, `tahun_pembelian`, `nomor_pabrik`, `nomor_rangka`, `nomor_mesin`, `nomor_polisi`, `nomor_bpkb`, `sumber_perolehan`, `harga`, `pejabat_pengguna`, `keterangan`, `no_stnk`, `berlaku_sampai`) VALUES
+(2, 35, 9, '9', 9, 9, 9, 9, '9', '9', '9', 2009, '9', '9', '9', '9', '0009-09-09', '9', 9, '9', '9', '9', '2021-06-30');
 
 -- --------------------------------------------------------
 
@@ -176,7 +255,7 @@ CREATE TABLE `tbl_mutasi` (
 
 INSERT INTO `tbl_mutasi` (`id_mutasi`, `jenis_mutasi`, `tahun_pesan`, `tanggal_pesan`, `id_rekanan`, `keterangan`, `username`, `id_opd`, `no_suratpermohonanpptk`, `no_suratpermohonanpenyedia`, `no_suratbalasan`, `no_suratperintahpengiriman`, `no_bapenyedia`, `no_bappk`, `statusorder`, `tanggalterimabarang`, `id_paketpekerjaan`, `tanggal_suratpermohonanpptk`, `tanggal_suratpermohonanpenyedia`, `tanggal_suratbalasan`, `tanggal_suratperintahpengiriman`, `tanggal_bapenyedia`, `tanggal_bappk`, `belanja`, `memesan`, `no_kwitansi`, `no_faktur`, `no_suratpermohonanpembayaran`, `no_bapembayaran`, `tanggal_kwitansi`, `tanggal_faktur`, `tanggal_suratpermohonanpembayaran`, `tanggal_bapembayaran`, `no_sppb`, `tanggal_sppb`, `no_bapenyaluranbarang`, `tanggal_bapenyaluranbarang`, `statuspenyaluran`, `tanggalpenyaluran`, `untuk`) VALUES
 (36, 'Pengadaan', 2021, '2021-05-17', 1, 'Disetujui', 'pptk', 35, 'a', 'a', 'a', 'a', 'a', 'a', 'Selesai', '2021-05-23', NULL, '2021-05-27', '2021-04-29', '2021-05-27', '2021-05-18', '2021-05-15', '2021-05-19', 'aaa', 'aaa', 'a', 'a', 'a', 'a', '2021-04-30', '2021-05-29', '2021-05-29', '2021-05-27', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(37, 'Penyaluran', 2021, '2021-05-24', NULL, 'Disetujui', 'pptk', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Sedang Diproses', '2021-05-23', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'b', '2021-04-27', 'b', '2021-06-02', 'Sudah Disalurkan', '2021-05-23', NULL);
+(37, 'Penyaluran', 2021, '2021-05-24', NULL, 'Disetujui', 'pptk', 35, NULL, NULL, NULL, NULL, NULL, NULL, 'Sedang Diproses', '2021-05-23', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'b', '2021-04-27', 'b', '2021-06-02', 'Sudah Disalurkan', '2021-05-23', NULL);
 
 -- --------------------------------------------------------
 
@@ -308,6 +387,38 @@ INSERT INTO `tbl_rekanan` (`id_rekanan`, `nama_pimpinan`, `nama_rekanan`, `alama
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_riwayatkibb`
+--
+
+CREATE TABLE `tbl_riwayatkibb` (
+  `id_kibb` int(128) NOT NULL,
+  `id_opd` int(128) NOT NULL,
+  `no_urut` int(128) NOT NULL,
+  `nama_barang` varchar(128) NOT NULL,
+  `roda_dua` int(128) NOT NULL,
+  `roda_tiga` int(128) NOT NULL,
+  `roda_empat` int(128) NOT NULL,
+  `roda_enam` int(128) NOT NULL,
+  `merk` varchar(128) NOT NULL,
+  `type` varchar(128) NOT NULL,
+  `bahan` varchar(128) NOT NULL,
+  `tahun_pembelian` year(4) NOT NULL,
+  `nomor_pabrik` varchar(128) NOT NULL,
+  `nomor_rangka` varchar(128) NOT NULL,
+  `nomor_mesin` varchar(128) NOT NULL,
+  `nomor_polisi` varchar(128) NOT NULL,
+  `nomor_bpkb` varchar(128) NOT NULL,
+  `sumber_perolehan` varchar(128) NOT NULL,
+  `harga` double NOT NULL,
+  `pejabat_pengguna` varchar(128) NOT NULL,
+  `keterangan` varchar(128) NOT NULL,
+  `no_stnk` varchar(128) NOT NULL,
+  `berlaku_sampai` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_sk`
 --
 
@@ -393,6 +504,18 @@ ALTER TABLE `tbl_detailpenyaluran`
   ADD PRIMARY KEY (`id_detailpenyaluran`);
 
 --
+-- Indexes for table `tbl_kiba`
+--
+ALTER TABLE `tbl_kiba`
+  ADD PRIMARY KEY (`id_kiba`);
+
+--
+-- Indexes for table `tbl_kibb`
+--
+ALTER TABLE `tbl_kibb`
+  ADD PRIMARY KEY (`id_kibb`);
+
+--
 -- Indexes for table `tbl_mutasi`
 --
 ALTER TABLE `tbl_mutasi`
@@ -427,6 +550,12 @@ ALTER TABLE `tbl_penyaluran`
 --
 ALTER TABLE `tbl_rekanan`
   ADD PRIMARY KEY (`id_rekanan`);
+
+--
+-- Indexes for table `tbl_riwayatkibb`
+--
+ALTER TABLE `tbl_riwayatkibb`
+  ADD PRIMARY KEY (`id_kibb`);
 
 --
 -- Indexes for table `tbl_sk`
@@ -469,6 +598,18 @@ ALTER TABLE `tbl_detailpenyaluran`
   MODIFY `id_detailpenyaluran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
+-- AUTO_INCREMENT for table `tbl_kiba`
+--
+ALTER TABLE `tbl_kiba`
+  MODIFY `id_kiba` int(128) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tbl_kibb`
+--
+ALTER TABLE `tbl_kibb`
+  MODIFY `id_kibb` int(128) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `tbl_mutasi`
 --
 ALTER TABLE `tbl_mutasi`
@@ -497,6 +638,12 @@ ALTER TABLE `tbl_penyaluran`
 --
 ALTER TABLE `tbl_rekanan`
   MODIFY `id_rekanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `tbl_riwayatkibb`
+--
+ALTER TABLE `tbl_riwayatkibb`
+  MODIFY `id_kibb` int(128) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_sk`
