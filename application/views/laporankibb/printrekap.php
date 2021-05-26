@@ -28,7 +28,7 @@ table{
 </style>
 <table align="center">
 <h3 class="jarak-lh" align="center">DAFTAR KENDARAAN DINAS DI LINGKUNGAN PEMERINTAH KOTA PADANGSIDIMPUAN</h1>
-<h3 class="jarak-lh" align="center">TAHUN ANGGARAN "TAHUN"</h1>
+<h3 class="jarak-lh" align="center">TAHUN ANGGARAN <?= $tahun_pembelian;?></h1>
 <table>
 </head>
 
@@ -41,13 +41,13 @@ table{
                     <tr>
                         <th rowspan="2">No</th>
                         <th rowspan="2">Nama OPD</th>
-                        <th colspan="4">SALDO AWAL PER 1 JANUARI "TAHUN"</th>        
+                        <th colspan="4">SALDO AWAL PER 1 JANUARI <?= $tahun_pembelian;?></th>        
                         <th rowspan="2">Total</th>   
-                        <th colspan="4">MUTASI BERTAMBAH "TAHUN"</th>        
+                        <th colspan="4">MUTASI BERTAMBAH <?= $tahun_pembelian;?></th>        
                         <th rowspan="2">Total</th>   
-                        <th colspan="4">MUTASI BERKURANG "TAHUN"</th>        
+                        <th colspan="4">MUTASI BERKURANG <?= $tahun_pembelian;?></th>        
                         <th rowspan="2">Total</th>   
-                        <th colspan="4">SALDO AKHIR PER 31 DESEMBER "TAHUN"</th>        
+                        <th colspan="4">SALDO AKHIR PER 31 DESEMBER <?= $tahun_pembelian;?></th>        
                         <th rowspan="2">Total</th>        
                     </tr>
                     <tr>
@@ -101,7 +101,7 @@ table{
                     ?>
                     <tr>
                         <td align="center"><?= $no;?></td>
-                        <td align="center"></td>
+                        <td align="center"><?= $item->id_opd;?></td>
                         <td align="center"></td>
                         <td align="center"></td>
                         <td align="center"></td>

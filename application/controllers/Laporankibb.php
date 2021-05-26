@@ -20,7 +20,8 @@ class Laporankibb extends CI_Controller {
     function printrekap()
 	{   
         $tahun_pembelian = $this->input->post('tahun_pembelian');
-        $data['hasil']=$this->model_laporankibb->Getrekap($tahun_pembelian);
+        $data['tahun_pembelian'] = $this->input->post('tahun_pembelian');
+        $data['saldoawal']=$this->model_laporankibb->Getrekap($tahun_pembelian);
         $this->load->view('laporankibb/printrekap',$data);
 	}
 }

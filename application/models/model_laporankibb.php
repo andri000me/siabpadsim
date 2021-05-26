@@ -15,6 +15,10 @@ class Model_laporankibb extends CI_Model {
   {
       $this->db->select('*');
       $this->db->where('tahun_pembelian',$tahun_pembelian);
+      $this->db->group_by('roda_dua');
+      $this->db->group_by('roda_tiga');
+      $this->db->group_by('roda_empat');
+      $this->db->group_by('roda_enam');
       return $this->db->from('tbl_kibb') 
         ->get()
         ->result();
