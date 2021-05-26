@@ -178,6 +178,20 @@ $this->load->view('operator/kibb/menu');
                 </div>
               </div>
 
+              <div class="form-group">
+              <div class="form-row">
+                  <div class="col-md-6">
+                    <label for="no_stnk">No STNK</label>
+                    <input class="form-control" id="no_stnk" type="text" aria-describedby="nameHelp" name="no_stnk" required/>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="berlaku_sampai">STNK Berlaku Sampai</label>
+                    <input class="form-control" id="berlaku_sampai" type="date" aria-describedby="nameHelp" name="berlaku_sampai" required/>
+                  </div>
+                  
+                </div>
+              </div>
+
             <div class="form-group">
             <div class="form-row">
               <div class="col-md-2">

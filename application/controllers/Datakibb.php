@@ -44,7 +44,9 @@ class Datakibb extends CI_Controller {
 							'sumber_perolehan'=>$this->input->post('sumber_perolehan'),
 							'harga'=>$this->input->post('harga'),
 							'pejabat_pengguna'=>$this->input->post('pejabat_pengguna'),
-							'keterangan'=>$this->input->post('keterangan')
+							'keterangan'=>$this->input->post('keterangan'),
+							'no_stnk'=>$this->input->post('no_stnk'),
+							'berlaku_sampai'=>$this->input->post('berlaku_sampai')
 						);
 					$this->model_datakibb->menambahdatadatakibb($data);
 					$this->session->set_flashdata('msg', '<div class="alert alert-success" role="alert">Data KIB B Berhasil di Tambah</div>');
@@ -80,7 +82,9 @@ class Datakibb extends CI_Controller {
 							'sumber_perolehan'=>$this->input->post('sumber_perolehan'),
 							'harga'=>$this->input->post('harga'),
 							'pejabat_pengguna'=>$this->input->post('pejabat_pengguna'),
-							'keterangan'=>$this->input->post('keterangan')
+							'keterangan'=>$this->input->post('keterangan'),
+							'no_stnk'=>$this->input->post('no_stnk'),
+							'berlaku_sampai'=>$this->input->post('berlaku_sampai')
         );
         $this->model_datakibb->updatedatadatakibb($data, $id_kibb);
 		$this->session->set_flashdata('msg', '<div class="alert alert-success" role="alert">Data KIB B berhasil diubah</div>');
