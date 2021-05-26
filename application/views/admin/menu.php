@@ -17,6 +17,10 @@
               </li>
 			        <li><a href="<?php echo base_url('ssh')?>">Data SSH</a>
               </li>
+              <li><a href="<?php echo base_url('admin/laporanaset')?>">Laporan Aset</a>
+              </li>
+              <li><a href="<?php echo base_url('admin/laporanbarangpersediaan')?>">Laporan Barang Persediaan</a>
+              </li>
             </ul>
           </li>
           <li><a href="<?php echo base_url('logout'); ?>">Log Out</a></li>

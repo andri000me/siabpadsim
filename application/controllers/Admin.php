@@ -11,7 +11,15 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('admin/index');
-    }             
+    }     
+	public function laporanbarangpersediaan()
+	{
+		$this->load->view('admin/laporanbarangpersediaan/index');
+    }   
+	public function laporanaset()
+	{
+		$this->load->view('admin/laporanaset/index');
+    }              
 }
 
 

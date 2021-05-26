@@ -19,7 +19,21 @@
             <div class="icon"><i class="icofont-settings"></i></div>
             <h4 class="title"><a href="<?php echo base_url('ssh'); ?>">Data SSH</a></h4>
             </div>
-
+            </div>
+            <br>
+            <br> <br>
+            <div class="row">
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+            <div class="icon"><i class="icofont-computer"></i></div>
+            <h4 class="title"><a href="<?php echo base_url('admin/laporanaset'); ?>">Laporan Aset</a></h4>
+           </div>
+          <div class="col-lg-4 col-md-6  " data-aos="fade-up" data-aos-delay="0">
+            <div class=" "></div>
+            </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon"><i class="icofont-settings"></i></div>
+            <h4 class="title"><a href="<?php echo base_url('admin/laporanbarangpersediaan'); ?>">Laporan Barang Persediaan</a></h4>
+            </div>
       </div>
     </section><!-- End Services Section -->
 

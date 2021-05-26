@@ -1,8 +1,12 @@
-
-
 <?php 
+
+$level=$this->session->userdata('level');
 $this->load->view('include/header'); 
-$this->load->view('operator/barangpersediaan/menu'); 
+if ($level=="Admin"){
+  $this->load->view('admin/menu');
+}else if ($level=="operator"){
+  $this->load->view('operator/barangpersediaan/menu');
+}
 ?>
 
 </head>
